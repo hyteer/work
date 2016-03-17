@@ -1,0 +1,24 @@
+{
+  "name": "Work-env",
+  "version": "1.0.0",
+  "description": "Node enviroment for work",
+  "author": "Yongtang <hyteer@gmail.com>",
+  "tags": [
+    "work",
+    "testing"
+  ],
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/hyteer/work.git"
+  },
+  "bin": {
+    "test": "test/app.js"
+  }
+}
