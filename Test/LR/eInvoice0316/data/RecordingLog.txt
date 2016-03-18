@@ -1,0 +1,29 @@
+[Network Analyzer (278c: 4f8)] ------------------------------------------------------------------------------------------
+[Network Analyzer (278c: 4f8)] Load Network Traffic Analyzers:
+[Network Analyzer (278c: 4f8)]     Analyzer Module: WPLUS (value=)
+[Network Analyzer (278c: 4f8)]     Analyzer Module: WebBase (value=GetHttpProtocolAnalyzer:api_http_filter.dll)
+[Network Analyzer (278c: 4f8)]     + Network Analyzer: api_http_filter.dll @ GetHttpProtocolAnalyzer Loaded!
+[Network Analyzer (278c: 4f8)]     + Interception Auditors: WinInetWplusInterceptionAudit:api_http_filter.dll
+[Network Analyzer (278c: 4f8)]     Analyzer Module: QTWeb (value=)
+[Network Analyzer (278c: 4f8)]     Analyzer Module: WS_SOAP (value=)
+[Network Analyzer (278c: 4f8)]     Analyzer Module: local_server (value=)
+[Network Analyzer (278c: 4f8)] ------------------------------------------------------------------------------------------
+[Network Analyzer (278c:216c)] Address lookup for WIN-20160309VRJ = 192.168.11.180
+[Network Analyzer (278c: 4f8)] Address lookup for WIN-20160309VRJ = 192.168.11.180
+[Network Analyzer (278c: e38)] Address lookup for WIN-20160309VRJ = 192.168.11.180
+[Network Analyzer (278c: e38)] Request Connection: Remote Server @ 172.25.2.61:50021   (Service=)  (Sid=  1)  PROXIED!
+[Web Request      (278c:216c)] "GET /yysqz/services/ElectronInvoiceSer?wsdl"   
+[Network Analyzer (278c:216c)]   (Sid:  1) Client -> Server : 371 bytes (Service=HTTP)
+[Network Analyzer (278c: 4f8)] Request Connection: Remote Server @ 125.90.206.144:80   (Service=)  (Sid=  2)  PROXIED!
+[Network Analyzer (278c:216c)]   (Sid:  1) Server -> Client : 2867 bytes  (Service=HTTP)
+[Web Request      (278c:216c)] "GET /cloud/picinfo.ini"   
+[Network Analyzer (278c:216c)]   (Sid:  2) Client -> Server : 90 bytes (Service=HTTP)
+[Network Analyzer (278c:216c)]   (Sid:  2) Server -> Client : 2504 bytes  (Service=HTTP)
+[Network Analyzer (278c: 33c)] Address lookup for masterconn.qq.com = 119.147.21.219
+[Network Analyzer (278c: 33c)] Address lookup for masterconn2.qq.com = 14.17.37.103
+[Network Analyzer (278c:1da8)] Address lookup for 172.25.2.61 = 172.25.2.61
+[Web Request      (278c:216c)] "GET /favicon.ico"   
+[Network Analyzer (278c:216c)]   (Sid:  1) Client -> Server : 320 bytes (Service=HTTP)
+[Network Analyzer (278c:216c)]   (Sid:  1) Server -> Client : 1219 bytes  (Service=HTTP)
+[Network Analyzer (278c:216c)]   (Sid:  2) Connection Terminated (by Client)
+[Network Analyzer (278c:216c)]   (Sid:  1) Connection Terminated (by Client)

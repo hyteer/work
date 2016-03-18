@@ -1,0 +1,98 @@
+Failed to get information of process Id: 0
+Failed to get information of process Id: 4
+Failed to get information of process Id: 320
+Failed to get information of process Id: 492
+Failed to get information of process Id: 532
+Failed to get information of process Id: 552
+Failed to get information of process Id: 604
+Failed to get information of process Id: 644
+Failed to get information of process Id: 652
+Failed to get information of process Id: 664
+Failed to get information of process Id: 764
+Failed to get information of process Id: 844
+Failed to get information of process Id: 908
+Failed to get information of process Id: 972
+Failed to get information of process Id: 1028
+Failed to get information of process Id: 1164
+Failed to get information of process Id: 1252
+Failed to get information of process Id: 1320
+Failed to get information of process Id: 1480
+Failed to get information of process Id: 1516
+Failed to get information of process Id: 1584
+Failed to get information of process Id: 1756
+PROCESS 0x708       dwm.exe
+PROCESS 0x728       taskhost.exe
+PROCESS 0x748       explorer.exe
+Failed to get information of process Id: 1976
+PROCESS 0x178       taskeng.exe
+Failed to get information of process Id: 1688
+Failed to get information of process Id: 2160
+Failed to get information of process Id: 2268
+PROCESS 0xa78       360tray.exe
+PROCESS 0xa84       rtkngui.exe
+PROCESS 0xb28       360sd.exe
+PROCESS 0xef4       360rp.exe
+PROCESS 0x434       computerztray.exe
+PROCESS 0x180       computerzservice.exe
+PROCESS 0x35c       notepad++.exe
+PROCESS 0xbd8       xigui32.exe
+PROCESS 0x934       foxitreader.exe
+PROCESS 0xa94       qq.exe
+PROCESS 0x168c      txplatform.exe
+PROCESS 0x15f8      tencentdl.exe
+PROCESS 0x17a8      qqexternal.exe
+PROCESS 0xdcc       qqbrowser.exe
+PROCESS 0x112c      qqbrowser.exe
+PROCESS 0xb08       qqbrowser.exe
+PROCESS 0x9e4       qqbrowser.exe
+PROCESS 0x10b4      qqbrowser.exe
+PROCESS 0x12f4      qqbrowser.exe
+PROCESS 0xbd4       qqbrowser.exe
+PROCESS 0x5d0       qqbrowser.exe
+PROCESS 0xea0       qqbrowser.exe
+PROCESS 0x1734      qqbrowser.exe
+PROCESS 0x17d8      qqbrowser.exe
+PROCESS 0x10e4      qqbrowser.exe
+PROCESS 0x1264      qqbrowser.exe
+PROCESS 0x18f8      adb.exe
+PROCESS 0x199c      qqbrowser.exe
+PROCESS 0x1a78      qqbrowser.exe
+PROCESS 0x1a50      yodaodict.exe
+PROCESS 0x1ab0      youdaodicthelper.exe
+PROCESS 0x1c14      youdaoie.exe
+PROCESS 0x1c24      wordbook.exe
+PROCESS 0x198c      youdaodicthelper.exe
+Failed to get information of process Id: 7544
+PROCESS 0x18a8      qqbrowser.exe
+PROCESS 0x1b10      iexplore.exe
+PROCESS 0x1d3c      loadrunnerhelp.exe
+PROCESS 0x11e8      winword.exe
+PROCESS 0x12b0      notepad.exe
+PROCESS 0x1ee0      sublime_text.exe
+PROCESS 0x1850      plugin_host.exe
+PROCESS 0x10d8      notepad.exe
+PROCESS 0x1804      totalcmd.exe
+PROCESS 0x182c      qqbrowser.exe
+PROCESS 0x718       qqbrowser.exe
+PROCESS 0x1964      foxmail.exe
+PROCESS 0x14ec      foxmail.exe
+PROCESS 0x1c84      foxmail.exe
+PROCESS 0x17b8      qqbrowser.exe
+PROCESS 0x1284      explorer.exe
+PROCESS 0x1af8      wiz.exe
+PROCESS 0x1c60      iexplore.exe
+PROCESS 0x1314      iexplore.exe
+PROCESS 0x18f0      iexplore.exe
+Failed to get information of process Id: 1732
+PROCESS 0x2360      iexplore.exe
+PROCESS 0x2234      iexplore.exe
+PROCESS 0x13c8      firefox.exe
+PROCESS 0x24d8      lrlauncherapp.exe
+PROCESS 0x26b4      wlrun.exe
+PROCESS 0x239c      online.exe
+PROCESS 0x1908      vugen.exe
+Failed to get information of process Id: 2444
+PROCESS 0x209c      notepad.exe
+PROCESS 0x1ec8      qqbrowser.exe
+PROCESS 0x1f64      iexplore.exe
+Failed to get information of process Id: 6844

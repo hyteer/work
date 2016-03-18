@@ -1,0 +1,238 @@
+WebServices notify: version 2 (11.0.0.8859)
+****** Start Log Message ******
+Web Recorder version : 11.0.0.8859 
+Recording Mode: HTML-based script
+Correlation is enabled system wide
+Recording headers in list:
+	accept-charset
+	accept-encoding
+	accept-language
+	soapaction
+	user-agent
+Not excluding content types
+Do not record this content types as a resource:
+	text/html
+	text/xml
+Reset context between actions
+Record non-HTML elements in current HTML function
+Protocol Type: Multi-WS_SOAP
+
+$$$$$$ End Log Message $$$$$$
+
+Code generation version: 11.0.0.8859
+
+****** Request Header For Transaction With Id 18 ******
+GET /yysqz/services/ElectronInvoiceSer?wsdl HTTP/1.1
+Accept: */*
+Accept-Language: zh-cn
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; Media Center PC 6.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; InfoPath.2)
+Accept-Encoding: gzip, deflate
+Host: 172.25.2.61:50021
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 18 Ended $$$$$$
+
+****** Response Header For Transaction With Id 18 ******
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Date: Tue, 15 Mar 2016 07:50:29 GMT
+Content-Type: text/xml
+Content-Length: 2664
+Date: Tue, 15 Mar 2016 07:50:40 GMT
+Date: Tue, 15 Mar 2016 07:50:40 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 18 Ended $$$$$$
+
+****** Response Body For Transaction With Id 18 ******
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://unientry.sn.tradeswitch.unicom.com" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://unientry.sn.tradeswitch.unicom.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://unientry.sn.tradeswitch.unicom.com">
+<xsd:element name="electronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="xml" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="electronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="electronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:electronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="electronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:electronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ElectronInvoiceSerPortType">
+    <wsdl:operation name="electronInvoice">
+      <wsdl:input name="electronInvoiceRequest" message="tns:electronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse" message="tns:electronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ElectronInvoiceSerHttpBinding" type="tns:ElectronInvoiceSerPortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="electronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="electronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ElectronInvoiceSer">
+    <wsdl:port name="ElectronInvoiceSerHttpPort" binding="tns:ElectronInvoiceSerHttpBinding">
+      <wsdlsoap:address location="http://172.25.2.61:50021/yysqz/services/ElectronInvoiceSer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+
+$$$$$$ Response Body For Transaction With Id 18 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+The Node has no URL
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 18 ****** (Location Flag : tFlagInsertEnd, Location ID : 18)
+	web_url("ElectronInvoiceSer",
+		"URL=http://172.25.2.61:50021/yysqz/services/ElectronInvoiceSer?wsdl",
+		"Resource=0",
+		"RecContentType=text/xml",
+		"Referer=",
+		"Snapshot=t2.inf",
+		"Mode=HTML",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 18 Ended $$$$$$
+
+****** Request Header For Transaction With Id 19 ******
+GET /cloud/picinfo.ini HTTP/1.1
+Host: se.360.cn
+Accept: */*
+Cache-Control: no-cache
+
+
+$$$$$$ Request Header For Transaction With Id 19 Ended $$$$$$
+
+****** Response Header For Transaction With Id 19 ******
+HTTP/1.1 200 OK
+Expires: Mon, 14 Mar 2016 08:41:54 GMT
+Date: Mon, 14 Mar 2016 08:36:54 GMT
+Server: nginx/1.5.7
+Content-Type: application/octet-stream
+Content-Length: 2048
+Last-Modified: Fri, 11 Jul 2014 02:18:55 GMT
+ETag: "53bf498f-800"
+Cache-Control: max-age=300
+Accept-Ranges: bytes
+Age: 1
+X-Cache: HIT from cache.51cdn.com
+X-Via: 1.1 hzh93:8109 (Cdn Cache Server V2.0), 1.1 qingdianxin80:7 (Cdn Cache Server V2.0)
+Connection: keep-alive
+
+
+$$$$$$ Response Header For Transaction With Id 19 Ended $$$$$$
+
+****** Response Body For Transaction With Id 19 ******
+e0157d874ac8f24d44ac830e4e2eff8d684c9625387c3abb4ce231038a2ce92cea1c6dfcf46d7ba63537b8c80af043f196e33275e916b927deeeb972a4c9c25ddb312eb9450fd42e31d4a2646aa681b41f2fb0424dc44f942081182df491da42c16300a32013dd3c78838c2f474e83ad1468ac0d124d5a882bd20e69e749865bb8322db06d22db742885e02e2aca9936622dc0c365a4643f63d309b8a19780e9ce645b29223edefb2b87de9348a8de691637e0cb1ecd1d026b8e1491fae8cac5ef7822042e6c899f7583adb06acfd0455372bbc04acb00512a8a10d6f6f58d8b9f3a1d37297c89ab3ecbe1b020c8cb315e3fafb24aee4e56798444b6a2c09faf922e003a7617c4ae67d5e18223bad341db327d94e8c1d831dd87cac561ad44906374c061c3065d92fcc44c3b84171de6ef7d124dd89dd30b9e09d0e541aa6fa95f33cb3b98444be4eb8709d2f908246dc46521b18452aa49f1d882bd22140aa5787df57afec04cabced662e3f572186cd5711e91c45add3b8688c4cdb7568b03837ac1fff2bd2123fec77406955915ddf0286a2f1c5e18e725d53c21d70dcf59997c5da03eb889273687a77a660a80a70939ba1f4c08509268de402ce54199148f642ba44fb7d77261cde7043a08cfdb5d78fb5f64113a9938c4156cba5dcd5781681fbe7fb98e2026acf263201a9ce94d3f9442670132b314d6410aec439a0184340ff565c1917131afea3c1470fcbc336cc912335838da27d05e39bd5789068266128567a3ca1337d1a05621089adc152cbd00001c0f873f021a73a6188145d37019a576fbc06b608cef387d16d2ac183cee150c1007b238c0060bb40c9f2bdf77508b6ba4d7107d86fb51360d8eea5977e9554e120fd974b15e75b223cc53816d15f2289bd17a7787a97a7b089ef10aaba0484a5b06d26b8b457ce61ac554cbfb19b426a1cf6971dbe1617b4a90b95acfbf0d42461d9b60df0d3be4429217c1f750bb36a4947a21d4ef667c2099af1c8ff65e0d245e8f7dbe0723e70bdf50d3ea17f826efc66026d0e4287159c1e052aaa9115c09079679b8593ae401d71980ac42f070b3cef62984bfb42d0bc8470aa5eb951c0a051c77bc55e1ef5b899386a4113e6beccff77387bfed285bc45808f5faa35512045e715607b2e35e8da78b82166277ffcadc2481eea12b5fc46350ffa6f70a0e5516219657e8ef43dba4d2aa454a2db4d8f26bd6efef401ea85b1e91e69d1d2a4e1d64c44a90a22095cac5f71a6c3993dfeb73d0acb9657393531ed3afc93521640539c8438fb37091d297e51a6626bf99dd61d1b3de68599f6e54f6cfbc3414535e34de0db8b70f85b8d4fd133673aaccf9671da29c8bc5d76f1790eb13d41b59886c5e41eb72f496cfc6e2465af629c0df625bf1e4aecc81624aadacf9dea94809244800a33f9c8198
+$$$$$$ Response Body For Transaction With Id 19 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/yysqz/services/ElectronInvoiceSer?wsdl
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Replace Event For Transaction With Id 18 ******
+	web_url("ElectronInvoiceSer",
+		"URL=http://172.25.2.61:50021/yysqz/services/ElectronInvoiceSer?wsdl",
+		"Resource=0",
+		"RecContentType=text/xml",
+		"Referer=",
+		"Snapshot=t2.inf",
+		"Mode=HTML",
+		EXTRARES,
+		"Url=http://se.360.cn/cloud/picinfo.ini", "Referer=", ENDITEM,
+		LAST);
+
+
+$$$$$$ Replace Event For Transaction With Id 18 Ended $$$$$$
+
+****** Request Header For Transaction With Id 23 ******
+GET /favicon.ico HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; Media Center PC 6.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; InfoPath.2)
+Host: 172.25.2.61:50021
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 23 Ended $$$$$$
+
+****** Response Header For Transaction With Id 23 ******
+HTTP/1.1 404 Not Found
+Server: Apache-Coyote/1.1
+Date: Tue, 15 Mar 2016 07:50:30 GMT
+Content-Type: text/html;charset=utf-8
+Content-Length: 973
+Date: Tue, 15 Mar 2016 07:50:41 GMT
+Content-Language: en
+Date: Tue, 15 Mar 2016 07:50:41 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 23 Ended $$$$$$
+
+****** Response Body For Transaction With Id 23 ******
+<html><head><title>Apache Tomcat/7.0.55 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /favicon.ico</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/favicon.ico</u></p><p><b>description</b> <u>The requested resource is not available.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.55</h3></body></html>
+$$$$$$ Response Body For Transaction With Id 23 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/yysqz/services/ElectronInvoiceSer?wsdl
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 18)
+	web_add_header("Accept-Encoding",
+		"gzip, deflate");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 18)
+	web_add_header("Accept-Language",
+		"zh-cn");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 18)
+	web_add_header("User-Agent",
+		"Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; Media Center PC 6.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; InfoPath.2)");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+

@@ -1,0 +1,9 @@
+Debug Message:
+	Correlation engine instance created; using configuration Default
+
+Debug Message:
+	Rules could not be applied to http://172.25.2.61:50021/yysqz/services/ElectronInvoiceSer?wsdl
+
+Debug Message:
+	Rules could not be applied to http://se.360.cn/cloud/picinfo.ini
+

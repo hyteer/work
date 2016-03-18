@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IE:\Test\Temp\eInvoice0318
+-IC:\Program Files\HP\LoadRunner\include
+-ee:\test\temp\einvoice0318\\logfile.log
+e:\test\temp\einvoice0318\\combined_eInvoice0318.c
+e:\test\temp\einvoice0318\\pre_cci.c
