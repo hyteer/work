@@ -1,0 +1,171 @@
+9b3
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://unientry.sn.tradeswitch.unicom.com" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://unientry.sn.tradeswitch.unicom.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://unientry.sn.tradeswitch.unicom.com">
+<xsd:element name="getElectronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getElectronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="createElectronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="createElectronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkElectronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkElectronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="electronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="electronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+
+1116
+  </wsdl:types>
+  <wsdl:message name="electronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:electronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElectronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:getElectronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkElectronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:checkElectronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createElectronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:createElectronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElectronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:getElectronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="electronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:electronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createElectronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:createElectronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkElectronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:checkElectronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ElectronInvoiceSerPortType">
+    <wsdl:operation name="getElectronInvoice">
+      <wsdl:input name="getElectronInvoiceRequest" message="tns:getElectronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="getElectronInvoiceResponse" message="tns:getElectronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createElectronInvoice">
+      <wsdl:input name="createElectronInvoiceRequest" message="tns:createElectronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="createElectronInvoiceResponse" message="tns:createElectronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkElectronInvoice">
+      <wsdl:input name="checkElectronInvoiceRequest" message="tns:checkElectronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="checkElectronInvoiceResponse" message="tns:checkElectronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="electronInvoice">
+      <wsdl:input name="electronInvoiceRequest" message="tns:electronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse" message="tns:electronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ElectronInvoiceSerHttpBinding" type="tns:ElectronInvoiceSerPortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getElectronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getElectronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getElectronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createElectronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="createElectronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createElectronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkElectronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="checkElectronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkElectronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="electronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="electronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ElectronInvoiceSer">
+    <wsdl:port name="ElectronInvoiceSerHttpPort" binding="tns:ElectronInvoiceSerHttpBinding">
+      <wsdlsoap:address location="http://172.25.2.62:6010/yys-lt-upload/services/ElectronInvoiceSer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+
+0
+

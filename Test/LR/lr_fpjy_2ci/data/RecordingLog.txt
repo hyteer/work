@@ -1,0 +1,20 @@
+[Network Analyzer (1d54:3100)] ------------------------------------------------------------------------------------------
+[Network Analyzer (1d54:3100)] Load Network Traffic Analyzers:
+[Network Analyzer (1d54:3100)]     Analyzer Module: WPLUS (value=)
+[Network Analyzer (1d54:3100)]     Analyzer Module: WebBase (value=GetHttpProtocolAnalyzer:api_http_filter.dll)
+[Network Analyzer (1d54:3100)]     + Network Analyzer: api_http_filter.dll @ GetHttpProtocolAnalyzer Loaded!
+[Network Analyzer (1d54:3100)]     + Interception Auditors: WinInetWplusInterceptionAudit:api_http_filter.dll
+[Network Analyzer (1d54:3100)]     Analyzer Module: QTWeb (value=)
+[Network Analyzer (1d54:3100)]     Analyzer Module: WS_SOAP (value=)
+[Network Analyzer (1d54:3100)]     Analyzer Module: local_server (value=)
+[Network Analyzer (1d54:3100)] ------------------------------------------------------------------------------------------
+[Network Analyzer (1d54:16d8)] Address lookup for liuyl-PC = 192.168.11.74
+[Network Analyzer (1d54:37f4)] Address lookup for liuyl-PC = 192.168.11.74
+[Network Analyzer (1d54:37f4)] Request Connection: Remote Server @ 172.25.2.62:6010   (Service=)  (Sid=  1)  PROXIED!
+[Web Request      (1d54:16d8)] "GET /yys-lt-upload/services/ElectronInvoiceSer?wsdl"   
+[Network Analyzer (1d54:16d8)]   (Sid:  1) Client -> Server : 292 bytes (Service=HTTP)
+[Network Analyzer (1d54:16d8)]   (Sid:  1) Server -> Client : 2625 bytes  (Service=HTTP)
+[Network Analyzer (1d54:16d8)]   (Sid:  1) Server -> Client : 4387 bytes  (Service=HTTP)
+[Web Request      (1d54:16d8)] "GET /favicon.ico"   
+[Network Analyzer (1d54:16d8)]   (Sid:  1) Client -> Server : 199 bytes (Service=HTTP)
+[Network Analyzer (1d54:16d8)]   (Sid:  1) Server -> Client : 109 bytes  (Service=HTTP)

@@ -1,0 +1,62 @@
+Virtual User Script started at : 2016-03-12 16:36:47
+Starting action vuser_init.
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Starting action Action.
+Action.c(5): Web service call "checkElectronInvoice_101" started
+Action.c(5): Web service call "checkElectronInvoice_101" was successful
+Action.c(18): result:&lt;checkElectronInvoiceOutput&gt;
+&lt;UNI_BSS_HEAD&gt;
+	&lt;ORIG_DOMAIN&gt;EISP&lt;/ORIG_DOMAIN&gt;
+	&lt;SERVICE_NAME&gt;ElectronInvoiceSer&lt;/SERVICE_NAME&gt;
+	&lt;OPERATE_NAME&gt;checkElectronInvoice&lt;/OPERATE_NAME&gt;
+	&lt;ACTION_CODE&gt;1&lt;/ACTION_CODE&gt;
+	&lt;ACTION_RELATION&gt;0&lt;/ACTION_RELATION&gt;
+	&lt;ROUTING&gt;
+		&lt;ROUTE_TYPE&gt;&lt;/ROUTE_TYPE&gt;
+		&lt;ROUTE_VALUE&gt;&lt;/ROUTE_VALUE&gt;
+	&lt;/ROUTING&gt;
+	&lt;PROC_ID&gt;lyl001&lt;/PROC_ID&gt;
+	&lt;TRANS_IDO&gt; lyl001&lt;/TRANS_IDO&gt;
+	&lt;TRANS_IDH&gt;1457771687306154118705331596&lt;/TRANS_IDH&gt;
+	&lt;PROCESS_TIME&gt;20160312163447&lt;/PROCESS_TIME&gt;
+	&lt;RESPONSE&gt;
+		&lt;RSP_TYPE&gt;0&lt;/RSP_TYPE&gt;
+		&lt;RSP_CODE&gt;1328&lt;/RSP_CODE&gt;
+	&lt;/RESPONSE&gt;
+	&lt;COM_BUS_INFO&gt;
+		&lt;OPER_ID&gt;&lt;/OPER_ID&gt;
+		&lt;PROVINCE_CODE&gt;&lt;/PROVINCE_CODE&gt;
+	&lt;/COM_BUS_INFO&gt;
+	&lt;SP_RESERVE&gt;
+		&lt;TRANS_IDC&gt;ECIP0002seq00001&lt;/TRANS_IDC&gt;
+		&lt;CUTOFFDAY&gt;20080608&lt;/CUTOFFDAY&gt;
+		&lt;OSNDUNS&gt;&lt;/OSNDUNS&gt;
+		&lt;HSNDUNS&gt;1100&lt;/HSNDUNS&gt;
+		&lt;CONV_ID&gt;ECIP0002seq00001200806081200111&lt;/CONV_ID&gt;
+	&lt;/SP_RESERVE&gt;
+	&lt;TEST_FLAG&gt;1&lt;/TEST_FLAG&gt;
+	&lt;MSG_SENDER&gt;&lt;/MSG_SENDER&gt;
+	&lt;MSG_RECEIVER&gt;&lt;/MSG_RECEIVER&gt;
+&lt;/UNI_BSS_HEAD&gt;
+&lt;UNI_BSS_BODY&gt;
+  &lt;CHECK_ELECTRON_INVOICE_RSP&gt;
+    &lt;RESP_CODE&gt;1328&lt;/RESP_CODE&gt;
+	&lt;RESP_DESC&gt;·¢Æ±²»´æÔÚ&lt;/RESP_DESC&gt;
+	&lt;PARA&gt;
+	  &lt;PARA_ID&gt;&lt;/PARA_ID&gt;
+	  &lt;PARA_VALUE&gt;&lt;/PARA_VALUE&gt;
+	&lt;/PARA&gt;
+  &lt;/CHECK_ELECTRON_INVOICE_RSP&gt;
+&lt;/UNI_BSS_BODY&gt;
+&lt;UNI_BSS_ATTACHED&gt;
+	&lt;MEDIA_INFO&gt;&lt;/MEDIA_INFO&gt;
+&lt;/UNI_BSS_ATTACHED&gt;
+&lt;/checkElectronInvoiceOutput&gt;
+Ending action Action.
+Ending iteration 1.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.

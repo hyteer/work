@@ -1,0 +1,104 @@
+Failed to get information of process Id: 0
+Failed to get information of process Id: 4
+Failed to get information of process Id: 364
+Failed to get information of process Id: 500
+Failed to get information of process Id: 564
+Failed to get information of process Id: 572
+Failed to get information of process Id: 612
+Failed to get information of process Id: 636
+Failed to get information of process Id: 644
+Failed to get information of process Id: 724
+Failed to get information of process Id: 792
+Failed to get information of process Id: 940
+Failed to get information of process Id: 972
+Failed to get information of process Id: 1016
+Failed to get information of process Id: 1040
+Failed to get information of process Id: 1100
+Failed to get information of process Id: 1256
+Failed to get information of process Id: 1352
+Failed to get information of process Id: 1400
+Failed to get information of process Id: 1444
+Failed to get information of process Id: 1592
+Failed to get information of process Id: 1712
+Failed to get information of process Id: 1724
+Failed to get information of process Id: 1880
+Failed to get information of process Id: 1956
+Failed to get information of process Id: 392
+Failed to get information of process Id: 504
+Failed to get information of process Id: 2000
+Failed to get information of process Id: 2200
+Failed to get information of process Id: 2240
+Failed to get information of process Id: 2304
+Failed to get information of process Id: 2340
+Failed to get information of process Id: 2436
+Failed to get information of process Id: 2472
+Failed to get information of process Id: 3556
+Failed to get information of process Id: 4640
+Failed to get information of process Id: 4672
+Failed to get information of process Id: 4828
+Failed to get information of process Id: 4848
+Failed to get information of process Id: 4856
+Failed to get information of process Id: 5116
+Failed to get information of process Id: 5128
+Failed to get information of process Id: 5136
+Failed to get information of process Id: 5160
+Failed to get information of process Id: 5440
+Failed to get information of process Id: 6056
+Failed to get information of process Id: 6064
+Failed to get information of process Id: 1932
+PROCESS 0x1608      taskhost.exe
+PROCESS 0x16a4      dwm.exe
+Failed to get information of process Id: 5868
+Failed to get information of process Id: 5824
+PROCESS 0x17bc      explorer.exe
+Failed to get information of process Id: 2092
+Failed to get information of process Id: 6008
+Failed to get information of process Id: 5112
+Failed to get information of process Id: 5808
+PROCESS 0x186c      nvtray.exe
+Failed to get information of process Id: 6628
+Failed to get information of process Id: 6736
+PROCESS 0x1d38      taobaoprotect.exe
+Failed to get information of process Id: 7764
+Failed to get information of process Id: 7868
+Failed to get information of process Id: 8020
+Failed to get information of process Id: 8124
+PROCESS 0x20ec      hkcmd.exe
+PROCESS 0x2130      gdcacertmanager.exe
+PROCESS 0x2150      qqpctray.exe
+PROCESS 0x216c      baidumusic.exe
+PROCESS 0x2178      qqlive.exe
+PROCESS 0x21b8      kxetray.exe
+PROCESS 0x2480      tsvncache.exe
+PROCESS 0xef4       qqliveservice.exe
+Failed to get information of process Id: 11512
+PROCESS 0x2dec      kphonetray.exe
+PROCESS 0x1a80      sogoucloud.exe
+PROCESS 0xb0c       chrome.exe
+PROCESS 0xb44       chrome.exe
+PROCESS 0x2df8      androidserver.exe
+PROCESS 0x1774      sjk_daemon.exe
+Failed to get information of process Id: 11656
+PROCESS 0x2bd4      foxitreaderupdater.exe
+PROCESS 0x400       kminisite.exe
+PROCESS 0x2e04      chrome.exe
+PROCESS 0x1ddc      foxmail.exe
+PROCESS 0xa68       foxmail.exe
+PROCESS 0x1848      foxmail.exe
+PROCESS 0x460       touchcontrol.exe
+PROCESS 0x1044      aliwssv.exe
+PROCESS 0x1f80      conhost.exe
+PROCESS 0x1280      qq.exe
+PROCESS 0x628       txplatform.exe
+PROCESS 0x3788      qqexternal.exe
+PROCESS 0x1dcc      qqexternal.exe
+PROCESS 0x29a4      chrome.exe
+PROCESS 0xf60       xmlspy.exe
+PROCESS 0x3768      notepad++.exe
+PROCESS 0x3524      iexplore.exe
+PROCESS 0x1230      chrome.exe
+PROCESS 0x1ca4      iexplore.exe
+Failed to get information of process Id: 13420
+PROCESS 0xce4       iexplore.exe
+PROCESS 0x3338      vugen.exe
+PROCESS 0x30e4      chrome.exe

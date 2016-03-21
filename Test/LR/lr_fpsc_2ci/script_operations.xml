@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<Services><Service name="ElectronInvoiceSer" namespace="http://unientry.sn.tradeswitch.unicom.com"><Port name="ElectronInvoiceSerHttpPort"><Operation>electronInvoice</Operation></Port></Service></Services>

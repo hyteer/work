@@ -1,0 +1,21 @@
+[Network Analyzer (1ca4:3790)] ------------------------------------------------------------------------------------------
+[Network Analyzer (1ca4:3790)] Load Network Traffic Analyzers:
+[Network Analyzer (1ca4:3790)]     Analyzer Module: WPLUS (value=)
+[Network Analyzer (1ca4:3790)]     Analyzer Module: WebBase (value=GetHttpProtocolAnalyzer:api_http_filter.dll)
+[Network Analyzer (1ca4:3790)]     + Network Analyzer: api_http_filter.dll @ GetHttpProtocolAnalyzer Loaded!
+[Network Analyzer (1ca4:3790)]     + Interception Auditors: WinInetWplusInterceptionAudit:api_http_filter.dll
+[Network Analyzer (1ca4:3790)]     Analyzer Module: QTWeb (value=)
+[Network Analyzer (1ca4:3790)]     Analyzer Module: WS_SOAP (value=)
+[Network Analyzer (1ca4:3790)]     Analyzer Module: local_server (value=)
+[Network Analyzer (1ca4:3790)] ------------------------------------------------------------------------------------------
+[Network Analyzer (1ca4:3498)] Address lookup for liuyl-PC = 192.168.11.74
+[Network Analyzer (1ca4: ad4)] Address lookup for liuyl-PC = 192.168.11.74
+[Network Analyzer (1ca4: ad4)] Request Connection: Remote Server @ 172.25.2.62:6008   (Service=)  (Sid=  1)  PROXIED!
+[Web Request      (1ca4:3498)] "GET /dsqt_tax/services/ElectronInvoiceSer?wsdl"   
+[Network Analyzer (1ca4:3498)]   (Sid:  1) Client -> Server : 287 bytes (Service=HTTP)
+[Network Analyzer (1ca4:3498)]   (Sid:  1) Server -> Client : 1325 bytes  (Service=HTTP)
+[Network Analyzer (1ca4:3498)]   (Sid:  1) Server -> Client : 1495 bytes  (Service=HTTP)
+[Web Request      (1ca4:3498)] "GET /favicon.ico"   
+[Network Analyzer (1ca4:3498)]   (Sid:  1) Client -> Server : 199 bytes (Service=HTTP)
+[Network Analyzer (1ca4:3498)]   (Sid:  1) Server -> Client : 1145 bytes  (Service=HTTP)
+[Network Analyzer (1ca4:3498)]   (Sid:  1) Connection Terminated (by Client)

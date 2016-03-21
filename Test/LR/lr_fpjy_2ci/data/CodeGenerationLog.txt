@@ -1,0 +1,284 @@
+WebServices notify: version 2 (11.0.0.8859)
+****** Start Log Message ******
+Web Recorder version : 11.0.0.8859 
+Recording Mode: HTML-based script
+Correlation is enabled system wide
+Recording headers in list:
+	accept-charset
+	accept-encoding
+	accept-language
+	soapaction
+	user-agent
+Not excluding content types
+Do not record this content types as a resource:
+	text/html
+	text/xml
+Reset context between actions
+Record non-HTML elements in current HTML function
+Protocol Type: Multi-WS_SOAP
+
+$$$$$$ End Log Message $$$$$$
+
+Code generation version: 11.0.0.8859
+
+****** Request Header For Transaction With Id 3 ******
+GET /yys-lt-upload/services/ElectronInvoiceSer?wsdl HTTP/1.1
+Accept: text/html, application/xhtml+xml, */*
+Accept-Language: zh-CN
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+Accept-Encoding: gzip, deflate
+Host: 172.25.2.62:6010
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 3 Ended $$$$$$
+
+****** Response Header For Transaction With Id 3 ******
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/xml
+Transfer-Encoding: chunked
+Date: Sat, 12 Mar 2016 08:27:37 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 3 Ended $$$$$$
+
+****** Response Body For Transaction With Id 3 ******
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://unientry.sn.tradeswitch.unicom.com" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://unientry.sn.tradeswitch.unicom.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://unientry.sn.tradeswitch.unicom.com">
+<xsd:element name="getElectronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getElectronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="createElectronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="createElectronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkElectronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkElectronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="electronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="electronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="electronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:electronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElectronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:getElectronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkElectronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:checkElectronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createElectronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:createElectronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getElectronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:getElectronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="electronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:electronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createElectronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:createElectronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkElectronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:checkElectronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ElectronInvoiceSerPortType">
+    <wsdl:operation name="getElectronInvoice">
+      <wsdl:input name="getElectronInvoiceRequest" message="tns:getElectronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="getElectronInvoiceResponse" message="tns:getElectronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createElectronInvoice">
+      <wsdl:input name="createElectronInvoiceRequest" message="tns:createElectronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="createElectronInvoiceResponse" message="tns:createElectronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkElectronInvoice">
+      <wsdl:input name="checkElectronInvoiceRequest" message="tns:checkElectronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="checkElectronInvoiceResponse" message="tns:checkElectronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="electronInvoice">
+      <wsdl:input name="electronInvoiceRequest" message="tns:electronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse" message="tns:electronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ElectronInvoiceSerHttpBinding" type="tns:ElectronInvoiceSerPortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getElectronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getElectronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getElectronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createElectronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="createElectronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createElectronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkElectronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="checkElectronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkElectronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="electronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="electronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ElectronInvoiceSer">
+    <wsdl:port name="ElectronInvoiceSerHttpPort" binding="tns:ElectronInvoiceSerHttpBinding">
+      <wsdlsoap:address location="http://172.25.2.62:6010/yys-lt-upload/services/ElectronInvoiceSer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
+
+$$$$$$ Response Body For Transaction With Id 3 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+The Node has no URL
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 3 ****** (Location Flag : tFlagInsertEnd, Location ID : 3)
+	web_url("ElectronInvoiceSer",
+		"URL=http://172.25.2.62:6010/yys-lt-upload/services/ElectronInvoiceSer?wsdl",
+		"Resource=0",
+		"RecContentType=text/xml",
+		"Referer=",
+		"Snapshot=t1.inf",
+		"Mode=HTML",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 3 Ended $$$$$$
+
+****** Request Header For Transaction With Id 4 ******
+GET /favicon.ico HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
+Host: 172.25.2.62:6010
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 4 Ended $$$$$$
+
+****** Response Header For Transaction With Id 4 ******
+HTTP/1.1 404 Not Found
+Server: Apache-Coyote/1.1
+Content-Length: 0
+Date: Sat, 12 Mar 2016 08:27:37 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 4 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/yys-lt-upload/services/ElectronInvoiceSer?wsdl
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 3)
+	web_add_header("Accept-Encoding",
+		"gzip, deflate");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 3)
+	web_add_header("Accept-Language",
+		"zh-CN");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+
+****** Add Event For Transaction With Id 0 ****** (Location Flag : tFlagInsertBefore, Location ID : 3)
+	web_add_header("User-Agent",
+		"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)");
+
+
+$$$$$$ Add Event For Transaction With Id 0 Ended $$$$$$
+

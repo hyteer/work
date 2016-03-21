@@ -1,0 +1,16 @@
+[parameter:checkElectronInvoice_101_Response]
+ParamName="checkElectronInvoice_101_Response"
+IsEncrypt="NO"
+CurrentValue=""
+Type="Output"
+OriginalValue=""
+IsServer="NO"
+Prompt=""
+[parameter:Param_out]
+ParamName="Param_out"
+IsEncrypt="NO"
+CurrentValue=""
+Type="Output"
+OriginalValue=""
+IsServer="NO"
+Prompt=""

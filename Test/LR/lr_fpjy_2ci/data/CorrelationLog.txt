@@ -1,0 +1,6 @@
+Debug Message:
+	Correlation engine instance created; using configuration Default
+
+Debug Message:
+	Rules could not be applied to http://172.25.2.62:6010/yys-lt-upload/services/ElectronInvoiceSer?wsdl
+

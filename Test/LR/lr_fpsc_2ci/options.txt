@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IF:\ltzs\lr_fpsc_2ci
+-IC:\Program Files\HP\LoadRunner\include
+-ef:\ltzs\lr_fpsc_2ci\\logfile.log
+f:\ltzs\lr_fpsc_2ci\\combined_lr_fpsc_2ci.c
+f:\ltzs\lr_fpsc_2ci\\pre_cci.c

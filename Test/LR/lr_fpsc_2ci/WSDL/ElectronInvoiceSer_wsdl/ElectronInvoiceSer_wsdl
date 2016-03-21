@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://unientry.sn.tradeswitch.unicom.com" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://unientry.sn.tradeswitch.unicom.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://unientry.sn.tradeswitch.unicom.com">
+<xsd:element name="electronInvoice">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="xml" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="electronInvoiceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="electronInvoiceResponse">
+    <wsdl:part name="parameters" element="tns:electronInvoiceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="electronInvoiceRequest">
+    <wsdl:part name="parameters" element="tns:electronInvoice">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ElectronInvoiceSerPortType">
+    <wsdl:operation name="electronInvoice">
+      <wsdl:input name="electronInvoiceRequest" message="tns:electronInvoiceRequest">
+    </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse" message="tns:electronInvoiceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ElectronInvoiceSerHttpBinding" type="tns:ElectronInvoiceSerPortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="electronInvoice">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="electronInvoiceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="electronInvoiceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ElectronInvoiceSer">
+    <wsdl:port name="ElectronInvoiceSerHttpPort" binding="tns:ElectronInvoiceSerHttpBinding">
+      <wsdlsoap:address location="http://172.25.2.62:6008/dsqt_tax/services/ElectronInvoiceSer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

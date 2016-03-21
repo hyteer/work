@@ -1,0 +1,54 @@
+<?xml-stylesheet href="..\http.xsl" type="text/xsl"?>
+<report vuGenInstallDir="C:\Program Files\HP\LoadRunner">
+  <http>
+    <request>
+      <header>POST /dsqt_tax/services/ElectronInvoiceSer HTTP/1.1
+Content-Type: text/xml; charset=utf-8
+Cache-Control: no-cache
+SOAPAction: ""
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 1.1.4322.2032)
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN
+Accept: */*
+Connection: Keep-Alive
+Host: 172.25.2.62:6008
+Content-Length: 4176
+
+</header>
+      <body>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/03/addressing"&gt;
+  &lt;soap:Header&gt;
+    &lt;wsa:Action&gt;
+    &lt;/wsa:Action&gt;
+    &lt;wsa:MessageID&gt;uuid:385eac78-850f-4010-889f-5ff5e7e0116b&lt;/wsa:MessageID&gt;
+    &lt;wsa:ReplyTo&gt;
+      &lt;wsa:Address&gt;http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous&lt;/wsa:Address&gt;
+    &lt;/wsa:ReplyTo&gt;
+    &lt;wsa:To&gt;http://172.25.2.62:6008/dsqt_tax/services/ElectronInvoiceSer&lt;/wsa:To&gt;
+  &lt;/soap:Header&gt;
+  &lt;soap:Body&gt;
+    &lt;electronInvoice xmlns="http://unientry.sn.tradeswitch.unicom.com"&gt;
+      &lt;xml&gt;&amp;lt;ElectronInvoiceInput&amp;gt;&amp;lt;UNI_BSS_HEAD&amp;gt;&amp;lt;ORIG_DOMAIN&amp;gt;PTIS&amp;lt;/ORIG_DOMAIN&amp;gt;&amp;lt;SERVICE_NAME&amp;gt;ElectronInvoiceSer&amp;lt;/SERVICE_NAME&amp;gt;&amp;lt;OPERATE_NAME&amp;gt;electronInvoice&amp;lt;/OPERATE_NAME&amp;gt;&amp;lt;ACTION_CODE&amp;gt;0&amp;lt;/ACTION_CODE&amp;gt;&amp;lt;ACTION_RELATION&amp;gt;0&amp;lt;/ACTION_RELATION&amp;gt;&amp;lt;ROUTING&amp;gt;&amp;lt;ROUTE_TYPE&amp;gt;36&amp;lt;/ROUTE_TYPE&amp;gt;&amp;lt;ROUTE_VALUE&amp;gt;18674453342&amp;lt;/ROUTE_VALUE&amp;gt;&amp;lt;/ROUTING&amp;gt;&amp;lt;PROC_ID&amp;gt;seq00001&amp;lt;/PROC_ID&amp;gt;&amp;lt;TRANS_IDO&amp;gt;seq00001&amp;lt;/TRANS_IDO&amp;gt;&amp;lt;TRANS_IDH&amp;gt;&amp;lt;/TRANS_IDH&amp;gt;&amp;lt;PROCESS_TIME&amp;gt;201603111704001&amp;lt;/PROCESS_TIME&amp;gt;&amp;lt;RESPONSE&amp;gt;&amp;lt;RSP_TYPE&amp;gt;&amp;lt;/RSP_TYPE&amp;gt;&amp;lt;RSP_CODE&amp;gt;&amp;lt;/RSP_CODE&amp;gt;&amp;lt;RSP_DESC&amp;gt;&amp;lt;/RSP_DESC&amp;gt;&amp;lt;/RESPONSE&amp;gt;&amp;lt;COM_BUS_INFO&amp;gt;&amp;lt;OPER_ID&amp;gt;yanff&amp;lt;/OPER_ID&amp;gt;&amp;lt;PROVINCE_CODE&amp;gt;0002&amp;lt;/PROVINCE_CODE&amp;gt;&amp;lt;EPARCHY_CODE&amp;gt;地市代码表&amp;lt;/EPARCHY_CODE&amp;gt;&amp;lt;CITY_CODE&amp;gt;区县编码&amp;lt;/CITY_CODE&amp;gt;&amp;lt;CHANNEL_ID&amp;gt;渠道编码&amp;lt;/CHANNEL_ID&amp;gt;&amp;lt;ACCESS_TYPE&amp;gt;1&amp;lt;/ACCESS_TYPE&amp;gt;&amp;lt;ORDER_TYPE&amp;gt;1&amp;lt;/ORDER_TYPE&amp;gt;&amp;lt;/COM_BUS_INFO&amp;gt;&amp;lt;SP_RESERVE&amp;gt;&amp;lt;TRANS_IDC&amp;gt;ECIP0002seq00001&amp;lt;/TRANS_IDC&amp;gt;&amp;lt;CUTOFFDAY&amp;gt;20080608&amp;lt;/CUTOFFDAY&amp;gt;&amp;lt;OSNDUNS&amp;gt;0002&amp;lt;/OSNDUNS&amp;gt;&amp;lt;HSNDUNS&amp;gt;1100&amp;lt;/HSNDUNS&amp;gt;&amp;lt;CONV_ID&amp;gt;ECIP0002seq00001200806081200111&amp;lt;/CONV_ID&amp;gt;&amp;lt;/SP_RESERVE&amp;gt;&amp;lt;TEST_FLAG&amp;gt;0&amp;lt;/TEST_FLAG&amp;gt;&amp;lt;MSG_SENDER&amp;gt;1100&amp;lt;/MSG_SENDER&amp;gt;&amp;lt;MSG_RECEIVER&amp;gt;1101&amp;lt;/MSG_RECEIVER&amp;gt;&amp;lt;/UNI_BSS_HEAD&amp;gt;&amp;lt;UNI_BSS_BODY&amp;gt;&amp;lt;ELECTRON_INVOICE_REQ&amp;gt;&amp;lt;INVOICE_REQ_ID&amp;gt;lyl00000001&amp;lt;/INVOICE_REQ_ID&amp;gt;&amp;lt;MAKE_INVOICE_TYPE&amp;gt;0&amp;lt;/MAKE_INVOICE_TYPE&amp;gt;&amp;lt;SELLER_TAXPAYER_ID&amp;gt;440300568519737&amp;lt;/SELLER_TAXPAYER_ID&amp;gt;&amp;lt;SELLER_NAME&amp;gt;电子发票测试&amp;lt;/SELLER_NAME&amp;gt;&amp;lt;SELLER_ADD&amp;gt;深圳市南山区南海大道1057号科技大厦二期A栋601房&amp;lt;/SELLER_ADD&amp;gt;&amp;lt;SELLER_PHONE&amp;gt;0755-26027907&amp;lt;/SELLER_PHONE&amp;gt;&amp;lt;SELLER_BANK_ACCOUNT&amp;gt;31001669701052502638&amp;lt;/SELLER_BANK_ACCOUNT&amp;gt;&amp;lt;BUYER_TAXPAYER_ID&amp;gt;&amp;lt;/BUYER_TAXPAYER_ID&amp;gt;&amp;lt;BUYER_NAME&amp;gt;张三&amp;lt;/BUYER_NAME&amp;gt;&amp;lt;BUYER_ADD&amp;gt;深圳市南山区深南大道1057号科技大厦二期A栋6888房&amp;lt;/BUYER_ADD&amp;gt;&amp;lt;BUYER_BANK_ACCOUNT&amp;gt;98888888701052502638&amp;lt;/BUYER_BANK_ACCOUNT&amp;gt;&amp;lt;BUYER_PHONE&amp;gt;18888888888&amp;lt;/BUYER_PHONE&amp;gt;&amp;lt;BUYER_EMAIL&amp;gt;test@fapiao.com&amp;lt;/BUYER_EMAIL&amp;gt;&amp;lt;WRITE_MANAGER&amp;gt;admin&amp;lt;/WRITE_MANAGER&amp;gt;&amp;lt;RECE_FEE_MANAGER&amp;gt;admin&amp;lt;/RECE_FEE_MANAGER&amp;gt;&amp;lt;CHECK_MANAGER&amp;gt;admin&amp;lt;/CHECK_MANAGER&amp;gt;&amp;lt;ORG_INVOICE_CODE&amp;gt;&amp;lt;/ORG_INVOICE_CODE&amp;gt;&amp;lt;ORG_INVOICE_NUM&amp;gt;&amp;lt;/ORG_INVOICE_NUM&amp;gt;&amp;lt;TOTAL_PRICE_TAX&amp;gt;117&amp;lt;/TOTAL_PRICE_TAX&amp;gt;&amp;lt;TOTAL_FEE&amp;gt;100&amp;lt;/TOTAL_FEE&amp;gt;&amp;lt;TOTAL_TAX_PAY&amp;gt;17&amp;lt;/TOTAL_TAX_PAY&amp;gt;&amp;lt;PROJECT_INFO&amp;gt;&amp;lt;INVOICE_COMPANY_NATURE&amp;gt;0&amp;lt;/INVOICE_COMPANY_NATURE&amp;gt;&amp;lt;PROJECT_NAME&amp;gt;洗衣粉&amp;lt;/PROJECT_NAME&amp;gt;&amp;lt;UNIT&amp;gt;袋&amp;lt;/UNIT&amp;gt;&amp;lt;MODEL&amp;gt;500克&amp;lt;/MODEL&amp;gt;&amp;lt;PROJECT_COUNT&amp;gt;1&amp;lt;/PROJECT_COUNT&amp;gt;&amp;lt;PROJECT_UNIT_PRICE&amp;gt;100&amp;lt;/PROJECT_UNIT_PRICE&amp;gt;&amp;lt;PROJECT_FEE&amp;gt;100&amp;lt;/PROJECT_FEE&amp;gt;&amp;lt;TAX_RATE&amp;gt;0.17&amp;lt;/TAX_RATE&amp;gt;&amp;lt;TAX_PAY&amp;gt;17&amp;lt;/TAX_PAY&amp;gt;&amp;lt;/PROJECT_INFO&amp;gt;&amp;lt;PARA&amp;gt;&amp;lt;PARA_ID&amp;gt;保留字段ID&amp;lt;/PARA_ID&amp;gt;&amp;lt;PARA_VALUE&amp;gt;保留字段值&amp;lt;/PARA_VALUE&amp;gt;&amp;lt;/PARA&amp;gt;&amp;lt;/ELECTRON_INVOICE_REQ&amp;gt;&amp;lt;/UNI_BSS_BODY&amp;gt;&amp;lt;UNI_BSS_ATTACHED&amp;gt;&amp;lt;MEDIA_INFO&amp;gt;&amp;lt;/MEDIA_INFO&amp;gt;&amp;lt;/UNI_BSS_ATTACHED&amp;gt;&amp;lt;/ElectronInvoiceInput&amp;gt;&lt;/xml&gt;
+    &lt;/electronInvoice&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+    </request>
+    <response>
+      <header>HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/xml;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Mon, 14 Mar 2016 06:45:59 GMT
+
+</header>
+      <body>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;soap:Body&gt;
+    &lt;ns1:electronInvoiceResponse xmlns:ns1="http://unientry.sn.tradeswitch.unicom.com"&gt;
+      &lt;ns1:out&gt;&amp;lt;ElectronInvoiceOutput&amp;gt;&amp;lt;UNI_BSS_HEAD&amp;gt;&amp;lt;ORIG_DOMAIN&amp;gt;PTIS&amp;lt;/ORIG_DOMAIN&amp;gt;&amp;lt;SERVICE_NAME&amp;gt;ElectronInvoiceSer&amp;lt;/SERVICE_NAME&amp;gt;&amp;lt;OPERATE_NAME&amp;gt;electronInvoice&amp;lt;/OPERATE_NAME&amp;gt;&amp;lt;ORIG_DOMAIN&amp;gt;PTIS&amp;lt;/ORIG_DOMAIN&amp;gt;&amp;lt;ACTION_CODE&amp;gt;1&amp;lt;/ACTION_CODE&amp;gt;&amp;lt;ACTION_RELATION&amp;gt;0&amp;lt;/ACTION_RELATION&amp;gt;&amp;lt;ROUTING&amp;gt;&amp;lt;ROUTE_TYPE&amp;gt;&amp;lt;/ROUTE_TYPE&amp;gt;&amp;lt;ROUTE_VALUE&amp;gt;&amp;lt;/ROUTE_VALUE&amp;gt;&amp;lt;/ROUTING&amp;gt;&amp;lt;PROC_ID&amp;gt;seq00001&amp;lt;/PROC_ID&amp;gt;&amp;lt;TRANS_IDO&amp;gt;seq00001&amp;lt;/TRANS_IDO&amp;gt;&amp;lt;TRANS_IDH&amp;gt;&amp;lt;/TRANS_IDH&amp;gt;&amp;lt;PROCESS_TIME&amp;gt;201603111704001&amp;lt;/PROCESS_TIME&amp;gt;&amp;lt;RESPONSE&amp;gt;&amp;lt;RSP_TYPE&amp;gt;&amp;lt;/RSP_TYPE&amp;gt;&amp;lt;RSP_CODE&amp;gt;&amp;lt;/RSP_CODE&amp;gt;&amp;lt;RSP_DESC&amp;gt;&amp;lt;/RSP_DESC&amp;gt;&amp;lt;/RESPONSE&amp;gt;&amp;lt;COM_BUS_INFO&amp;gt;&amp;lt;OPER_ID&amp;gt;&amp;lt;/OPER_ID&amp;gt;&amp;lt;PROVINCE_CODE&amp;gt;&amp;lt;/PROVINCE_CODE&amp;gt;&amp;lt;EPARCHY_CODE&amp;gt;&amp;lt;/EPARCHY_CODE&amp;gt;&amp;lt;CITY_CODE&amp;gt;&amp;lt;/CITY_CODE&amp;gt;&amp;lt;CHANNEL_ID&amp;gt;&amp;lt;/CHANNEL_ID&amp;gt;&amp;lt;ACCESS_TYPE&amp;gt;&amp;lt;/ACCESS_TYPE&amp;gt;&amp;lt;ORDER_TYPE&amp;gt;&amp;lt;/ORDER_TYPE&amp;gt;&amp;lt;/COM_BUS_INFO&amp;gt;&amp;lt;SP_RESERVE&amp;gt;&amp;lt;TRANS_IDC&amp;gt;&amp;lt;/TRANS_IDC&amp;gt;&amp;lt;CUTOFFDAY&amp;gt;&amp;lt;/CUTOFFDAY&amp;gt;&amp;lt;OSNDUNS&amp;gt;&amp;lt;/OSNDUNS&amp;gt;&amp;lt;HSNDUNS&amp;gt;&amp;lt;/HSNDUNS&amp;gt;&amp;lt;CONV_ID&amp;gt;&amp;lt;/CONV_ID&amp;gt;&amp;lt;/SP_RESERVE&amp;gt;&amp;lt;TEST_FLAG&amp;gt;0&amp;lt;/TEST_FLAG&amp;gt;&amp;lt;MSG_SENDER&amp;gt;1100&amp;lt;/MSG_SENDER&amp;gt;&amp;lt;MSG_RECEIVER&amp;gt;1101&amp;lt;/MSG_RECEIVER&amp;gt;&amp;lt;/UNI_BSS_HEAD&amp;gt;&amp;lt;UNI_BSS_BODY&amp;gt;&amp;lt;ELECTRON_INVOICE_RSP&amp;gt;&amp;lt;RESP_CODE&amp;gt;0000&amp;lt;/RESP_CODE&amp;gt;&amp;lt;RESP_DESC&amp;gt;???&amp;lt;/RESP_DESC&amp;gt;&amp;lt;INVOICE_REQ_ID&amp;gt;lyl00000001&amp;lt;/INVOICE_REQ_ID&amp;gt;&amp;lt;INVOICE_INFO&amp;gt;&amp;lt;INVOICE_CODE&amp;gt;000003521012&amp;lt;/INVOICE_CODE&amp;gt;&amp;lt;INVOICE_NUM&amp;gt;80280935&amp;lt;/INVOICE_NUM&amp;gt;&amp;lt;MAKE_INVOICE_TIME&amp;gt;20160314144559&amp;lt;/MAKE_INVOICE_TIME&amp;gt;&amp;lt;TAX_EQUIPMENT_NUM&amp;gt;499099900038&amp;lt;/TAX_EQUIPMENT_NUM&amp;gt;&amp;lt;TWO_DIMENSION_CODE&amp;gt;&amp;lt;![CDATA[]]&amp;gt;&amp;lt;/TWO_DIMENSION_CODE&amp;gt;&amp;lt;INVOICE_CIPHERTEXT&amp;gt;&amp;lt;![CDATA[03-8-1/&amp;gt;-9+26-680/-0728&amp;gt;/6134/+49-80059042/*&amp;lt;348845/70-+9*-8-1/&amp;gt;-9+26-680/&amp;gt;3&amp;lt;&amp;lt;0-9838-36&amp;gt;&amp;lt;692*201-54119*98874*036]]&amp;gt;&amp;lt;/INVOICE_CIPHERTEXT&amp;gt;&amp;lt;INVOICE_CHECK_CODE&amp;gt;19536715122582973072101&amp;lt;/INVOICE_CHECK_CODE&amp;gt;&amp;lt;INVOICE_URL&amp;gt;&amp;lt;![CDATA[http://172.25.2.62:6009/yys-lt-download/downloadController/download?request=nvg6d5oscoMeZ2n91NYsIYTGQUdCk5nOFKkq2nx2A3aQtBk0BFycGpuw3sd8wAIqkWfKtfOOjT4_%5EHfaffFgHb]]&amp;gt;&amp;lt;/INVOICE_URL&amp;gt;&amp;lt;/INVOICE_INFO&amp;gt;&amp;lt;PARA&amp;gt;&amp;lt;PARA_ID&amp;gt;&amp;lt;/PARA_ID&amp;gt;&amp;lt;PARA_VALUE&amp;gt;&amp;lt;/PARA_VALUE&amp;gt;&amp;lt;/PARA&amp;gt;&amp;lt;/ELECTRON_INVOICE_RSP&amp;gt;&amp;lt;/UNI_BSS_BODY&amp;gt;&amp;lt;UNI_BSS_ATTACHED&amp;gt;&amp;lt;MEDIA_INFO&amp;gt;&amp;lt;/MEDIA_INFO&amp;gt;&amp;lt;/UNI_BSS_ATTACHED&amp;gt;&amp;lt;/ElectronInvoiceOutput&amp;gt;&lt;/ns1:out&gt;
+    &lt;/ns1:electronInvoiceResponse&gt;
+  &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</body>
+    </response>
+  </http>
+</report>
