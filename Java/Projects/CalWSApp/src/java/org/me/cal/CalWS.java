@@ -35,4 +35,14 @@ public class CalWS {
         int k = i+j;
         return k;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "repl")
+    public String repl(@WebParam(name = "info") String info, @WebParam(name = "time") String timeSt) {
+        //TODO write your implementation code here:
+        String replInfo = "【Your Info】: " + info + "  【TimeStamp】: " + timeSt;
+        return replInfo;
+    }
 }
