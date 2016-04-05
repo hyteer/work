@@ -12,7 +12,7 @@ package java21;
 public class Weather {
     public static void main(String[] args) {
         float fah = 86;
-        System.out.println(fah + "degrees Fahrenheit is ...");
+        System.out.println(fah + " degrees Fahrenheit is ...");
         // To convert Fahrenheit into Celsius
         // begin by subtracting 32
         fah = fah -32;
