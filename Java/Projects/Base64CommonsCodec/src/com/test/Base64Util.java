@@ -21,6 +21,8 @@ public class Base64Util {
     }
     //*******************
     
+    
+    
     //******解密方法******
     public static String decodeBase64(String message){
         byte[] result = Base64.decodeBase64(message);
@@ -35,6 +37,9 @@ public class Base64Util {
         System.out.println("加密后为：" + encodeMessage);
         String decodeMessage = decodeBase64(encodeMessage); //解密
         System.out.println("解密后为：" + decodeMessage);
+        
+  
+        
         
         
     }
