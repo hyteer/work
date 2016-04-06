@@ -9,7 +9,7 @@ import org.apache.commons.codec.binary.Base64;
  *
  * @author Administrator
  */
-public class YTest {
+public class CharCoding {
     
     //*****加密方法******
     public static String encodeBase64(String message){
