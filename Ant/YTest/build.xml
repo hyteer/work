@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+   <project name="MyProject" default="hello">
+       <target name="hello">
+          <echo>Hello World!</echo>
+          <echo message="test yongtang"></echo>
+          <echo message="test Again"/>
+       </target>
+   </project>
