@@ -26,5 +26,6 @@ public class TypeConvert {
         System.out.println("Lower number: " + Math.min(f1, f2));
         
         
+        
     }
 }
