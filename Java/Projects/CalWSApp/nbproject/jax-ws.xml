@@ -4,6 +4,9 @@
     <service name="CalWS">
       <implementation-class>org.me.cal.CalWS</implementation-class>
     </service>
+    <service name="CalFull">
+      <implementation-class>org.me.cal.CalFull</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
