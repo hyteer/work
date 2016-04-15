@@ -2,8 +2,8 @@
 node_modules
 uploads
 #/Java/Projects/*/nbproject/private/*
-#**/nbproject/private/*
-private/
+nbproject/private/
+# private/
 .idea
 *~
 *.*_bak
