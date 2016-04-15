@@ -1,0 +1,20 @@
+docker run -d --name YT-redmine -p 8888:3000 -v /home/tony/data/redmineData:/usr/src/redmine/files redmine
+docker run -d --name org-redmine -p 8888:3000 -v /home/tony/data/redmineData:/usr/src/redmine/files redmine:2.6.10
+
+docker run -d --name=redmine2 -it -p 8888:80 -v /home/tony/data/redmineData:/home/redmine/data sameersbn/redmine
+docker run -d --name=redmine2 -it -v /home/tony/data/redmineData:/home/redmine/data sameersbn/redmine
+docker run --name yt-mysql -e MYSQL_ROOT_PASSWORD=111 -d mysql:latest
+
+docker run --name=mysql-redmine -d \
+  --volume=/srv/docker/redmine/mysql:/var/lib/mysql \
+  sameersbn/mysql:latest
+
+docker commit 9864ee1cd432565eebf389a8259f2c62bb4dfe61854064610673cb1c6bec1c58 redmine0415
+
+
+************************************************************
+docker run --name=postgresql-redmine -d \
+  --env='DB_NAME=redmine_production' \
+  --env='DB_USER=redmine' --env='DB_PASS=111' \
+  --volume=/home/tony/data/redmine/postgresql:/var/lib/postgresql \
+  sameersbn/postgresql:9.4-18
