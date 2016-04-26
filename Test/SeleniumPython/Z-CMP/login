@@ -1,0 +1,16 @@
+from selenium import webdriver
+
+# create a new firefox session
+driver = webdriver.Ie()
+driver.implicitly_wait(10)
+driver.maximize_window()
+
+# navigate to z-cmp home
+driver.get("http://172.25.2.61:9090/")
+logId = driver.find_element_by_id("txtUid")
+logPass = driver.find_element_by_id("txtPwd")
+
+logId.clear()
+logId.send_keys("tony")
+
+

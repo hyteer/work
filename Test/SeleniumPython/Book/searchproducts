@@ -1,0 +1,31 @@
+from selenium import webdriver
+
+# create a new Firefox session
+driver = webdriver.Firefox()
+driver.implicitly_wait(5)
+driver.maximize_window()
+
+# navigate to the application home page
+driver.get("http://localhost/wp")
+
+# get the search textbox
+search_field = driver.find_element_by_name("s")
+search_field.clear()
+
+# enter search keyword and submit
+search_field.send_keys("test")
+search_field.submit()
+
+# get all the anchor elements which have product names displayed
+# currently on result page using find_elements_by_xpath method
+tests = driver.find_elements_by_xpath("//h2[@class='entry-title']/a")
+
+# get the number of anchor elements found
+print "Found " + str(len(tests)) + " test articles:"
+
+# iterate through each anchor element and print it out
+for test in tests:
+    print test.text
+
+# close the browser window
+driver.quit()
