@@ -1,0 +1,15 @@
+socketServer
+fe:a0:c5:b5:73:bc:41:bb:1b:2c:84:c0:7d:5c:65:83:ab:1e:bd:56
+
+
+i-1f663791
+
+公有 DNS：ec2-52-221-243-152.ap-southeast-1.compute.amazonaws.com
+公有 IP：52.221.243.152
+
+
+私有 DNS：ip-172-31-29-73.ap-southeast-1.compute.internal
+可用区：ap-southeast-1a
+私有 IP：172.31.29.73
+
+

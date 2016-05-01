@@ -1,4 +1,4 @@
-docker run -d --name YT-redmine -p 8888:3000 -v /home/tony/data/redmineData:/usr/src/redmine/files redmine
+docker run -d --name YT-redmine -p 8888:3000 -v /home/tony/data/redmineData:/usr/src/redmine/files redmine:2.6.10
 docker run -d --name org-redmine -p 8888:3000 -v /home/tony/data/redmineData:/usr/src/redmine/files redmine:2.6.10
 
 docker run -d --name=redmine2 -it -p 8888:80 -v /home/tony/data/redmineData:/home/redmine/data sameersbn/redmine
