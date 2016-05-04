@@ -2,15 +2,16 @@
 import unittest
 import time
 from selenium import webdriver
-#from args import*
+# from args import*
 from args import elements, global_args
-#import args
+# import args
 
 e = elements
 g = global_args
 HOME = g.HOME
 
-class zfmsLogin(unittest.TestCase):
+
+class ZfmsLogin(unittest.TestCase):
     def setUp(self):
         # create a new firefox session
         self.driver = webdriver.Firefox()
@@ -26,19 +27,17 @@ class zfmsLogin(unittest.TestCase):
         driver.find_element_by_name(e.login_pass).send_keys(g.password)
         driver.find_element_by_link_text('登录').click()
 
-
     def tearDown(self):
         url = self.driver.current_url
-        print "Url: ",self.driver.current_url
-        self.assertEqual('http://192.168.31.237:8090/bw_sms/platform/console/main.ht',url)
-        print "Test finished successfully."
+        print "URL: ", url
+        self.assertEqual(g.HOME_LOGINED, url, 'URL checking failed')
+
         time.sleep(3)
         self.driver.quit()
 
 
-
 '''
-class zfmsProcess(unittest.TestCase):
+class ZfmsProcess(unittest.TestCase):
     def setUp(self):
         login = zfmsLogin(self)
         login.setUp()

@@ -1,6 +1,7 @@
 # encoding: utf-8
 import unittest
 import time
+import xmlrunner
 from selenium import webdriver
 from args import global_args, elements
 
@@ -31,16 +32,16 @@ class ZfmsForm(unittest.TestCase):
         driver.switch_to.frame('83')
         time.sleep(2)
 
-    def test_add_table(self):
-        print "---添加自定义表---"
+    def add_table(self):
+        print "\n---添加自定义表---"
         driver = self.driver
         # 添加表
         driver.find_element_by_xpath(e.add).click()
         # 输入表信息
-        driver.find_element_by_id('comment').send_keys('Test table1')
+        driver.find_element_by_id('comment').send_keys(g.tbDesc)
         tbname = driver.find_element_by_id('name')
         tbname.clear()
-        tbname.send_keys('auto_test_table1')
+        tbname.send_keys(g.tbName)
         driver.find_element_by_xpath("//label[contains(text(),'主表')]/input").click()
         # 添加列
         print "添加字段..."
@@ -66,9 +67,27 @@ class ZfmsForm(unittest.TestCase):
             i = i + 1
             time.sleep(1)
         # Finised and refresh
-        driver.find_element_by_xpath(e.back).click()
+        driver.find_element_by_id('dataFormSave').click()
+        driver.find_element_by_xpath("//div[@class='l-dialog-btn-inner' and text()='否']").click()
+        # 判断操作结果
+        # driver.find_element_by_xpath("//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), 'auto_test_table')]")
+        xpath = "//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), '"+g.tbName+"')]"
+        print "XPath: %s" % xpath
+        nTb = driver.find_element_by_xpath("//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), '"+g.tbName+"')]")
+        print u"查找新添加的表： " + nTb.text
+        try:
+            driver.find_element_by_xpath("//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), 'auto_test_table')]").is_displayed()
 
-    def test_search_table(self):
+            a = True
+        except:
+            a = False
+        if a is True:
+            print "添加表成功！"
+        elif a is False:
+            print "未找到添加的表！"
+
+
+    def search_table(self):
         print "---查询表---"
         driver = self.driver
         driver.find_element_by_xpath(e.unfold).click()
@@ -84,8 +103,23 @@ class ZfmsForm(unittest.TestCase):
         time.sleep(2)
 
 
+    def del_table(self):
+        print "---删除表---"
+        driver = self.driver
+        nTb = driver.find_element_by_xpath("//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), '"+g.tbName+"')]")
+        nTb.click()
+        driver.find_element_by_xpath(e.delete).click()
+        driver.find_element_by_xpath(e.yes).click()
+        time.sleep(1)
+        driver.find_element_by_xpath(e.confirm).click()
+        print "删除表成功！"
+        time.sleep(2)
 
-        #self.assertEqual(g.HOME_LOGINED, newfield, 'URL checking failed')
+
+    def test_table_smoke(self):
+        ZfmsForm.add_table(self)
+        ZfmsForm.search_table(self)
+        ZfmsForm.del_table(self)
 
 
     @classmethod
@@ -96,8 +130,19 @@ class ZfmsForm(unittest.TestCase):
 
 
 
+'''
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+'''
+'''
+if __name__ == '__main__':
+    unittest.main(
+        testRunner=xmlrunner.XMLTestRunner(output='test-reports'),
+        # these make sure that some options that are not applicable
+        # remain hidden from the help menu.
+        failfast=False, buffer=False, catchbreak=False)
+        '''
+
 
 
 
