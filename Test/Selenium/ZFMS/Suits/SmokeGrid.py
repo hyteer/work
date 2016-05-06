@@ -9,15 +9,15 @@ from Cases.form import table_grid
 g = globalArgs
 
 
-#g.setGlb('WINDOWS','chrome')
+#g.setEnv('WINDOWS','chrome')
 if len(sys.argv)>1:
     print "The length of argvs: " + str(len(sys.argv))
     br = sys.argv.pop()
     pf = sys.argv.pop()
-    g.setGlb(pf, br)
-    print "GET GLOB:" + str(g.getGlb())
+    g.setEnv(pf, br)
+    print "GET GLOB:" + str(g.getEnv())
 else:
-    g.setGlb('WINDOWS','firefox')
+    g.setEnv('WINDOWS','firefox')
 
 userTest = unittest.TestLoader().loadTestsFromTestCase(user_grid.ZfmsOrg)
 tableTest = unittest.TestLoader().loadTestsFromTestCase(table_grid.ZfmsForm)

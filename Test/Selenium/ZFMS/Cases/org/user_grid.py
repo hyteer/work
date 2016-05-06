@@ -16,7 +16,13 @@ e = elements
 
 
 class ZfmsOrg(unittest.TestCase):
-    desired_caps = g.getGlb()
+    desired_caps = g.getEnv()
+    ACC = g.randName6X
+    NAME = g.randName10X
+    PASS = g.randPass6X
+    print "Generate randrom user to add, info: \n" + \
+        "ID:" + ACC + "\nName:" + NAME + "\nPassword:" + PASS
+
 
     @classmethod
     def setUpClass(cls):
@@ -34,9 +40,9 @@ class ZfmsOrg(unittest.TestCase):
         driver.maximize_window()
         driver.get(g.HOME)
         driver.find_element_by_name('username').clear()
-        driver.find_element_by_name('username').send_keys(g.username)
+        driver.find_element_by_name('username').send_keys(g.USERNAME)
         driver.find_element_by_name('password').clear()
-        driver.find_element_by_name('password').send_keys(g.password)
+        driver.find_element_by_name('password').send_keys(g.PASSWORD)
         driver.find_element_by_link_text('登录').click()
         url = driver.current_url
         print "URL: ", url
@@ -51,19 +57,23 @@ class ZfmsOrg(unittest.TestCase):
         print u"---添加用户---"
         driver = self.driver
         driver.find_element_by_xpath(e.add).click()
-        driver.find_element_by_id('account').send_keys('autotest1')
-        driver.find_element_by_id('fullname').send_keys('Auto_test1')
+        driver.find_element_by_id('account').send_keys(ZfmsOrg.ACC)
+        driver.find_element_by_id('password').send_keys(ZfmsOrg.PASS)
+        driver.find_element_by_id('fullname').send_keys(ZfmsOrg.NAME)
         time.sleep(1)
-        driver.find_element_by_xpath(e.back).click()
-        time.sleep(1)
+        driver.find_element_by_id('dataFormSave').click()
+        driver.find_element_by_xpath(e.no).click()
+        #driver.find_element_by_xpath(e.back).click()
+        time.sleep(2)
 
-    def test_user_search(self):
+    def test_user_bsearch(self):
         # test user management
         print u"---查询用户---"
         driver = self.driver
         driver.find_element_by_xpath("//div[@class='drop']/a[contains(text(),'展开')]").click()
-        driver.find_element_by_name('Q_fullname_SL').send_keys('Tony')
+        driver.find_element_by_name('Q_fullname_SL').send_keys(ZfmsOrg.NAME)
         driver.find_element_by_id('btnSearch').click()
+        time.sleep(1.5)
         result = driver.find_elements_by_xpath("//table[@id='sysUserItem']/tbody/tr")
         tbNum = len(result)
         if tbNum == 1 and (result[0].get_attribute('class') == 'empty'):
@@ -73,6 +83,23 @@ class ZfmsOrg(unittest.TestCase):
 
         time.sleep(1)
 
+    def test_user_del(self):
+        # delete user
+        driver = self.driver
+        print u"---删除用户---"
+        result = driver.find_elements_by_xpath("//table[@id='sysUserItem']/tbody/tr")
+        tbNum = len(result)
+        if tbNum == 1 and (result[0].get_attribute('class') == 'empty'):
+            print u"当前页没有找该到用户"
+        else:
+            time.sleep(1)
+            nTb = driver.find_element_by_xpath("//table[@id='sysUserItem']/tbody/tr/td[contains(text(), '"+ZfmsOrg.NAME+"')]")
+            nTb.click()
+            driver.find_element_by_xpath(e.delete).click()
+            time.sleep(1)
+            driver.find_element_by_xpath(e.yes).click()
+            time.sleep(1)
+            driver.find_element_by_xpath(e.confirm).click()
 
 
     @classmethod

@@ -11,7 +11,9 @@ frame_pop = "//div[@ligeruiid='Dialog1001']//iframe"
 add = "//div[@class='panel-toolbar']//a/span/parent::a[contains(text(),'添加')]"
 #add = "//div[@class='panel-toolbar']//a/span/parent::a[text()='添加')]"
 # 删除
-delete = "//div[@class='panel-toolbar']//a/span/parent::a[@action='delByTableId.ht' and contains(text(),'删除')]"
+delete = "//div[@class='panel-toolbar']//div[@class='group']//a/span/parent::a[contains(text(),'删除')]"
+# 删除表
+delete_tb = "//div[@class='panel-toolbar']//a/span/parent::a[@action='delByTableId.ht' and contains(text(),'删除')]"
 # 添加列
 add_col = "//div[@class='panel-toolbar']//a[@onclick='clickAddRow()']"
 # 关闭

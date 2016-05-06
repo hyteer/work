@@ -12,7 +12,7 @@ e = elements
 
 
 class ZfmsForm(unittest.TestCase):
-    desired_caps = g.getGlb()
+    desired_caps = g.getEnv()
     tbName = g.tbRandName
 
     @classmethod
@@ -31,9 +31,9 @@ class ZfmsForm(unittest.TestCase):
         driver.maximize_window()
         driver.get(g.HOME)
         driver.find_element_by_name('username').clear()
-        driver.find_element_by_name('username').send_keys(g.username)
+        driver.find_element_by_name('username').send_keys(g.USERNAME)
         driver.find_element_by_name('password').clear()
-        driver.find_element_by_name('password').send_keys(g.password)
+        driver.find_element_by_name('password').send_keys(g.PASSWORD)
         driver.find_element_by_link_text('登录').click()
         url = driver.current_url
         print "URL: ", url
@@ -45,7 +45,6 @@ class ZfmsForm(unittest.TestCase):
 
     def add_table(self):
         print u"---添加自定义表---"
-        random.randint(100,999)
         driver = self.driver
         # 添加表
         driver.find_element_by_xpath(e.add).click()
@@ -55,7 +54,6 @@ class ZfmsForm(unittest.TestCase):
         e_tbname.click()
         time.sleep(1)
         e_tbname.clear()
-
         e_tbname.send_keys(ZfmsForm.tbName)
         driver.find_element_by_xpath("//label[contains(text(),'主表')]/input").click()
         # 添加列
@@ -130,11 +128,21 @@ class ZfmsForm(unittest.TestCase):
         print u"删除表成功！"
         time.sleep(2)
 
+    def test_a_add_tb(self):
+        ZfmsForm.add_table(self)
 
+    def test_b_search_tb(self):
+        ZfmsForm.search_table(self)
+
+    def test_c_del_tb(self):
+        ZfmsForm.del_table(self)
+
+    '''
     def test_table_smoke(self):
         ZfmsForm.add_table(self)
         ZfmsForm.search_table(self)
         ZfmsForm.del_table(self)
+    '''
 
 
     @classmethod
