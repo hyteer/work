@@ -16,7 +16,7 @@ formTest = unittest.TestLoader().loadTestsFromTestCase(table.ZfmsForm)
 smokeTest = unittest.TestSuite([userTest, formTest])
 # unittest.TextTestRunner(verbosity=2).run(suite)
 
-xmlrunner.XMLTestRunner(verbosity=2,output='TestReport0504').run(smokeTest)
+xmlrunner.XMLTestRunner(verbosity=2,output='TestReports').run(smokeTest)
 
 
 

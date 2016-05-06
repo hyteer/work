@@ -3,11 +3,11 @@ import unittest
 import time
 from selenium import webdriver
 # from args import*
-from args import elements, global_args
+from args import elements, globalArgs
 # import args
 
 e = elements
-g = global_args
+g = globalArgs
 HOME = g.HOME
 
 

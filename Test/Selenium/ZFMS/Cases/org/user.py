@@ -5,9 +5,9 @@ import xmlrunner
 import HTMLTestRunner
 
 from selenium import webdriver
-from args import global_args, elements
+from args import globalArgs, elements
 
-g = global_args
+g = globalArgs
 e = elements
 
 # ------------------用户管理-----------------------
@@ -17,7 +17,7 @@ class ZfmsOrg(unittest.TestCase):
     def setUpClass(cls):
         # create a new firefox session
         print "---用户管理测试初始化...---"
-        cls.driver = webdriver.Firefox()
+        cls.driver = webdriver.Chrome()
         driver = cls.driver
         driver.implicitly_wait(30)
         driver.maximize_window()
@@ -51,7 +51,7 @@ class ZfmsOrg(unittest.TestCase):
         print "---查询用户---"
         driver = self.driver
         driver.find_element_by_xpath("//div[@class='drop']/a[contains(text(),'展开')]").click()
-        driver.find_element_by_name('Q_fullname_SL').send_keys('Dyci')
+        driver.find_element_by_name('Q_fullname_SL').send_keys('Tony')
         driver.find_element_by_id('btnSearch').click()
         result = driver.find_elements_by_xpath("//table[@id='sysUserItem']/tbody/tr")
         tbNum = len(result)

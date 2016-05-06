@@ -3,9 +3,9 @@ import unittest
 import time
 import xmlrunner
 from selenium import webdriver
-from args import global_args, elements
+from args import globalArgs, elements
 
-g = global_args
+g = globalArgs
 e = elements
 
 
@@ -58,12 +58,13 @@ class ZfmsForm(unittest.TestCase):
             fieldName.send_keys(fn)
             time.sleep(1)
             driver.find_element_by_id('dataFormSave').click()
+            time.sleep(1)
             driver.find_element_by_xpath("//div[@class='panel-toolbar']//a[@onclick='dialog.close();']").click()
             driver.switch_to.parent_frame()
             driver.switch_to.frame('83')
             #print driver.find_element_by_id('tableColumnItem').get_attribute('class')
             newfield = driver.find_element_by_xpath("//table[@id='tableColumnItem']//td[@name='fieldName']").text
-            print "New field name: ", newfield
+            #print "新字段名称: ", newfield
             i = i + 1
             time.sleep(1)
         # Finised and refresh
@@ -71,8 +72,8 @@ class ZfmsForm(unittest.TestCase):
         driver.find_element_by_xpath("//div[@class='l-dialog-btn-inner' and text()='否']").click()
         # 判断操作结果
         # driver.find_element_by_xpath("//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), 'auto_test_table')]")
-        xpath = "//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), '"+g.tbName+"')]"
-        print "XPath: %s" % xpath
+        # xpath = "//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), '"+g.tbName+"')]"
+        # print "XPath: %s" % xpath
         nTb = driver.find_element_by_xpath("//table[@id='bpmFormTableItem']/tbody/tr/td[contains(text(), '"+g.tbName+"')]")
         print u"查找新添加的表： " + nTb.text
         try:
