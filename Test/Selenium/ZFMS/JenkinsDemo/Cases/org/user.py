@@ -5,9 +5,9 @@ import xmlrunner
 import HTMLTestRunner
 
 from selenium import webdriver
-from args import global_args, elements
+from args import globalArgs, elements
 
-g = global_args
+g = globalArgs
 e = elements
 
 # ------------------用户管理-----------------------

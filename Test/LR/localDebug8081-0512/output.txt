@@ -1,0 +1,14 @@
+Action.c (38): undeclared identifier `lb'
+Action.c (38): illegal expression
+Action.c (38): syntax error; found `rb' expecting `)'
+Action.c (38): syntax error; found `rb' expecting `;'
+Action.c (38): undeclared identifier `rb'
+Action.c (38): illegal expression
+Action.c (38): syntax error; found `ord' expecting `;'
+Action.c (38): undeclared identifier `ord'
+Action.c (38): undeclared identifier `searchin'
+Action.c (38): undeclared identifier `all'
+Action.c (38): syntax error; found `)' expecting `;'
+Action.c (38): illegal statement termination
+Action.c (38): skipping `)'
+c:\\users\\administrator\\appdata\\local\\temp\\noname1\\\\combined_noname1.c (5): 13 errors, not writing pre_cci.ci

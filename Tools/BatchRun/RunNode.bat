@@ -1,0 +1,2 @@
+java -Dwebdriver.chrome.driver="e:\webdriver\chromedriver.exe" -jar e:\soft\selenium-server-standalone-2.52.0.jar -role webdriver -browser "browserName=chrome,platform=WINDOWS" -hubHost 172.25.2.71 -port 4444
+call CMD

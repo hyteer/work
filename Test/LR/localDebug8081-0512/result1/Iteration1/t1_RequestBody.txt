@@ -1,0 +1,6 @@
+"<?xml version="1.0"encoding="UTF-8" standalone="no"?><soapenv:Envelope xmlns:soapenv="http://s"
+"chemas.xmlsoap.org/soap/envelope/" xmlns:ns="ns:fwbs"><soapenv:Header></soapenv:Header><soapen"
+"v:Body><ns:agentPay><feetype>13</feetype><tlrno>0394</tlrno><custno>45113904</custno><hbrno>10"
+"004</hbrno><channel>selfHelp</channel><qfbs>1</qfbs><txamt>702.00</txamt><cashflg>1</cashflg><"
+"actno>6223920001101146592</actno><NotCheckPasswd>1</NotCheckPasswd><TXTYPE>0</TXTYPE><passwd><"
+"/passwd></ns:agentPay></soapenv:Body></soapenv:Envelope>"
