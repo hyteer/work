@@ -1,12 +1,12 @@
 # encoding: utf-8
-#!/usr/bin/python 
+#!/usr/bin/python
 import paramiko
- 
-t = paramiko.Transport('10.10.16.42','22')
-t.connect(username = 'root', password = '123456')
+
+t = paramiko.Transport('192.168.198.128','22')
+t.connect(username = 'tony', password = 'sa')
 sftp = paramiko.SFTPClient.from_transport(t)
-remotepath='/yt/tmp/test.log'
-localpath='d:/Temp/ssh/tmp/test2.log'
+remotepath='/home/tony/test/tmp/jmeter-agent/startAgent.sh'
+localpath='d:/Temp/ssh/tmp/startAgent.sh'
 sftp.get(remotepath, localpath)
-sftp.put('d:/Temp/ssh/testSFTP.txt','/yt/tmp/sftpTest.txt')
+#sftp.put('d:/Temp/ssh/testSFTP.txt','/yt/tmp/sftpTest.txt')
 t.close()
