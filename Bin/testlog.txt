@@ -1,0 +1,82 @@
+2016-06-21 06:06:32:100 - info: [Appium] Welcome to Appium v1.5.3
+2016-06-21 06:06:32:102 - info: [Appium] Non-default server args:
+2016-06-21 06:06:32:103 - info: [Appium]   bootstrapPort: 2251
+2016-06-21 06:06:32:103 - info: [Appium]   log: 'd:\\Bin\\testlog.txt'
+2016-06-21 06:06:32:156 - info: [Appium] Appium REST http interface listener started on 0.0.0.0:4723
+2016-06-21 06:06:36:754 - info: [HTTP] --> POST /wd/hub/session {"desiredCapabilities":{"platformVersion":"4.4.2","deviceName":"'emulator-5554'","platformName":"Android","appActivity":"com.tencent.mm.ui.LauncherUI","appPackage":"com.tencent.mm"}}
+2016-06-21 06:06:36:755 - info: [MJSONWP] Calling AppiumDriver.createSession() with args: [{"platformVersion":"4.4.2"...
+2016-06-21 06:06:36:758 - info: [Appium] Creating new AndroidDriver session
+2016-06-21 06:06:36:758 - info: [Appium] Capabilities:
+2016-06-21 06:06:36:769 - info: [Appium]   platformVersion: '4.4.2'
+2016-06-21 06:06:36:776 - info: [Appium]   deviceName: '\'emulator-5554\''
+2016-06-21 06:06:36:776 - info: [Appium]   platformName: 'Android'
+2016-06-21 06:06:36:776 - info: [Appium]   appActivity: 'com.tencent.mm.ui.LauncherUI'
+2016-06-21 06:06:36:777 - info: [Appium]   appPackage: 'com.tencent.mm'
+2016-06-21 06:06:36:785 - info: [BaseDriver] Session created with session id: 6c0eebb8-5f6b-45fb-9c79-1a874eee10aa
+2016-06-21 06:06:36:787 - info: [debug] [AndroidDriver] Getting Java version
+2016-06-21 06:06:36:867 - info: [AndroidDriver] Java version is: 1.8.0_91
+2016-06-21 06:06:36:869 - info: [ADB] Checking whether adb is present
+2016-06-21 06:06:36:874 - info: [ADB] Using adb.exe from D:\Android\Sdk\platform-tools\adb.exe
+2016-06-21 06:06:36:875 - info: [AndroidDriver] Retrieving device list
+2016-06-21 06:06:36:876 - info: [debug] [ADB] Trying to find a connected android device
+2016-06-21 06:06:36:877 - info: [debug] [ADB] Getting connected devices...
+2016-06-21 06:06:36:898 - info: [debug] [ADB] 0 device(s) connected
+2016-06-21 06:06:36:899 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:36:900 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:06:37:128 - info: [debug] [ADB] Getting connected devices...
+2016-06-21 06:06:41:321 - info: [debug] [ADB] 0 device(s) connected
+2016-06-21 06:06:41:322 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:41:322 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:06:41:558 - info: [debug] [ADB] Getting connected devices...
+2016-06-21 06:06:45:741 - info: [debug] [ADB] 0 device(s) connected
+2016-06-21 06:06:45:743 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:45:746 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:06:45:991 - info: [debug] [ADB] Getting connected devices...
+2016-06-21 06:06:50:203 - info: [debug] [ADB] 0 device(s) connected
+2016-06-21 06:06:50:205 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:50:208 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:06:50:453 - info: [debug] [ADB] Getting connected devices...
+2016-06-21 06:06:54:520 - info: [debug] [ADB] 0 device(s) connected
+2016-06-21 06:06:54:522 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:54:524 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:06:54:766 - info: [debug] [ADB] Getting connected devices...
+2016-06-21 06:06:58:869 - info: [debug] [ADB] 0 device(s) connected
+2016-06-21 06:06:58:870 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:58:871 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:06:59:120 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:06:59:122 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:07:00:366 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:07:00:367 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:07:01:626 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:07:01:627 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:07:02:872 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:07:02:874 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:07:04:118 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:07:04:125 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:07:05:385 - info: [debug] [ADB] Could not find devices, restarting adb server...
+2016-06-21 06:07:05:387 - info: [debug] [ADB] Restarting adb
+2016-06-21 06:07:06:645 - info: [debug] [AndroidDriver] Shutting down Android driver
+2016-06-21 06:07:06:646 - warn: [AndroidDriver] Cannot shut down Android driver; it has already shut down
+2016-06-21 06:07:06:672 - error: [MJSONWP] Encountered internal error running command: Error: Could not find a connected Android device.
+    at ADB.getDevices$ (lib/tools/system-calls.js:127:13)
+    at tryCatch (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:67:40)
+    at GeneratorFunctionPrototype.invoke [as _invoke] (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:315:22)
+    at GeneratorFunctionPrototype.prototype.(anonymous function) [as next] (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:100:21)
+    at invoke (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:136:37)
+    at enqueueResult (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:185:17)
+    at new Promise (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\core-js\1.2.6\core-js\library\modules\es6.promise.js:197:7)
+    at AsyncIterator.enqueue (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:184:12)
+    at AsyncIterator.prototype.(anonymous function) [as next] (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:100:21)
+    at Object.runtime.async (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:209:12)
+    at getDevices (lib/tools/system-calls.js:130:18)
+    at ADB.getDevices$ (lib/tools/system-calls.js:144:20)
+    at tryCatch (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:67:40)
+    at GeneratorFunctionPrototype.invoke [as _invoke] (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:315:22)
+    at GeneratorFunctionPrototype.prototype.(anonymous function) [as next] (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:100:21)
+    at GeneratorFunctionPrototype.invoke (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\babel-runtime\5.8.24\babel-runtime\regenerator\runtime.js:136:37)
+    at run (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\core-js\1.2.6\core-js\library\modules\es6.promise.js:104:47)
+    at C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\core-js\1.2.6\core-js\library\modules\es6.promise.js:115:28
+    at flush (C:\Users\tonyhu\AppData\Roaming\npm\node_modules\.appium_npminstall\core-js\1.2.6\core-js\library\modules\$.microtask.js:19:5)
+    at nextTickCallbackWith0Args (node.js:420:9)
+    at process._tickCallback (node.js:349:13)
+2016-06-21 06:07:06:679 - info: [HTTP] <-- POST /wd/hub/session 500 29922 ms - 179 
