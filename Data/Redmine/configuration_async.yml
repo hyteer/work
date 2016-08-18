@@ -21,7 +21,7 @@ default:
         authentication: :login
         domain: 'smtp.qq.com'
         user_name: 'hyteer@qq.com'
-        password: 'wguzgzjugssxdidf'
+        password: 'rvkxxmswbjeseabj'
 
 # ------END------
 
