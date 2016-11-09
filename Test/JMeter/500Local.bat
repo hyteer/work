@@ -1,5 +1,5 @@
-title 500WS-local
-e:
-cd E:\run\apache-jmeter-2.13\bin
-jmeter -n -t ..\Save\UnicomTest-0516.jmx
+title ÖÇ»Û²ÍÌüĞÔÄÜ²âÊÔ
+d:
+cd d:\Tool\apache-jmeter-3.0\bin
+jmeter -n -t ..\Save\ÖÇ»Û²ÍÌüRC_CMD.jmx
 call CMD
