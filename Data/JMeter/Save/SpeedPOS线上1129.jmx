@@ -1,0 +1,2466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="SetUP" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1478851121000</longProp>
+        <longProp name="ThreadGroup.end_time">1478851121000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query">
+props.put(&quot;counter&quot;,&quot;0&quot;);
+props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_UserGroup_Beta" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1478658146000</longProp>
+        <longProp name="ThreadGroup.end_time">1478658146000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <SoapSampler guiclass="SoapSamplerGui" testclass="SoapSampler" testname="SOAP/XML-RPC Request" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SoapSampler.URL_DATA"></stringProp>
+          <stringProp name="HTTPSamper.xml_data"></stringProp>
+          <stringProp name="SoapSampler.xml_data_file"></stringProp>
+          <stringProp name="SoapSampler.SOAP_ACTION"></stringProp>
+          <stringProp name="SoapSampler.SEND_SOAP_ACTION">true</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+        </SoapSampler>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">SpeedPOS.csv</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">mch_id,mch_key</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="mch_key2" elementType="Argument">
+              <stringProp name="Argument.name">mch_key2</stringProp>
+              <stringProp name="Argument.value">31qdxsgvvb2yc3r2zcnure5o80l9hnpz</stringProp>
+              <stringProp name="Argument.desc">AT商户测试7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id2" elementType="Argument">
+              <stringProp name="Argument.name">mch_id2</stringProp>
+              <stringProp name="Argument.value">1000000077</stringProp>
+              <stringProp name="Argument.desc">AT商户测试7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host1" elementType="Argument">
+              <stringProp name="Argument.name">host1</stringProp>
+              <stringProp name="Argument.value">betagate.speedpos.snsshop.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host2" elementType="Argument">
+              <stringProp name="Argument.name">host2</stringProp>
+              <stringProp name="Argument.value">10.100.100.88:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key73" elementType="Argument">
+              <stringProp name="Argument.name">mch_key73</stringProp>
+              <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+              <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id73" elementType="Argument">
+              <stringProp name="Argument.name">mch_id73</stringProp>
+              <stringProp name="Argument.value">1000000073</stringProp>
+              <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id70" elementType="Argument">
+              <stringProp name="Argument.name">mch_id70</stringProp>
+              <stringProp name="Argument.value">1000000070</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key70" elementType="Argument">
+              <stringProp name="Argument.name">mch_key70</stringProp>
+              <stringProp name="Argument.value">kpy5r160mq0p8idmjt0swj0vl6f4l6fm</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host3" elementType="Argument">
+              <stringProp name="Argument.name">host3</stringProp>
+              <stringProp name="Argument.value">payapic.speedpos.snsshop.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host4" elementType="Argument">
+              <stringProp name="Argument.name">host4</stringProp>
+              <stringProp name="Argument.value">10.100.100.82:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id_dev" elementType="Argument">
+              <stringProp name="Argument.name">mch_id_dev</stringProp>
+              <stringProp name="Argument.value">1000102875</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Dev测试商户</stringProp>
+            </elementProp>
+            <elementProp name="mch_key_dev" elementType="Argument">
+              <stringProp name="Argument.name">mch_key_dev</stringProp>
+              <stringProp name="Argument.value">ycwth8umslsea4tmy0vhf3jhajzt3rfh</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="fee" elementType="Argument">
+              <stringProp name="Argument.name">fee</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host_ol" elementType="Argument">
+              <stringProp name="Argument.name">host_ol</stringProp>
+              <stringProp name="Argument.value">gate.speedpos.cn</stringProp>
+              <stringProp name="Argument.desc">线上</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id" elementType="Argument">
+              <stringProp name="Argument.name">mch_id</stringProp>
+              <stringProp name="Argument.value">1000000001</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key" elementType="Argument">
+              <stringProp name="Argument.name">mch_key</stringProp>
+              <stringProp name="Argument.value">but15ozu7ckfqfn1ksle541rbatskk3x</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Unifiedorder" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&lt;body&gt;test1&lt;/body&gt;&lt;cashierid&gt;1&lt;/cashierid&gt;&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&lt;nonce_str&gt;xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&lt;/nonce_str&gt;&lt;notify_url&gt;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&lt;/notify_url&gt;&lt;openid&gt;odLjYvwUYEEq1HMGQY_3CErEGLSU&lt;/openid&gt;&lt;out_trade_no&gt;${out_trade_no}&lt;/out_trade_no&gt;&lt;return_url&gt;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&lt;/return_url&gt;&lt;spbill_create_ip&gt;127.0.0.1&lt;/spbill_create_ip&gt;&lt;total_fee&gt;${fee}&lt;/total_fee&gt;&lt;trade_type&gt;WXPAY.JSAPI&lt;/trade_type&gt;&lt;sign&gt;${sign}&lt;/sign&gt;&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://${host_ol}/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="false">
+            <stringProp name="maximumValue">999999999999999999</stringProp>
+            <stringProp name="minimumValue">1</stringProp>
+            <stringProp name="outputFormat">10002000000000000000000000</stringProp>
+            <boolProp name="perThread">false</boolProp>
+            <stringProp name="randomSeed"></stringProp>
+            <stringProp name="variableName">out_trade_no</stringProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">500</stringProp>
+            <stringProp name="RandomTimer.range">6000</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mch_key2" elementType="Argument">
+                <stringProp name="Argument.name">mch_key2</stringProp>
+                <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              </elementProp>
+              <elementProp name="mch_id2" elementType="Argument">
+                <stringProp name="Argument.name">mch_id2</stringProp>
+                <stringProp name="Argument.value">1000000073</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="MyMd5" elementType="Argument">
+                <stringProp name="Argument.name">MyMd5</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="Argument">
+                <stringProp name="Argument.name">time</stringProp>
+                <stringProp name="Argument.value">${__time(yyyyMMddHHmmss,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no2" elementType="Argument">
+                <stringProp name="Argument.name">rand_no2</stringProp>
+                <stringProp name="Argument.value">${__RandomString(2,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no18" elementType="Argument">
+                <stringProp name="Argument.name">rand_no18</stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="out_trade_no_old" elementType="Argument">
+                <stringProp name="Argument.name">out_trade_no_old</stringProp>
+                <stringProp name="Argument.value">10002000${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,rand_no)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__RandomString(18,0123456789,rand_no)}</stringProp>
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="script">import ytools.YtMD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no_old = vars.get(&quot;out_trade_no_old&quot;);
+String out_trade_no_pre = &quot;10002000&quot;;
+String out_trade_no_suff = vars.get(&quot;rand_no&quot;);
+String fee = vars.get(&quot;fee&quot;);
+
+log.warn(&quot;【DebugInfo】,【mch_id:&quot;+mch_id+&quot;  mch_key:&quot; + mch_key+&quot;】&quot;);
+
+String out_trade_no = out_trade_no_pre + out_trade_no_suff;
+//Long out_trade_no2 = ${temptest};
+log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+vars.put(&quot;out_trade_no&quot;,out_trade_no);
+//String out_trade_no = &quot;10002000&quot;+${__RandomString(18,0123456789,)}.toString();
+//log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+
+
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=&quot;+fee+&quot;&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+
+//System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = ytools.YtMD5.EncryptionStr32(sign_str, &quot;MD5&quot;, &quot;UTF-8&quot;);
+String sign_upper = sign.toUpperCase();
+
+
+//log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+              <stringProp name="-1725864027">&lt;prepay_id&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Success" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=YT测试&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_order_no" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">order_no</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;order_no&gt;(\d+)&lt;/order_no&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retmsg" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retmsg</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retmsg&gt;(.*)&lt;/retmsg&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retcode" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retcode</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retcode&gt;(.*)&lt;/retcode&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">//String resdata = prev.getResponseDataAsString();
+String code = prev.getResponseCode(); 
+String message = prev.getResponseMessage();
+String retcode = vars.get(&quot;retcode&quot;);
+//Integer retcode = vars.get(&quot;retcode&quot;);
+String retmsg = vars.get(&quot;retmsg&quot;);
+//String retcode2 = retcode.toString();
+log.warn(&quot;【retcode】：&quot;+retcode);
+//log.warn(&quot;【ResCode】：&quot;+code);
+//log.warn(&quot;【message】：&quot;+message);
+
+if (retmsg != &quot;SUCCESS&quot;){
+	//vars.put(&quot;【Error_Debug】：&quot;,resdata);
+	log.warn(&quot;【Error retcode】：&quot;+retcode);
+	log.warn(&quot;【Error retmsg】：&quot;+retmsg);
+}else{
+	log.warn(&quot;【Pass】：&quot;+message);	
+}
+
+	
+//log.warn(&quot;【ResponseData】：&quot;+resdata);
+//vars.put(&quot;resdata&quot;,resdata);
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String prevResponse = prev.getResponseDataAsString();
+String retmsg = vars.get(&quot;retmsg&quot;);
+String counter = props.get(&quot;counter&quot;);
+String error_counter = props.get(&quot;error_counter&quot;);
+
+//log.warn(&quot;【Test The Counter】&quot; + counter);
+
+
+// 错误统计
+public void count_error(String error_counter){
+	int errors = Integer.parseInt(error_counter);
+	errors = errors +1;
+	props.put(&quot;error_counter&quot;,errors.toString());
+	log.warn(&quot;【Total Errors】：&quot;+errors.toString());
+}
+
+// 失败统计
+public void count_success(String counter){
+
+	if (counter == null){	
+		log.warn(&quot;【counter is null】&quot;);
+		vars.put(&quot;GlobalCounter&quot;,&quot;1&quot;);
+	}else{
+		int counter = Integer.parseInt(counter);
+		counter = counter +1;
+		props.put(&quot;counter&quot;,counter.toString());
+		log.warn(&quot;【Total Success】：&quot;+counter.toString());
+	}
+	
+}
+// 统计调用
+if (prevResponse.contains(&quot;SUCCESS&quot;)) {
+	log.warn(&quot;【SUCCESS】&quot;);
+	count_success(counter);
+} else {
+	log.warn(&quot;【Error Message】：&quot;+retmsg);
+	count_error(error_counter);
+}
+
+/*
+public void counter(){
+	
+	//int counter = Integer.parseInt( vars.get(&quot;Counter&quot;));
+	String tester = vars.get(&quot;TotalCount&quot;);
+	int counter = Integer.parseInt( vars.get(&quot;TotalCount&quot;));
+	if (counter != null){
+		log.warn(&quot;【TotalCount_Before】：&quot;+counter_org.toString());
+		counter = counter +1;
+		vars.put(&quot;TotalCount&quot;,counter.toString());
+		log.warn(&quot;【TotalCount_After】：&quot;+counter.toString());
+	}else{
+		int counter = 0;
+		vars.put(&quot;TotalCount&quot;,counter);
+		log.info(&quot;【Start Count】：&quot;+counter.toString());
+	}
+	
+		
+}
+*/
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
+            <stringProp name="Assertion.test_field">SizeAssertion.response_data</stringProp>
+            <stringProp name="SizeAssertion.size">0</stringProp>
+            <intProp name="SizeAssertion.operator">2</intProp>
+          </SizeAssertion>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
+          <stringProp name="BeanShellSampler.query">String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+log.warn(&quot;【Debug out_trade_no】：&quot;+out_trade_no);
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=1000000037&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=lg81oqo89knyugdifr850molrioeqw46&quot;;
+log.warn(&quot;【Debug sign_str】：&quot;+sign_str);
+vars.put(&quot;temptest&quot;,sign_str);
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="ThreadGroup_Bak" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">2</stringProp>
+        <longProp name="ThreadGroup.start_time">1478658146000</longProp>
+        <longProp name="ThreadGroup.end_time">1478658146000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <SoapSampler guiclass="SoapSamplerGui" testclass="SoapSampler" testname="SOAP/XML-RPC Request" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SoapSampler.URL_DATA"></stringProp>
+          <stringProp name="HTTPSamper.xml_data"></stringProp>
+          <stringProp name="SoapSampler.xml_data_file"></stringProp>
+          <stringProp name="SoapSampler.SOAP_ACTION"></stringProp>
+          <stringProp name="SoapSampler.SEND_SOAP_ACTION">true</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+        </SoapSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&lt;body&gt;test1&lt;/body&gt;&lt;cashierid&gt;1&lt;/cashierid&gt;&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&lt;nonce_str&gt;xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&lt;/nonce_str&gt;&lt;notify_url&gt;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&lt;/notify_url&gt;&lt;openid&gt;odLjYvwUYEEq1HMGQY_3CErEGLSU&lt;/openid&gt;&lt;out_trade_no&gt;${out_trade_no}&lt;/out_trade_no&gt;&lt;return_url&gt;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&lt;/return_url&gt;&lt;spbill_create_ip&gt;127.0.0.1&lt;/spbill_create_ip&gt;&lt;total_fee&gt;1&lt;/total_fee&gt;&lt;trade_type&gt;WXPAY.JSAPI&lt;/trade_type&gt;&lt;sign&gt;${sign}&lt;/sign&gt;&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.proxyHost">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.proxyPort">8888</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">http://betagate.speedpos.snsshop.net/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="false">
+            <stringProp name="maximumValue">999999999999999999</stringProp>
+            <stringProp name="minimumValue">1</stringProp>
+            <stringProp name="outputFormat">10002000000000000000000000</stringProp>
+            <boolProp name="perThread">false</boolProp>
+            <stringProp name="randomSeed"></stringProp>
+            <stringProp name="variableName">out_trade_no</stringProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mch_key" elementType="Argument">
+                <stringProp name="Argument.name">mch_key</stringProp>
+                <stringProp name="Argument.value">lg81oqo89knyugdifr850molrioeqw46</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">香港直营</stringProp>
+              </elementProp>
+              <elementProp name="mch_id" elementType="Argument">
+                <stringProp name="Argument.name">mch_id</stringProp>
+                <stringProp name="Argument.value">1000000037</stringProp>
+                <stringProp name="Argument.desc">香港直营</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="MyMd5" elementType="Argument">
+                <stringProp name="Argument.name">MyMd5</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="Argument">
+                <stringProp name="Argument.name">time</stringProp>
+                <stringProp name="Argument.value">${__time(yyyyMMddHHmmss,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no2" elementType="Argument">
+                <stringProp name="Argument.name">rand_no2</stringProp>
+                <stringProp name="Argument.value">${__RandomString(2,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no18" elementType="Argument">
+                <stringProp name="Argument.name">rand_no18</stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="out_trade_no_old" elementType="Argument">
+                <stringProp name="Argument.name">out_trade_no_old</stringProp>
+                <stringProp name="Argument.value">10002000${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,rand_no)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__RandomString(18,0123456789,rand_no)}</stringProp>
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="script">import ytools.YtMD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no_old = vars.get(&quot;out_trade_no_old&quot;);
+String out_trade_no_pre = &quot;10002000&quot;;
+
+String out_trade_no_suff = vars.get(&quot;rand_no&quot;);
+String out_trade_no = out_trade_no_pre + out_trade_no_suff;
+//Long out_trade_no2 = ${temptest};
+log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+vars.put(&quot;out_trade_no&quot;,out_trade_no);
+//String out_trade_no = &quot;10002000&quot;+${__RandomString(18,0123456789,)}.toString();
+//log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+
+
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=1000000037&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=lg81oqo89knyugdifr850molrioeqw46&quot;;
+
+//System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = ytools.YtMD5.EncryptionStr32(sign_str, &quot;MD5&quot;, &quot;UTF-8&quot;);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=YT测试&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+              <stringProp name="-1725864027">&lt;prepay_id&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_order_no" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">order_no</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;order_no&gt;(\d+)&lt;/order_no&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retmsg" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retmsg</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retmsg&gt;(.*)&lt;/retmsg&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">String resdata = prev.getResponseDataAsString();
+String code = prev.getResponseCode(); 
+String message = prev.getResponseMessage();
+
+log.warn(&quot;【message】：&quot;+message);
+log.warn(&quot;【ResponseData】：&quot;+resdata);
+vars.put(&quot;resdata&quot;,resdata);
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
+          <stringProp name="BeanShellSampler.query">String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+log.warn(&quot;【Debug out_trade_no】：&quot;+out_trade_no);
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=1000000037&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=lg81oqo89knyugdifr850molrioeqw46&quot;;
+log.warn(&quot;【Debug sign_str】：&quot;+sign_str);
+vars.put(&quot;temptest&quot;,sign_str);
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request_bak" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&#xd;
+&lt;body&gt;&#xd;
+	&lt;![CDATA[天下第一]]&gt;&#xd;
+&lt;/body&gt;&#xd;
+	&lt;cashierid&gt;&#xd;
+		&lt;![CDATA[]]&gt;&#xd;
+	&lt;/cashierid&gt;&#xd;
+	&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&#xd;
+	&lt;nonce_str&gt;&#xd;
+		&lt;![CDATA[xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn]]&gt;&#xd;
+	&lt;/nonce_str&gt;&#xd;
+	&lt;notify_url&gt;&#xd;
+		&lt;![CDATA[http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701]]{&gt;}&#xd;
+	&lt;/notify_url&gt;&#xd;
+	&lt;openid&gt;&#xd;
+		&lt;![CDATA[oRs4YwmoyqGiWYqZn5FG0QCxlu9Q]]&gt;&#xd;
+	&lt;/openid&gt;&#xd;
+	&lt;out_trade_no&gt;1000100001201611021915213701&lt;/out_trade_no&gt;&#xd;
+	&lt;return_url&gt;&#xd;
+		&lt;![CDATA[http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701]]{&gt;}&#xd;
+	&lt;/return_url&gt;&#xd;
+	&lt;sign&gt;&#xd;
+		&lt;![CDATA[${sign}]]&gt;&#xd;
+	&lt;/sign&gt;&#xd;
+	&lt;spbill_create_ip&gt;&#xd;
+		&lt;![CDATA[14.17.37.143]]&gt;&#xd;
+	&lt;/spbill_create_ip&gt;&#xd;
+	&lt;total_fee&gt;1&lt;/total_fee&gt;&#xd;
+	&lt;trade_type&gt;&#xd;
+		&lt;![CDATA[WXPAY.JSAPI]]&gt;&#xd;
+	&lt;/trade_type&gt;&#xd;
+&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.proxyHost">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.proxyPort">8888</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">http://betagate.speedpos.snsshop.net/unifiedorder </stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+
+String sign_str = &quot;body=天下第一&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=5819e5af320cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request_bak2" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&lt;body&gt;test1&lt;/body&gt;&lt;cashierid&gt;1&lt;/cashierid&gt;&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&lt;nonce_str&gt;xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&lt;/nonce_str&gt;&lt;notify_url&gt;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&lt;/notify_url&gt;&lt;openid&gt;oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&lt;/openid&gt;&lt;out_trade_no&gt;${out_trade_no}&lt;/out_trade_no&gt;&lt;return_url&gt;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&lt;/return_url&gt;&lt;spbill_create_ip&gt;127.0.0.1&lt;/spbill_create_ip&gt;&lt;total_fee&gt;1&lt;/total_fee&gt;&lt;trade_type&gt;WXPAY.JSAPI&lt;/trade_type&gt;&lt;sign&gt;${sign}&lt;/sign&gt;&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.proxyHost">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.proxyPort">8888</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">http://betagate.speedpos.snsshop.net/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.YtMD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+
+//System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = ytools.YtMD5.EncryptionStr32(sign_str, &quot;MD5&quot;, &quot;UTF-8&quot;);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=YT测试&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request_Good" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&lt;body&gt;test1&lt;/body&gt;&lt;cashierid&gt;1&lt;/cashierid&gt;&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&lt;nonce_str&gt;xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&lt;/nonce_str&gt;&lt;notify_url&gt;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&lt;/notify_url&gt;&lt;openid&gt;odLjYvwUYEEq1HMGQY_3CErEGLSU&lt;/openid&gt;&lt;out_trade_no&gt;10002000711177073802461811&lt;/out_trade_no&gt;&lt;return_url&gt;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&lt;/return_url&gt;&lt;spbill_create_ip&gt;127.0.0.1&lt;/spbill_create_ip&gt;&lt;total_fee&gt;1&lt;/total_fee&gt;&lt;trade_type&gt;WXPAY.JSAPI&lt;/trade_type&gt;&lt;sign&gt;${sign}&lt;/sign&gt;&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.proxyHost">127.0.0.1</stringProp>
+          <stringProp name="HTTPSampler.proxyPort">8888</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">http://betagate.speedpos.snsshop.net/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.YtMD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=1000000037&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=10002000711177073802461811&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=lg81oqo89knyugdifr850molrioeqw46&quot;;
+
+//System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = ytools.YtMD5.EncryptionStr32(sign_str, &quot;MD5&quot;, &quot;UTF-8&quot;);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=YT测试&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_UserGroup_线上" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1478658146000</longProp>
+        <longProp name="ThreadGroup.end_time">1478658146000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">SpeedPOS.csv</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">mch_id,mch_key</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">200</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="mch_key2" elementType="Argument">
+              <stringProp name="Argument.name">mch_key2</stringProp>
+              <stringProp name="Argument.value">31qdxsgvvb2yc3r2zcnure5o80l9hnpz</stringProp>
+              <stringProp name="Argument.desc">AT商户测试7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id2" elementType="Argument">
+              <stringProp name="Argument.name">mch_id2</stringProp>
+              <stringProp name="Argument.value">1000000077</stringProp>
+              <stringProp name="Argument.desc">AT商户测试7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host1" elementType="Argument">
+              <stringProp name="Argument.name">host1</stringProp>
+              <stringProp name="Argument.value">betagate.speedpos.snsshop.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host2" elementType="Argument">
+              <stringProp name="Argument.name">host2</stringProp>
+              <stringProp name="Argument.value">10.100.100.88:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key73" elementType="Argument">
+              <stringProp name="Argument.name">mch_key73</stringProp>
+              <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+              <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id73" elementType="Argument">
+              <stringProp name="Argument.name">mch_id73</stringProp>
+              <stringProp name="Argument.value">1000000073</stringProp>
+              <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id70" elementType="Argument">
+              <stringProp name="Argument.name">mch_id70</stringProp>
+              <stringProp name="Argument.value">1000000070</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key70" elementType="Argument">
+              <stringProp name="Argument.name">mch_key70</stringProp>
+              <stringProp name="Argument.value">kpy5r160mq0p8idmjt0swj0vl6f4l6fm</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host3" elementType="Argument">
+              <stringProp name="Argument.name">host3</stringProp>
+              <stringProp name="Argument.value">payapic.speedpos.snsshop.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host4" elementType="Argument">
+              <stringProp name="Argument.name">host4</stringProp>
+              <stringProp name="Argument.value">10.100.100.82:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id_dev" elementType="Argument">
+              <stringProp name="Argument.name">mch_id_dev</stringProp>
+              <stringProp name="Argument.value">1000102875</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Dev测试商户</stringProp>
+            </elementProp>
+            <elementProp name="mch_key_dev" elementType="Argument">
+              <stringProp name="Argument.name">mch_key_dev</stringProp>
+              <stringProp name="Argument.value">ycwth8umslsea4tmy0vhf3jhajzt3rfh</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="fee" elementType="Argument">
+              <stringProp name="Argument.name">fee</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host_ol" elementType="Argument">
+              <stringProp name="Argument.name">host_ol</stringProp>
+              <stringProp name="Argument.value">gate.speedpos.cn:8181</stringProp>
+              <stringProp name="Argument.desc">线上</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id" elementType="Argument">
+              <stringProp name="Argument.name">mch_id</stringProp>
+              <stringProp name="Argument.value">1000000001</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key" elementType="Argument">
+              <stringProp name="Argument.name">mch_key</stringProp>
+              <stringProp name="Argument.value">but15ozu7ckfqfn1ksle541rbatskk3x</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="TestPlan.comments">For debug</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Unifiedorder" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&lt;body&gt;test1&lt;/body&gt;&lt;cashierid&gt;1&lt;/cashierid&gt;&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&lt;nonce_str&gt;xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&lt;/nonce_str&gt;&lt;notify_url&gt;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&lt;/notify_url&gt;&lt;openid&gt;odLjYvwUYEEq1HMGQY_3CErEGLSU&lt;/openid&gt;&lt;out_trade_no&gt;${out_trade_no}&lt;/out_trade_no&gt;&lt;return_url&gt;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&lt;/return_url&gt;&lt;spbill_create_ip&gt;127.0.0.1&lt;/spbill_create_ip&gt;&lt;total_fee&gt;${fee}&lt;/total_fee&gt;&lt;trade_type&gt;WXPAY.JSAPI&lt;/trade_type&gt;&lt;sign&gt;${sign}&lt;/sign&gt;&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://${host_ol}/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="false">
+            <stringProp name="maximumValue">999999999999999999</stringProp>
+            <stringProp name="minimumValue">1</stringProp>
+            <stringProp name="outputFormat">10002000000000000000000000</stringProp>
+            <boolProp name="perThread">false</boolProp>
+            <stringProp name="randomSeed"></stringProp>
+            <stringProp name="variableName">out_trade_no</stringProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">500</stringProp>
+            <stringProp name="RandomTimer.range">6000</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mch_key2" elementType="Argument">
+                <stringProp name="Argument.name">mch_key2</stringProp>
+                <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              </elementProp>
+              <elementProp name="mch_id2" elementType="Argument">
+                <stringProp name="Argument.name">mch_id2</stringProp>
+                <stringProp name="Argument.value">1000000073</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="MyMd5" elementType="Argument">
+                <stringProp name="Argument.name">MyMd5</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="Argument">
+                <stringProp name="Argument.name">time</stringProp>
+                <stringProp name="Argument.value">${__time(yyyyMMddHHmmss,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no2" elementType="Argument">
+                <stringProp name="Argument.name">rand_no2</stringProp>
+                <stringProp name="Argument.value">${__RandomString(2,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no18" elementType="Argument">
+                <stringProp name="Argument.name">rand_no18</stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="out_trade_no_old" elementType="Argument">
+                <stringProp name="Argument.name">out_trade_no_old</stringProp>
+                <stringProp name="Argument.value">10002000${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,rand_no)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__RandomString(18,0123456789,rand_no)}</stringProp>
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="script">import ytools.YtMD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no_old = vars.get(&quot;out_trade_no_old&quot;);
+String out_trade_no_pre = &quot;10002000&quot;;
+String out_trade_no_suff = vars.get(&quot;rand_no&quot;);
+String fee = vars.get(&quot;fee&quot;);
+
+log.warn(&quot;【DebugInfo】,【mch_id:&quot;+mch_id+&quot;  mch_key:&quot; + mch_key+&quot;】&quot;);
+
+String out_trade_no = out_trade_no_pre + out_trade_no_suff;
+//Long out_trade_no2 = ${temptest};
+log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+vars.put(&quot;out_trade_no&quot;,out_trade_no);
+//String out_trade_no = &quot;10002000&quot;+${__RandomString(18,0123456789,)}.toString();
+//log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+
+
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=&quot;+fee+&quot;&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+
+//System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = ytools.YtMD5.EncryptionStr32(sign_str, &quot;MD5&quot;, &quot;UTF-8&quot;);
+String sign_upper = sign.toUpperCase();
+
+
+//log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+              <stringProp name="-1725864027">&lt;prepay_id&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Success" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=YT测试&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_order_no" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">order_no</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;order_no&gt;(\d+)&lt;/order_no&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retmsg" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retmsg</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retmsg&gt;(.*)&lt;/retmsg&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retcode" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retcode</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retcode&gt;(.*)&lt;/retcode&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String prevResponse = prev.getResponseDataAsString();
+String retmsg = vars.get(&quot;retmsg&quot;);
+String counter = props.get(&quot;counter&quot;);
+String error_counter = props.get(&quot;error_counter&quot;);
+
+//log.warn(&quot;【Test The Counter】&quot; + counter);
+
+
+// 错误统计
+public void count_error(String error_counter){
+	int errors = Integer.parseInt(error_counter);
+	errors = errors +1;
+	props.put(&quot;error_counter&quot;,errors.toString());
+	log.warn(&quot;【Total Errors】：&quot;+errors.toString());
+}
+
+// 失败统计
+public void count_success(String counter){
+
+	if (counter == null){	
+		log.warn(&quot;【counter is null】&quot;);
+		vars.put(&quot;GlobalCounter&quot;,&quot;1&quot;);
+	}else{
+		int counter = Integer.parseInt(counter);
+		counter = counter +1;
+		props.put(&quot;counter&quot;,counter.toString());
+		log.warn(&quot;【Total Success】：&quot;+counter.toString());
+	}
+	
+}
+// 统计调用
+if (prevResponse.contains(&quot;SUCCESS&quot;)) {
+	log.warn(&quot;【SUCCESS】&quot;);
+	count_success(counter);
+} else {
+	log.warn(&quot;【Error Message】：&quot;+retmsg);
+	count_error(error_counter);
+}
+
+/*
+public void counter(){
+	
+	//int counter = Integer.parseInt( vars.get(&quot;Counter&quot;));
+	String tester = vars.get(&quot;TotalCount&quot;);
+	int counter = Integer.parseInt( vars.get(&quot;TotalCount&quot;));
+	if (counter != null){
+		log.warn(&quot;【TotalCount_Before】：&quot;+counter_org.toString());
+		counter = counter +1;
+		vars.put(&quot;TotalCount&quot;,counter.toString());
+		log.warn(&quot;【TotalCount_After】：&quot;+counter.toString());
+	}else{
+		int counter = 0;
+		vars.put(&quot;TotalCount&quot;,counter);
+		log.info(&quot;【Start Count】：&quot;+counter.toString());
+	}
+	
+		
+}
+*/
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">//String resdata = prev.getResponseDataAsString();
+String code = prev.getResponseCode(); 
+String message = prev.getResponseMessage();
+String retcode = vars.get(&quot;retcode&quot;);
+//Integer retcode = vars.get(&quot;retcode&quot;);
+String retmsg = vars.get(&quot;retmsg&quot;);
+//String retcode2 = retcode.toString();
+log.warn(&quot;【retcode】：&quot;+retcode);
+//log.warn(&quot;【ResCode】：&quot;+code);
+//log.warn(&quot;【message】：&quot;+message);
+
+if (retmsg != &quot;SUCCESS&quot;){
+	//vars.put(&quot;【Error_Debug】：&quot;,resdata);
+	log.warn(&quot;【Error retcode】：&quot;+retcode);
+	log.warn(&quot;【Error retmsg】：&quot;+retmsg);
+}else{
+	log.warn(&quot;【Pass】：&quot;+message);	
+}
+
+	
+//log.warn(&quot;【ResponseData】：&quot;+resdata);
+//vars.put(&quot;resdata&quot;,resdata);
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+            <stringProp name="Assertion.test_field">SizeAssertion.response_data</stringProp>
+            <stringProp name="SizeAssertion.size">0</stringProp>
+            <intProp name="SizeAssertion.operator">2</intProp>
+          </SizeAssertion>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
+          <stringProp name="BeanShellSampler.query">String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+log.warn(&quot;【Debug out_trade_no】：&quot;+out_trade_no);
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=1000000037&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=lg81oqo89knyugdifr850molrioeqw46&quot;;
+log.warn(&quot;【Debug sign_str】：&quot;+sign_str);
+vars.put(&quot;temptest&quot;,sign_str);
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+          <collectionProp name="metricConnections">
+            <collectionProp name="-1945195639">
+              <stringProp name="1325633705">gate.speedpos.cn</stringProp>
+              <stringProp name="1717171">8182</stringProp>
+              <stringProp name="66952">CPU</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="49057336">
+              <stringProp name="1325633705">gate.speedpos.cn</stringProp>
+              <stringProp name="1717171">8182</stringProp>
+              <stringProp name="-1993889503">Memory</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="161397352">
+              <stringProp name="1325633705">gate.speedpos.cn</stringProp>
+              <stringProp name="1717171">8182</stringProp>
+              <stringProp name="-274342153">Network I/O</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="1938066587">
+              <stringProp name="1325633705">gate.speedpos.cn</stringProp>
+              <stringProp name="1717171">8182</stringProp>
+              <stringProp name="2112896831">Disks I/O</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+          </collectionProp>
+        </kg.apc.jmeter.perfmon.PerfMonCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_UserGroup_Dev" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1478658146000</longProp>
+        <longProp name="ThreadGroup.end_time">1478658146000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <SoapSampler guiclass="SoapSamplerGui" testclass="SoapSampler" testname="SOAP/XML-RPC Request" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="SoapSampler.URL_DATA"></stringProp>
+          <stringProp name="HTTPSamper.xml_data"></stringProp>
+          <stringProp name="SoapSampler.xml_data_file"></stringProp>
+          <stringProp name="SoapSampler.SOAP_ACTION"></stringProp>
+          <stringProp name="SoapSampler.SEND_SOAP_ACTION">true</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+        </SoapSampler>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">SpeedPOS.csv</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">mch_id,mch_key</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="mch_key2" elementType="Argument">
+              <stringProp name="Argument.name">mch_key2</stringProp>
+              <stringProp name="Argument.value">31qdxsgvvb2yc3r2zcnure5o80l9hnpz</stringProp>
+              <stringProp name="Argument.desc">AT商户测试7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id2" elementType="Argument">
+              <stringProp name="Argument.name">mch_id2</stringProp>
+              <stringProp name="Argument.value">1000000077</stringProp>
+              <stringProp name="Argument.desc">AT商户测试7</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host1" elementType="Argument">
+              <stringProp name="Argument.name">host1</stringProp>
+              <stringProp name="Argument.value">betagate.speedpos.snsshop.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host2" elementType="Argument">
+              <stringProp name="Argument.name">host2</stringProp>
+              <stringProp name="Argument.value">10.100.100.88:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key73" elementType="Argument">
+              <stringProp name="Argument.name">mch_key73</stringProp>
+              <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+              <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id73" elementType="Argument">
+              <stringProp name="Argument.name">mch_id73</stringProp>
+              <stringProp name="Argument.value">1000000073</stringProp>
+              <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id70" elementType="Argument">
+              <stringProp name="Argument.name">mch_id70</stringProp>
+              <stringProp name="Argument.value">1000000070</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key70" elementType="Argument">
+              <stringProp name="Argument.name">mch_key70</stringProp>
+              <stringProp name="Argument.value">kpy5r160mq0p8idmjt0swj0vl6f4l6fm</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host3" elementType="Argument">
+              <stringProp name="Argument.name">host3</stringProp>
+              <stringProp name="Argument.value">payapic.speedpos.snsshop.net</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host82" elementType="Argument">
+              <stringProp name="Argument.name">host82</stringProp>
+              <stringProp name="Argument.value">10.100.100.82:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id_Dev" elementType="Argument">
+              <stringProp name="Argument.name">mch_id_Dev</stringProp>
+              <stringProp name="Argument.value">1000102875</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Dev测试商户</stringProp>
+            </elementProp>
+            <elementProp name="mch_key_Dev" elementType="Argument">
+              <stringProp name="Argument.name">mch_key_Dev</stringProp>
+              <stringProp name="Argument.value">ycwth8umslsea4tmy0vhf3jhajzt3rfh</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="fee" elementType="Argument">
+              <stringProp name="Argument.name">fee</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host_ol" elementType="Argument">
+              <stringProp name="Argument.name">host_ol</stringProp>
+              <stringProp name="Argument.value">gate.speedpos.cn</stringProp>
+              <stringProp name="Argument.desc">线上</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id_OL" elementType="Argument">
+              <stringProp name="Argument.name">mch_id_OL</stringProp>
+              <stringProp name="Argument.value">1000000001</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key_OL" elementType="Argument">
+              <stringProp name="Argument.name">mch_key_OL</stringProp>
+              <stringProp name="Argument.value">but15ozu7ckfqfn1ksle541rbatskk3x</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host76" elementType="Argument">
+              <stringProp name="Argument.name">host76</stringProp>
+              <stringProp name="Argument.value">10.20.60.76:17180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id" elementType="Argument">
+              <stringProp name="Argument.name">mch_id</stringProp>
+              <stringProp name="Argument.value">1000102875</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key" elementType="Argument">
+              <stringProp name="Argument.name">mch_key</stringProp>
+              <stringProp name="Argument.value">ycwth8umslsea4tmy0vhf3jhajzt3rfh</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host76_16" elementType="Argument">
+              <stringProp name="Argument.name">host76_16</stringProp>
+              <stringProp name="Argument.value">10.20.60.76:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host76_13580" elementType="Argument">
+              <stringProp name="Argument.name">host76_13580</stringProp>
+              <stringProp name="Argument.value">10.20.60.76:13580</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Unifiedorder" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;xml&gt;&lt;body&gt;test1&lt;/body&gt;&lt;cashierid&gt;1&lt;/cashierid&gt;&lt;mch_id&gt;${mch_id}&lt;/mch_id&gt;&lt;nonce_str&gt;xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&lt;/nonce_str&gt;&lt;notify_url&gt;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&lt;/notify_url&gt;&lt;openid&gt;odLjYvwUYEEq1HMGQY_3CErEGLSU&lt;/openid&gt;&lt;out_trade_no&gt;${out_trade_no}&lt;/out_trade_no&gt;&lt;return_url&gt;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&lt;/return_url&gt;&lt;spbill_create_ip&gt;127.0.0.1&lt;/spbill_create_ip&gt;&lt;total_fee&gt;${fee}&lt;/total_fee&gt;&lt;trade_type&gt;WXPAY.JSAPI&lt;/trade_type&gt;&lt;sign&gt;${sign}&lt;/sign&gt;&lt;/xml&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">http://${host76_13580}/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml; charset=utf-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RandomVariableConfig guiclass="TestBeanGUI" testclass="RandomVariableConfig" testname="Random Variable" enabled="false">
+            <stringProp name="maximumValue">999999999999999999</stringProp>
+            <stringProp name="minimumValue">1</stringProp>
+            <stringProp name="outputFormat">10002000000000000000000000</stringProp>
+            <boolProp name="perThread">false</boolProp>
+            <stringProp name="randomSeed"></stringProp>
+            <stringProp name="variableName">out_trade_no</stringProp>
+          </RandomVariableConfig>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+          <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">500</stringProp>
+            <stringProp name="RandomTimer.range">6000</stringProp>
+          </UniformRandomTimer>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mch_key2" elementType="Argument">
+                <stringProp name="Argument.name">mch_key2</stringProp>
+                <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              </elementProp>
+              <elementProp name="mch_id2" elementType="Argument">
+                <stringProp name="Argument.name">mch_id2</stringProp>
+                <stringProp name="Argument.value">1000000073</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="MyMd5" elementType="Argument">
+                <stringProp name="Argument.name">MyMd5</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="Argument">
+                <stringProp name="Argument.name">time</stringProp>
+                <stringProp name="Argument.value">${__time(yyyyMMddHHmmss,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no2" elementType="Argument">
+                <stringProp name="Argument.name">rand_no2</stringProp>
+                <stringProp name="Argument.value">${__RandomString(2,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no18" elementType="Argument">
+                <stringProp name="Argument.name">rand_no18</stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="out_trade_no_old" elementType="Argument">
+                <stringProp name="Argument.name">out_trade_no_old</stringProp>
+                <stringProp name="Argument.value">10002000${__RandomString(18,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${__RandomString(18,0123456789,rand_no)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__RandomString(18,0123456789,rand_no)}</stringProp>
+            <boolProp name="resetInterpreter">true</boolProp>
+            <stringProp name="script">import ytools.YtMD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no_old = vars.get(&quot;out_trade_no_old&quot;);
+String out_trade_no_pre = &quot;10002000&quot;;
+String out_trade_no_suff = vars.get(&quot;rand_no&quot;);
+String fee = vars.get(&quot;fee&quot;);
+
+log.warn(&quot;【DebugInfo】,【mch_id:&quot;+mch_id+&quot;  mch_key:&quot; + mch_key+&quot;】&quot;);
+
+String out_trade_no = out_trade_no_pre + out_trade_no_suff;
+//Long out_trade_no2 = ${temptest};
+log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+vars.put(&quot;out_trade_no&quot;,out_trade_no);
+//String out_trade_no = &quot;10002000&quot;+${__RandomString(18,0123456789,)}.toString();
+//log.warn(&quot;【DebugLog,out_trade_no】:&quot; + out_trade_no);
+
+
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=&quot;+fee+&quot;&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+
+//System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = ytools.YtMD5.EncryptionStr32(sign_str, &quot;MD5&quot;, &quot;UTF-8&quot;);
+String sign_upper = sign.toUpperCase();
+
+
+//log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+              <stringProp name="-1725864027">&lt;prepay_id&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assertion Success" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2134568044">&lt;xml&gt;
+    &lt;retcode&gt;0&lt;/retcode&gt;
+    &lt;retmsg&gt;SUCCESS&lt;/retmsg&gt;
+    &lt;order_no&gt;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">import ytools.Str2MD5;
+String mch_key = vars.get(&quot;mch_key&quot;);
+String mch_id = vars.get(&quot;mch_id&quot;);
+String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+
+String sign_str = &quot;body=YT测试&amp;cashierid=1&amp;mch_id=&quot;+mch_id+&quot;&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=oRs4YwmoyqGiWYqZn5FG0QCxlu9Q&amp;out_trade_no=&quot;+out_trade_no+&quot;cb&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=&quot;+mch_key;
+String res = new Str2MD5().MD5(&quot;adf&quot;);
+System.out.println(&quot;【Debug】:&quot; + res);
+
+String sign = new Str2MD5().MD5(sign_str);
+String sign_upper = sign.toUpperCase();
+
+log.warn(&quot;【DebugLog,mch_key】:&quot; + mch_key);
+log.warn(&quot;【DebugLog,SignStr】:&quot; + sign_upper);
+vars.put(&quot;MyMd5&quot;,res.toString());
+vars.put(&quot;sign_str&quot;,sign_str);
+vars.put(&quot;sign&quot;,sign_upper);
+
+</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_order_no" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">order_no</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;order_no&gt;(\d+)&lt;/order_no&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retmsg" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retmsg</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retmsg&gt;(.*)&lt;/retmsg&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="RegexpExtractor_retcode" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">retcode</stringProp>
+            <stringProp name="RegexExtractor.regex">&lt;retcode&gt;(.*)&lt;/retcode&gt;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">None</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor_bak" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">//String resdata = prev.getResponseDataAsString();
+String code = prev.getResponseCode(); 
+String message = prev.getResponseMessage();
+String retcode = vars.get(&quot;retcode&quot;);
+//Integer retcode = vars.get(&quot;retcode&quot;);
+String retmsg = vars.get(&quot;retmsg&quot;);
+//String retcode2 = retcode.toString();
+log.warn(&quot;【retcode】：&quot;+retcode);
+//log.warn(&quot;【ResCode】：&quot;+code);
+//log.warn(&quot;【message】：&quot;+message);
+
+if (retmsg != &quot;SUCCESS&quot;){
+	//vars.put(&quot;【Error_Debug】：&quot;,resdata);
+	log.warn(&quot;【Error retcode】：&quot;+retcode);
+	log.warn(&quot;【Error retmsg】：&quot;+retmsg);
+}else{
+	log.warn(&quot;【Pass】：&quot;+message);	
+}
+
+	
+//log.warn(&quot;【ResponseData】：&quot;+resdata);
+//vars.put(&quot;resdata&quot;,resdata);
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String prevResponse = prev.getResponseDataAsString();
+String retmsg = vars.get(&quot;retmsg&quot;);
+String counter = props.get(&quot;counter&quot;);
+String error_counter = props.get(&quot;error_counter&quot;);
+
+//log.warn(&quot;【Test The Counter】&quot; + counter);
+
+
+// 错误统计
+public void count_error(String error_counter){
+	int errors = Integer.parseInt(error_counter);
+	errors = errors +1;
+	props.put(&quot;error_counter&quot;,errors.toString());
+	log.warn(&quot;【Total Errors】：&quot;+errors.toString());
+}
+
+// 失败统计
+public void count_success(String counter){
+
+	if (counter == null){	
+		log.warn(&quot;【counter is null】&quot;);
+		vars.put(&quot;GlobalCounter&quot;,&quot;1&quot;);
+	}else{
+		int counter = Integer.parseInt(counter);
+		counter = counter +1;
+		props.put(&quot;counter&quot;,counter.toString());
+		log.warn(&quot;【Total Success】：&quot;+counter.toString());
+	}
+	
+}
+// 统计调用
+if (prevResponse.contains(&quot;SUCCESS&quot;)) {
+	log.warn(&quot;【SUCCESS】&quot;);
+	count_success(counter);
+} else {
+	log.warn(&quot;【Error Message】：&quot;+retmsg);
+	count_error(error_counter);
+}
+
+/*
+public void counter(){
+	
+	//int counter = Integer.parseInt( vars.get(&quot;Counter&quot;));
+	String tester = vars.get(&quot;TotalCount&quot;);
+	int counter = Integer.parseInt( vars.get(&quot;TotalCount&quot;));
+	if (counter != null){
+		log.warn(&quot;【TotalCount_Before】：&quot;+counter_org.toString());
+		counter = counter +1;
+		vars.put(&quot;TotalCount&quot;,counter.toString());
+		log.warn(&quot;【TotalCount_After】：&quot;+counter.toString());
+	}else{
+		int counter = 0;
+		vars.put(&quot;TotalCount&quot;,counter);
+		log.info(&quot;【Start Count】：&quot;+counter.toString());
+	}
+	
+		
+}
+*/
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
+            <stringProp name="Assertion.test_field">SizeAssertion.response_data</stringProp>
+            <stringProp name="SizeAssertion.size">0</stringProp>
+            <intProp name="SizeAssertion.operator">2</intProp>
+          </SizeAssertion>
+          <hashTree/>
+        </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
+          <stringProp name="BeanShellSampler.query">String out_trade_no = vars.get(&quot;out_trade_no&quot;);
+log.warn(&quot;【Debug out_trade_no】：&quot;+out_trade_no);
+String sign_str = &quot;body=test1&amp;cashierid=1&amp;mch_id=1000000037&amp;nonce_str=xbfg5ewrl44yp46x9dsw6dxzk4ycfhqn&amp;notify_url=http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&amp;openid=odLjYvwUYEEq1HMGQY_3CErEGLSU&amp;out_trade_no=&quot;+out_trade_no+&quot;&amp;return_url=http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&amp;spbill_create_ip=127.0.0.1&amp;total_fee=1&amp;trade_type=WXPAY.JSAPI&amp;key=lg81oqo89knyugdifr850molrioeqw46&quot;;
+log.warn(&quot;【Debug sign_str】：&quot;+sign_str);
+vars.put(&quot;temptest&quot;,sign_str);
+</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
