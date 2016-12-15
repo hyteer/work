@@ -36,14 +36,14 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
         </BeanShellSampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_UserGroup_Beta" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_Beta" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">250</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
         <longProp name="ThreadGroup.start_time">1478658146000</longProp>
         <longProp name="ThreadGroup.end_time">1478658146000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -76,14 +76,14 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
         <hashTree/>
         <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments">
-            <elementProp name="mch_key" elementType="Argument">
-              <stringProp name="Argument.name">mch_key</stringProp>
+            <elementProp name="mch_key77" elementType="Argument">
+              <stringProp name="Argument.name">mch_key77</stringProp>
               <stringProp name="Argument.value">31qdxsgvvb2yc3r2zcnure5o80l9hnpz</stringProp>
               <stringProp name="Argument.desc">AT商户测试7</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="mch_id" elementType="Argument">
-              <stringProp name="Argument.name">mch_id</stringProp>
+            <elementProp name="mch_id77" elementType="Argument">
+              <stringProp name="Argument.name">mch_id77</stringProp>
               <stringProp name="Argument.value">1000000077</stringProp>
               <stringProp name="Argument.desc">AT商户测试7</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
@@ -94,8 +94,8 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
               <stringProp name="Argument.desc">Beta</stringProp>
             </elementProp>
-            <elementProp name="host2" elementType="Argument">
-              <stringProp name="Argument.name">host2</stringProp>
+            <elementProp name="host88" elementType="Argument">
+              <stringProp name="Argument.name">host88</stringProp>
               <stringProp name="Argument.value">10.100.100.88:16180</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
@@ -115,11 +115,13 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
               <stringProp name="Argument.name">mch_id70</stringProp>
               <stringProp name="Argument.value">1000000070</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">70</stringProp>
             </elementProp>
             <elementProp name="mch_key70" elementType="Argument">
               <stringProp name="Argument.name">mch_key70</stringProp>
               <stringProp name="Argument.value">kpy5r160mq0p8idmjt0swj0vl6f4l6fm</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">70</stringProp>
             </elementProp>
             <elementProp name="host3" elementType="Argument">
               <stringProp name="Argument.name">host3</stringProp>
@@ -163,6 +165,35 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
               <stringProp name="Argument.value">but15ozu7ckfqfn1ksle541rbatskk3x</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
+            <elementProp name="mch_id75" elementType="Argument">
+              <stringProp name="Argument.name">mch_id75</stringProp>
+              <stringProp name="Argument.value">1000000075</stringProp>
+              <stringProp name="Argument.desc">75</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key75" elementType="Argument">
+              <stringProp name="Argument.name">mch_key75</stringProp>
+              <stringProp name="Argument.value">ir1o3mpash1qj0kg2ocd1wubqowqq2kg</stringProp>
+              <stringProp name="Argument.desc">75</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host_pc" elementType="Argument">
+              <stringProp name="Argument.name">host_pc</stringProp>
+              <stringProp name="Argument.value">10.97.39.41:16180</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_id" elementType="Argument">
+              <stringProp name="Argument.name">mch_id</stringProp>
+              <stringProp name="Argument.value">1000000069</stringProp>
+              <stringProp name="Argument.desc">69</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="mch_key" elementType="Argument">
+              <stringProp name="Argument.name">mch_key</stringProp>
+              <stringProp name="Argument.value">22m0fgxvbid1mjgpiq0vfyexwgayzzv1</stringProp>
+              <stringProp name="Argument.desc">69</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
@@ -183,7 +214,7 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">http://${host1}/unifiedorder</stringProp>
+          <stringProp name="HTTPSampler.path">http://${host88}/unifiedorder</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -211,8 +242,8 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
             <stringProp name="variableName">out_trade_no</stringProp>
           </RandomVariableConfig>
           <hashTree/>
-          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-            <stringProp name="ConstantTimer.delay">1000</stringProp>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">400</stringProp>
           </ConstantTimer>
           <hashTree/>
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
@@ -272,9 +303,10 @@ props.put(&quot;error_counter&quot;,&quot;0&quot;);</stringProp>
             <stringProp name="parameters">${__RandomString(18,0123456789,rand_no)}</stringProp>
             <boolProp name="resetInterpreter">true</boolProp>
             <stringProp name="script">import ytools.YtMD5;
+
 String mch_key = vars.get(&quot;mch_key&quot;);
 String mch_id = vars.get(&quot;mch_id&quot;);
-String out_trade_no_old = vars.get(&quot;out_trade_no_old&quot;);
+//String out_trade_no_old = vars.get(&quot;out_trade_no_old&quot;);
 String out_trade_no_pre = &quot;10002000&quot;;
 String out_trade_no_suff = vars.get(&quot;rand_no&quot;);
 String fee = vars.get(&quot;fee&quot;);
@@ -305,7 +337,7 @@ vars.put(&quot;sign&quot;,sign_upper);
 </stringProp>
           </BeanShellPreProcessor>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="-2134568044">&lt;xml&gt;
     &lt;retcode&gt;0&lt;/retcode&gt;
@@ -412,7 +444,83 @@ if (retmsg != &quot;SUCCESS&quot;){
 </stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor_output_csv" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String prevResponse = prev.getResponseDataAsString();
+String retmsg = vars.get(&quot;retmsg&quot;);
+String counter = props.get(&quot;counter&quot;);
+String error_counter = props.get(&quot;error_counter&quot;);
+
+//log.warn(&quot;【Test The Counter】&quot; + counter);
+// Output response to csv
+import com.csvreader.CsvWriter;
+log.warn(&quot;[just a test]&quot;);
+
+String mypath = &quot;F:\\Temp&quot;;
+CsvWriter cw = new CsvWriter(&quot;F:\\Temp\\scsp_resp_20161213_1.csv&quot;);
+
+cw.writeRecord(new String[]{&quot;ProspectIndividualID1&quot;,&quot;ProspectIndividualID2&quot;,&quot;ProspectIndividualID3&quot;}); 
+cw.flush();
+cw.close();
+
+// 错误统计
+public void count_error(String error_counter){
+	int errors = Integer.parseInt(error_counter);
+	errors = errors +1;
+	props.put(&quot;error_counter&quot;,errors.toString());
+	log.warn(&quot;【Total Errors】：&quot;+errors.toString());
+}
+
+// 失败统计
+public void count_success(String counter){
+
+	if (counter == null){	
+		log.warn(&quot;【counter is null】&quot;);
+		vars.put(&quot;GlobalCounter&quot;,&quot;1&quot;);
+	}else{
+		int counter = Integer.parseInt(counter);
+		counter = counter +1;
+		props.put(&quot;counter&quot;,counter.toString());
+		log.warn(&quot;【Total Success】：&quot;+counter.toString());
+	}
+	
+}
+// 统计调用
+if (prevResponse.contains(&quot;SUCCESS&quot;)) {
+	log.warn(&quot;【SUCCESS】&quot;);
+	count_success(counter);
+} else {
+	log.warn(&quot;【Error Message】：&quot;+retmsg);
+	count_error(error_counter);
+}
+
+/*
+public void counter(){
+	
+	//int counter = Integer.parseInt( vars.get(&quot;Counter&quot;));
+	String tester = vars.get(&quot;TotalCount&quot;);
+	int counter = Integer.parseInt( vars.get(&quot;TotalCount&quot;));
+	if (counter != null){
+		log.warn(&quot;【TotalCount_Before】：&quot;+counter_org.toString());
+		counter = counter +1;
+		vars.put(&quot;TotalCount&quot;,counter.toString());
+		log.warn(&quot;【TotalCount_After】：&quot;+counter.toString());
+	}else{
+		int counter = 0;
+		vars.put(&quot;TotalCount&quot;,counter);
+		log.info(&quot;【Start Count】：&quot;+counter.toString());
+	}
+	
+		
+}
+*/
+
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -479,11 +587,65 @@ public void counter(){
 </stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
-          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="false">
+          <SizeAssertion guiclass="SizeAssertionGui" testclass="SizeAssertion" testname="Size Assertion" enabled="true">
             <stringProp name="Assertion.test_field">SizeAssertion.response_data</stringProp>
             <stringProp name="SizeAssertion.size">0</stringProp>
             <intProp name="SizeAssertion.operator">2</intProp>
           </SizeAssertion>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor_CSVtest" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+String prevResponse = prev.getResponseDataAsString();
+String response = new String(prevResponse);
+
+FileOutputStream out = new FileOutputStream(&quot;F:\\Temp\\content.csv&quot;, true);
+String regex = &quot;\&quot;Content\&quot;:\&quot;(\\d+)\&quot;&quot;;
+Pattern p = Pattern.compile(regex);
+Matcher m = p.matcher(response);
+if (m.find()) {
+    String content = m.group(1);
+    out.write(content.getBytes());
+    out.write(System.getProperty(&quot;line.separator&quot;).getBytes());
+    out.flush();
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor-Temp" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import ytools.Write2CSV;
+
+String[] colNames = {&quot;第一列&quot;,&quot;第二列&quot;,&quot;第三列&quot;,&quot;第四列&quot;};  
+File csvFile = Write2CSV.createFileAndColName(&quot;F:/temp&quot;, &quot;write2csv_test3.csv&quot;, colNames);  
+
+List list = new ArrayList&lt;&gt;();  
+list.add(&quot;test data&quot;);  
+list.add(&quot;test data&quot;);  
+list.add(&quot;test data3&quot;);  
+list.add(&quot;test data&quot;);  
+log.warn
+/*
+List&lt;String&gt; list2 = new ArrayList&lt;&gt;();  
+list2.add(&quot;12&quot;);  
+list2.add(&quot;22&quot;);  
+list2.add(&quot;32&quot;);  
+list2.add(&quot;42&quot;);  
+List&lt;List&lt;String&gt;&gt; data = new ArrayList&lt;&gt;();  
+data.add(list);  
+data.add(list2);  
+Write2CSV.appendData(csvFile, data);  
+Write2CSV.appendData(csvFile, data);    
+
+System.out.println(data);   
+System.out.println( &quot;Encoding: &quot; + System.getProperty(&quot;file.encoding&quot;) );  
+*/</stringProp>
+          </BeanShellPreProcessor>
           <hashTree/>
         </hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="false">
@@ -505,7 +667,7 @@ vars.put(&quot;temptest&quot;,sign_str);
         </DebugSampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -521,9 +683,9 @@ vars.put(&quot;temptest&quot;,sign_str);
               <encoding>false</encoding>
               <assertions>true</assertions>
               <subresults>true</subresults>
-              <responseData>false</responseData>
+              <responseData>true</responseData>
               <samplerData>false</samplerData>
-              <xml>false</xml>
+              <xml>true</xml>
               <fieldNames>true</fieldNames>
               <responseHeaders>false</responseHeaders>
               <requestHeaders>false</requestHeaders>
@@ -532,10 +694,12 @@ vars.put(&quot;temptest&quot;,sign_str);
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
               <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
               <idleTime>true</idleTime>
             </value>
           </objProp>
           <stringProp name="filename"></stringProp>
+          <stringProp name="TestPlan.comments">f:\scsp_error_data1213_1.xml</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -555,21 +719,24 @@ vars.put(&quot;temptest&quot;,sign_str);
               <encoding>false</encoding>
               <assertions>true</assertions>
               <subresults>true</subresults>
-              <responseData>false</responseData>
+              <responseData>true</responseData>
               <samplerData>false</samplerData>
-              <xml>false</xml>
+              <xml>true</xml>
               <fieldNames>true</fieldNames>
               <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
+              <requestHeaders>true</requestHeaders>
               <responseDataOnError>false</responseDataOnError>
               <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
               <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
               <idleTime>true</idleTime>
             </value>
           </objProp>
           <stringProp name="filename"></stringProp>
+          <boolProp name="ResultCollector.success_only_logging">true</boolProp>
+          <stringProp name="TestPlan.comments">f:\scsp_aggregate_data1213_1.xml</stringProp>
         </ResultCollector>
         <hashTree/>
         <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="false">
@@ -613,6 +780,192 @@ vars.put(&quot;temptest&quot;,sign_str);
           <boolProp name="include_checkbox_state">false</boolProp>
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector88" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+          <collectionProp name="metricConnections">
+            <collectionProp name="93910462">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="66952">CPU</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="2088163437">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="-1993889503">Memory</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="-317794608">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="2112896831">Disks I/O</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+          </collectionProp>
+        </kg.apc.jmeter.perfmon.PerfMonCollector>
+        <hashTree/>
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector89" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+          <collectionProp name="metricConnections">
+            <collectionProp name="93910462">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="66952">CPU</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="2088163437">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="-1993889503">Memory</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="-317794608">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="2112896831">Disks I/O</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+          </collectionProp>
+        </kg.apc.jmeter.perfmon.PerfMonCollector>
+        <hashTree/>
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector41" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+          <collectionProp name="metricConnections">
+            <collectionProp name="93910462">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="66952">CPU</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="2088163437">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="-1993889503">Memory</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="-317794608">
+              <stringProp name="-1169274390">10.100.100.89</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="2112896831">Disks I/O</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+          </collectionProp>
+        </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="ThreadGroup_Bak" enabled="false">
@@ -1859,14 +2212,14 @@ vars.put(&quot;temptest&quot;,sign_str);
         </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_UserGroup_Dev" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SpeedPOS_UserGroup_Dev" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">25</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">100</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
         <longProp name="ThreadGroup.start_time">1478658146000</longProp>
         <longProp name="ThreadGroup.end_time">1478658146000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -1985,8 +2338,8 @@ vars.put(&quot;temptest&quot;,sign_str);
               <stringProp name="Argument.value">but15ozu7ckfqfn1ksle541rbatskk3x</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="host76" elementType="Argument">
-              <stringProp name="Argument.name">host76</stringProp>
+            <elementProp name="host76_17" elementType="Argument">
+              <stringProp name="Argument.name">host76_17</stringProp>
               <stringProp name="Argument.value">10.20.60.76:17180</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
@@ -2000,8 +2353,8 @@ vars.put(&quot;temptest&quot;,sign_str);
               <stringProp name="Argument.value">ycwth8umslsea4tmy0vhf3jhajzt3rfh</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
-            <elementProp name="host76_16" elementType="Argument">
-              <stringProp name="Argument.name">host76_16</stringProp>
+            <elementProp name="host76" elementType="Argument">
+              <stringProp name="Argument.name">host76</stringProp>
               <stringProp name="Argument.value">10.20.60.76:16180</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
@@ -2059,7 +2412,7 @@ vars.put(&quot;temptest&quot;,sign_str);
           </RandomVariableConfig>
           <hashTree/>
           <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-            <stringProp name="ConstantTimer.delay">1000</stringProp>
+            <stringProp name="ConstantTimer.delay">200</stringProp>
           </ConstantTimer>
           <hashTree/>
           <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="false">
@@ -2352,7 +2705,7 @@ vars.put(&quot;temptest&quot;,sign_str);
         </DebugSampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -2368,7 +2721,7 @@ vars.put(&quot;temptest&quot;,sign_str);
               <encoding>false</encoding>
               <assertions>true</assertions>
               <subresults>true</subresults>
-              <responseData>false</responseData>
+              <responseData>true</responseData>
               <samplerData>false</samplerData>
               <xml>false</xml>
               <fieldNames>true</fieldNames>
@@ -2383,6 +2736,7 @@ vars.put(&quot;temptest&quot;,sign_str);
             </value>
           </objProp>
           <stringProp name="filename"></stringProp>
+          <stringProp name="TestPlan.comments">F:\SpeedPOS1209.txt</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
@@ -2460,6 +2814,68 @@ vars.put(&quot;temptest&quot;,sign_str);
           <boolProp name="include_checkbox_state">false</boolProp>
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.perfmon.PerfMonCollector guiclass="kg.apc.jmeter.vizualizers.PerfMonGui" testclass="kg.apc.jmeter.perfmon.PerfMonCollector" testname="jp@gc - PerfMon Metrics Collector" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+          <collectionProp name="metricConnections">
+            <collectionProp name="101417794">
+              <stringProp name="-1169274397">10.100.100.82</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="66952">CPU</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="2095670769">
+              <stringProp name="-1169274397">10.100.100.82</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="-1993889503">Memory</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+            <collectionProp name="-310287276">
+              <stringProp name="-1169274397">10.100.100.82</stringProp>
+              <stringProp name="1600768">4444</stringProp>
+              <stringProp name="2112896831">Disks I/O</stringProp>
+              <stringProp name="0"></stringProp>
+            </collectionProp>
+          </collectionProp>
+        </kg.apc.jmeter.perfmon.PerfMonCollector>
         <hashTree/>
       </hashTree>
     </hashTree>

@@ -8,7 +8,7 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <stringProp name="TestPlan.user_define_classpath">D:\Tool\apache-jmeter-3.0\lib\yt\mysql-connector-java-5.1.26-bin.jar</stringProp>
+      <stringProp name="TestPlan.user_define_classpath">C:\jmeterlib\mysql-connector-java-5.1.26-bin.jar</stringProp>
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Ubuntu14_10.100.100.54" enabled="false">
@@ -207,10 +207,10 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">10</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
         <longProp name="ThreadGroup.start_time">1477286126000</longProp>
         <longProp name="ThreadGroup.end_time">1477286126000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -234,7 +234,7 @@
           <stringProp name="username">tester</stringProp>
         </JDBCDataSource>
         <hashTree/>
-        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection - test" enabled="true">
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection - test" enabled="false">
           <boolProp name="autocommit">true</boolProp>
           <stringProp name="checkQuery">Select 1</stringProp>
           <stringProp name="connectionAge">5000</stringProp>
@@ -250,9 +250,37 @@
           <stringProp name="username">speedpos</stringProp>
         </JDBCDataSource>
         <hashTree/>
+        <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection - 41" enabled="true">
+          <boolProp name="autocommit">true</boolProp>
+          <stringProp name="checkQuery">Select 1</stringProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="dataSource">mysqlcon</stringProp>
+          <stringProp name="dbUrl">jdbc:mysql://10.97.39.41:3306/pay_order_db_201612</stringProp>
+          <stringProp name="driver">com.mysql.jdbc.Driver</stringProp>
+          <boolProp name="keepAlive">true</boolProp>
+          <stringProp name="password">speedpos@123</stringProp>
+          <stringProp name="poolMax">100</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="transactionIsolation">DEFAULT</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="username">speedpos</stringProp>
+        </JDBCDataSource>
+        <hashTree/>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="test-insert" enabled="false">
           <stringProp name="dataSource">mysqlcon</stringProp>
           <stringProp name="query">insert into users (username,email,age,password) values (&apos;tempuser&apos;,&apos;sfsf@qq.com&apos;,33,111);</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="test-query" enabled="false">
+          <stringProp name="dataSource">mysqlcon</stringProp>
+          <stringProp name="query">SELECT * FROM `shop_db`.`shops` WHERE mch_id = 1000102875 LIMIT 1000;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -262,9 +290,116 @@
           <stringProp name="variableNames"></stringProp>
         </JDBCSampler>
         <hashTree/>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="test-query" enabled="true">
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="test-insert" enabled="true">
           <stringProp name="dataSource">mysqlcon</stringProp>
-          <stringProp name="query">SELECT * FROM `shop_db`.`shops` WHERE mch_id = 1000102875 LIMIT 1000;</stringProp>
+          <stringProp name="query">INSERT INTO `t_order_2` VALUES (${p_key}, &apos;10002000868023549964017125&apos;, 1000000072, 100033, &apos;${order_id}&apos;, &apos;WXPAY&apos;, &apos;&apos;, &apos;WXPAY.JSAPI&apos;, &apos;odLjYvwUYEEq1HMGQY_3CErEGLSU&apos;, &apos;16200734&apos;, &apos;&apos;, &apos;&apos;, 0, 0, &apos;&apos;, 1, 0, 0, 0, 0, 0, 0, &apos;test1&apos;, &apos;&apos;, 1, 0, 40, 1, 21, 0, 10, 0, 5, 0, 4, 0, 0, &apos;&apos;, NULL, &apos;127.0.0.1&apos;, &apos;http://pay.speedpos.snsshop.net/notify/1000100001/1000100001201611021915213701&apos;, &apos;http://pay.speedpos.snsshop.net/success/1000100001/1000100001201611021915213701&apos;, &apos;&apos;, 1481785685, 1481785685, 0, 0);</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Update Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="TestPlan.comments">${p_key}</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mch_key2" elementType="Argument">
+                <stringProp name="Argument.name">mch_key2</stringProp>
+                <stringProp name="Argument.value">go5vof4cdab4xte4w46g55jljkluvldy</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+              </elementProp>
+              <elementProp name="mch_id2" elementType="Argument">
+                <stringProp name="Argument.name">mch_id2</stringProp>
+                <stringProp name="Argument.value">1000000073</stringProp>
+                <stringProp name="Argument.desc">AT商户测试4</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="MyMd5" elementType="Argument">
+                <stringProp name="Argument.name">MyMd5</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="time" elementType="Argument">
+                <stringProp name="Argument.name">time</stringProp>
+                <stringProp name="Argument.value">${__time(yyyyMMddHHmmss,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no_temp" elementType="Argument">
+                <stringProp name="Argument.name">rand_no_temp</stringProp>
+                <stringProp name="Argument.value">${__RandomString(4,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="rand_no20" elementType="Argument">
+                <stringProp name="Argument.name">rand_no20</stringProp>
+                <stringProp name="Argument.value">${__RandomString(20,0123456789,)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">int p_key = 40000;
+p_key += 1;
+log.info(&quot;P_Key:&quot;,p_key.toString());</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="BSF PreProcessor" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters">${__RandomString(20,0123456789,rand_no)},${__RandomString(4,0123456789,rand_no4)}</stringProp>
+            <stringProp name="script">//var p_key = 0;
+var order_id_pre = &quot;81188888&quot;;
+var rand_no = vars.get(&quot;rand_no&quot;);
+var rand_no4 = vars.get(&quot;rand_no4&quot;);
+var counter = ${G_Counter};		// Global counter
+//var counter = ${__counter(,)};
+
+
+var p_key = counter.toString() + rand_no4;
+
+var order_id = order_id_pre + rand_no;
+
+
+//var counter = parseInt(${G_Counter});
+//log.info(&quot;【order_id】: &quot;+order_id)
+//p_key += counter;
+//log.info(&quot;【counter】: &quot;+counter);
+
+//log.info(&quot;p_key&quot;+p_key.toString());
+
+vars.put(&quot;p_key&quot;,p_key);
+vars.put(&quot;order_id&quot;,order_id);
+</stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </BSFPreProcessor>
+          <hashTree/>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+            <stringProp name="CounterConfig.start">1000</stringProp>
+            <stringProp name="CounterConfig.end">9999999</stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">G_Counter</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1329970139">1 updates</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="test-query" enabled="false">
+          <stringProp name="dataSource">mysqlcon</stringProp>
+          <stringProp name="query"> select count(*) from t_order_2;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -293,7 +428,7 @@
         </DebugSampler>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -359,6 +494,33 @@
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
+        <hashTree/>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+          <stringProp name="ConstantTimer.delay">200</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+      </hashTree>
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1481792578000</longProp>
+        <longProp name="ThreadGroup.end_time">1481792578000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </PostThreadGroup>
+      <hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+          <stringProp name="BeanShellSampler.query">log.warn(&quot;[Test finished,counter]: &quot;+${__counter(,)});</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
         <hashTree/>
       </hashTree>
     </hashTree>
