@@ -35,3 +35,15 @@ gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
 gitlab_rails['smtp_tls'] = true
 gitlab_rails['gitlab_email_from'] = 'huyt@snsshop.cn'
+
+
+# 126邮箱
+gitlab_rails['smtp_enable'] = true
+gitlab_rails['smtp_address'] = "smtp.126.com"
+gitlab_rails['smtp_port'] = 25
+gitlab_rails['smtp_user_name'] = "hyteer@126.com"
+gitlab_rails['smtp_password'] = "sa852011"
+gitlab_rails['smtp_authentication'] = "login"
+gitlab_rails['smtp_enable_starttls_auto']= true
+gitlab_rails['gitlab_email_from']= 'hyteer@126.com'
+gitlab_rails['gitlab_email_reply_to']= '40577190@126.com'
