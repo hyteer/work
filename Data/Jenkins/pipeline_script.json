@@ -1,0 +1,50 @@
+node {
+    stage 'Get Ready'
+    echo 'Stage Get ready'
+}
+node {
+    stage("Build Modules"){
+        parallel(
+            "first-ui": {
+                echo 'test...'
+                //BuildIt ("first-ui")
+            }, 
+            "second-ui": {
+                echo 'test...'
+                //BuildIt ("second-ui")
+            }, 
+            "first-ws": {
+                echo 'test...'
+                //BuildIt ("first-ws")
+            }, 
+            "second-ws": {
+                echo 'test...'
+                //BuildIt ("second-ws")
+            }
+        )
+    }        
+
+}
+node {
+    stage 'Run Tests'
+    //build job: 'YT_WKD_Test', parameters: [[$class: 'LabelParameterValue', name: 'node', label: 'Ubuntu14']]
+    build job: 'YT_WKD_Test';
+}
+node {
+    stage 'Build Documents'
+    echo 'Build sphinx doc'
+    build job: 'YT_WKD_Build_doc';
+}
+/*
+node {
+    
+   // Mark the code checkout 'stage'....
+   stage 'Checkout'
+   echo 'Stage Checkout'
+
+   // Get some code from a GitHub repository
+    //git clone ssh://snsshop@<host>:<port>/workflowLibs.git
+    git([url: 'http://10.100.100.54/snsshop/wkd.git', branch: 'master', credentialsId: '14dfc220-68c4-4e00-9e7c-b9e4dfb26d8f'])
+    sh 'echo "a simple test..."'
+}
+*/
