@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.param.market &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.param.market</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.param.market 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">营销API参数化配置</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">Utils</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+
+
+<div class="viewcode-block" id="MarketParam"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam">[文档]</a><span class="k">class</span> <span class="nc">MarketParam</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.card_coupons_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.card_coupons_add">[文档]</a>    <span class="k">def</span> <span class="nf">card_coupons_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加卡券常用参数表</span>
+
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     字段              类型              默认               描述</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     title              string         随机             卡券标题</span>
+<span class="sd">     start_time        timestamp      当前时间          生效日期</span>
+<span class="sd">     end_time          timestamp      明天              结束日期</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;测试卡券-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;brand_name&quot;</span><span class="p">:</span><span class="s2">&quot;微客联盟&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="n">title</span><span class="p">,</span><span class="s2">&quot;logo_url&quot;</span><span class="p">:</span><span class="s2">&quot;http://imgcache.vikduo.com/static/44ae6a2fae8d1ae7acddc0129dabb128.png&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#55bd47&quot;</span><span class="p">,</span><span class="s2">&quot;date_info_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">,</span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="s2">&quot;999&quot;</span><span class="p">,</span><span class="s2">&quot;get_limit&quot;</span><span class="p">:</span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="s2">&quot;can_give_friend&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;code_type&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;notice&quot;</span><span class="p">:</span><span class="s2">&quot;请出示卡券二维码&quot;</span><span class="p">,</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;使用说明。。。&quot;</span><span class="p">,</span><span class="s2">&quot;service_phone&quot;</span><span class="p">:</span><span class="s2">&quot;13344556677&quot;</span><span class="p">,</span><span class="s2">&quot;card_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;assign&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;wx_card_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;card_money&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;money_limit&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;card_discount&quot;</span><span class="p">:</span><span class="s2">&quot;8.8&quot;</span><span class="p">,</span><span class="s2">&quot;exchange_content_text&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;product_ids&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;deal_detail&quot;</span><span class="p">:</span><span class="s2">&quot;8.8折折扣券1张，全场通用&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.reduction_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.reduction_add">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加满减活动常用参数表</span>
+
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     字段              类型              默认               描述</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     name               string          随机</span>
+<span class="sd">     start_time         timestamp     当前时间          开始时间</span>
+<span class="sd">     end_time           timestamp     明天              到期时间</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;满减-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;is_relate_all&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">,</span><span class="s2">&quot;conditions&quot;</span><span class="p">:[{</span><span class="s2">&quot;condition_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;level&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;condition_min&quot;</span><span class="p">:</span><span class="mi">90000</span><span class="p">,</span><span class="s2">&quot;strategys&quot;</span><span class="p">:[{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">20000</span><span class="p">,</span><span class="s2">&quot;discount&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;point&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;card_type_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;red_packet_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_all_area&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;area_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;area_cn&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;discount&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;point&quot;</span><span class="p">:</span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="s2">&quot;card_type_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;red_packet_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_all_area&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;area_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;area_cn&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}]}],</span><span class="s2">&quot;products&quot;</span><span class="p">:[]}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.cash_redpack_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.cash_redpack_add">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加现金红包常用参数表</span>
+
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     字段              类型              默认               描述</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     name               string         随机</span>
+<span class="sd">     min_value           int            最小金额</span>
+<span class="sd">     max_value           int            最大金额</span>
+<span class="sd">     quantity            int            数量</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;红包-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;act_name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;send_name&quot;</span><span class="p">:</span><span class="s2">&quot;微客联盟&quot;</span><span class="p">,</span><span class="s2">&quot;wishing&quot;</span><span class="p">:</span><span class="s2">&quot;恭喜发财！大吉大利！&quot;</span><span class="p">,</span><span class="s2">&quot;remark&quot;</span><span class="p">:</span><span class="s2">&quot;一个测试红包&quot;</span><span class="p">,</span><span class="s2">&quot;min_value&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;max_value&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="s2">&quot;deleted&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;can_share&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.redpack_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.redpack_add">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加红包活动常用参数表</span>
+
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">    字段              类型              默认               描述</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     name               string          随机             活动名称</span>
+<span class="sd">    start_time          timestamp     当前时间          开始时间</span>
+<span class="sd">    end_time            timestamp     明天              到期时间</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;红包活动-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;activity&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;1. 活动时间：#年#月#日#时 至 #年#月#日#时；</span><span class="se">\n</span><span class="s2">2. 用户进入活动主页抢群红包，分享给好友瓜分群红包，瓜分到的红包金额自动发放到用户的商城账户；</span><span class="se">\n</span><span class="s2">3. 用户必须关注微信公众号才能抢群红包；（打开强制关注后）；</span><span class="se">\n</span><span class="s2">4. 每个用户只能发起一次活动，但可以瓜分不同用户转发的群红包；</span><span class="se">\n</span><span class="s2">5. 瓜分群红包，先到先得，该群红包分完为止；</span><span class="se">\n</span><span class="s2">6. 本活动最终解释权归XX商家所有。&quot;</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">,</span><span class="s2">&quot;share_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="s2">&quot;redPacketEvent&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;red_packet_id&quot;</span><span class="p">:</span><span class="mi">582</span><span class="p">,</span><span class="s2">&quot;num_per_packet&quot;</span><span class="p">:</span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;red_packet_num&quot;</span><span class="p">:</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="s2">&quot;is_attention&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="s2">&quot;shareMessage&quot;</span><span class="p">:{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;拼的是手气，抢的是红包~&quot;</span><span class="p">,</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;#商家店名#发红包啦，不要白不要啊！&quot;</span><span class="p">,</span><span class="s2">&quot;pic_id&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">},</span><span class="s2">&quot;news&quot;</span><span class="p">:{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;拼的是手气，抢的是红包~&quot;</span><span class="p">,</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;亲，点击进入活动主页，意外惊喜等着你！&quot;</span><span class="p">,</span><span class="s2">&quot;document_id&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.activity_points_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.activity_points_add">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加积分活动常用参数表</span>
+
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     字段              类型              默认               描述</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">     name              string          随机             活动名称</span>
+<span class="sd">     start_time        timestamp     当前时间           开始时间</span>
+<span class="sd">     end_time          timestamp     第二天             到期时间</span>
+<span class="sd">    =============     ===========    ============     ===================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;送积分-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;activity&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;expire_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">},</span><span class="s2">&quot;pointsConsumption&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="s2">&quot;points&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;count_type&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;together_buy_flag&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;seckill_flag&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;scan_flag&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;normal_flag&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.smashegg_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.smashegg_add">[文档]</a>    <span class="k">def</span> <span class="nf">smashegg_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加砸金蛋活动参数</span>
+
+<span class="sd">    ===============     ===========    ============     ===================================</span>
+<span class="sd">     字段                类型              默认               描述</span>
+<span class="sd">    ===============     ===========    ============     ===================================</span>
+<span class="sd">     name                string          随机</span>
+<span class="sd">     template            int               4                  活动模板</span>
+<span class="sd">     buy_limit           int</span>
+<span class="sd">     start_time          timestamp      当前时间</span>
+<span class="sd">     end_time            timestamp      第二天</span>
+<span class="sd">     try_limit           int                5                  每日限制</span>
+<span class="sd">     winning_limit       int                2                  中奖限制</span>
+<span class="sd">    ===============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;砸金蛋-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;activity_name&quot;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">&quot;buy_limit&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span>
+            <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="n">end_time</span><span class="p">,</span>
+            <span class="s2">&quot;is_subscribe&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;share_award&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;use_points&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;points_num&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;limit_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;try_limit&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s2">&quot;winning_limit&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;activity_desc&quot;</span><span class="p">:</span> <span class="s2">&quot;砸金蛋活动规则说明...&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][level]&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][type]&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][name]&quot;</span><span class="p">:</span> <span class="s2">&quot;谢谢参与！&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][type_id]&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][prize_pic]&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][documentLib][file_cdn_path]&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][num]&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;prize[0][probability]&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][level]&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][type]&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][name]&quot;</span><span class="p">:</span> <span class="s2">&quot;华为Mate9&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][prize_pic]&quot;</span><span class="p">:</span> <span class="mi">91751</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][documentLib][file_cdn_path]&quot;</span><span class="p">:</span> <span class="s2">&quot;http://imgcache.vikduo.com/static/463ad47a800772aa84aade7879749216.png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][num]&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s2">&quot;prize[1][probability]&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][level]&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][type]&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][name]&quot;</span><span class="p">:</span> <span class="s2">&quot;测试红包&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][type_id]&quot;</span><span class="p">:</span> <span class="mi">405</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][prize_pic]&quot;</span><span class="p">:</span> <span class="mi">91753</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][documentLib][file_cdn_path]&quot;</span><span class="p">:</span> <span class="s2">&quot;http://imgcache.vikduo.com/static/b5e7d2d43dbac650c358c1c2f77e1188.png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][num]&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">&quot;prize[2][probability]&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][level]&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][type]&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][name]&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][prize_pic]&quot;</span><span class="p">:</span> <span class="mi">91752</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][documentLib][file_cdn_path]&quot;</span><span class="p">:</span> <span class="s2">&quot;http://imgcache.vikduo.com/static/8d665aa70eedd30e5ad62edcc7dc4979.png&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][num]&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s2">&quot;prize[3][probability]&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">&quot;is_collect&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;expiry_time&quot;</span><span class="p">:</span> <span class="mi">1579756342</span><span class="p">,</span>
+            <span class="s2">&quot;share_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;startNews[title]&quot;</span><span class="p">:</span> <span class="s2">&quot;一锤定音，开心砸金蛋~&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;startNews[description]&quot;</span><span class="p">:</span> <span class="s2">&quot;亲，点击进入活动主页，意外惊喜等着你！&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;startNews[document_id]&quot;</span><span class="p">:</span> <span class="mi">36791</span><span class="p">,</span>
+            <span class="s2">&quot;shareMessage[title]&quot;</span><span class="p">:</span> <span class="s2">&quot;轻轻一锤，砸出精彩！&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shareMessage[desc]&quot;</span><span class="p">:</span> <span class="s2">&quot;玩抽奖砸金蛋，千万奖品等你来，百分百赢中奖哟~&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;shareMessage[pic_id]&quot;</span><span class="p">:</span> <span class="mi">36790</span><span class="p">,</span>
+            <span class="s2">&quot;marketing_manage_id&quot;</span><span class="p">:</span> <span class="mi">0</span>
+            <span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.togetherBuy_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.togetherBuy_add">[文档]</a>    <span class="k">def</span> <span class="nf">togetherBuy_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;news&quot;</span><span class="p">:{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;成为团长带领小伙伴享受团购价！&quot;</span><span class="p">,</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;拼团活动开始啦，赶紧开团召集小伙伴一起团购吧！&quot;</span><span class="p">,</span><span class="s2">&quot;document_id&quot;</span><span class="p">:</span><span class="mi">187381</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.togetherBuy_goods_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.togetherBuy_goods_add">[文档]</a>    <span class="k">def</span> <span class="nf">togetherBuy_goods_add</span><span class="p">(</span><span class="n">togetherBuyID</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加拼团商品参数</span>
+
+<span class="sd">        ==============     ===========    ============     ===================================</span>
+<span class="sd">         字段              类型              默认               描述</span>
+<span class="sd">        ==============     ===========    ============     ===================================</span>
+<span class="sd">        togetherBuyID      int                                团ID</span>
+<span class="sd">         product_id        int            289888              产品ID</span>
+<span class="sd">        ==============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">product_id</span> <span class="o">=</span> <span class="mi">289888</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;together_buy_id&quot;</span><span class="p">:</span><span class="n">togetherBuyID</span><span class="p">,</span><span class="s2">&quot;product_id&quot;</span><span class="p">:</span><span class="mi">289888</span><span class="p">,</span><span class="s2">&quot;product_sku_id&quot;</span><span class="p">:</span><span class="mi">1171811</span><span class="p">,</span><span class="s2">&quot;buy_price&quot;</span><span class="p">:</span><span class="mi">4900</span><span class="p">,</span><span class="s2">&quot;quota&quot;</span><span class="p">:</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="s2">&quot;limit_buy&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;together_num&quot;</span><span class="p">:</span><span class="s2">&quot;8&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.togetherBuy_edit"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.togetherBuy_edit">[文档]</a>    <span class="k">def</span> <span class="nf">togetherBuy_edit</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        编辑拼团活动参数</span>
+
+<span class="sd">        ==============     ===========    ============     ===================================</span>
+<span class="sd">         字段              类型              示例               描述</span>
+<span class="sd">        ==============     ===========    ============     ===================================</span>
+<span class="sd">         name               随机</span>
+<span class="sd">         id                 int            2873              活动ID</span>
+<span class="sd">         start_time         timestamp     1484197822         开始时间</span>
+<span class="sd">         end_time           timestamp     1578805824         结束时间</span>
+<span class="sd">        ==============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;拼团活动-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;activity&quot;</span><span class="p">:{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="nb">id</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;1. 活动时间：#年#月#日#时 至 #年#月#日#时；</span><span class="se">\n</span><span class="s2">2. 团长：开团且该团第一位支付成功的人</span><span class="se">\n</span><span class="s2">3. 参加成员：通过团长邀请购买该商品的成员即为参团成员，参团成员也可邀请更多的成员参团</span><span class="se">\n</span><span class="s2">4. 退款说明：若拼团失败系统会将支付的金额返还至参团成员的支付账号中</span><span class="se">\n</span><span class="s2">5. 拼团是基于好友的组团购买，获取团购优惠，为了保证广大消费者的权益，商家有权判定为黄牛倒货的团解散并取消订单&quot;</span><span class="p">,</span><span class="s2">&quot;expire_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;postage_setting_id&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">,</span><span class="s2">&quot;share_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="s2">&quot;togetherBuy&quot;</span><span class="p">:{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">815</span><span class="p">,</span><span class="s2">&quot;is_agree&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;is_discount&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;is_time_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;head_price&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;time_limit&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;is_open&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;is_more&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;is_auto_share&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;auth_icons&quot;</span><span class="p">:[],</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">},</span><span class="s2">&quot;shareMessage&quot;</span><span class="p">:{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;爱拼才会赢抱团才优惠&quot;</span><span class="p">,</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;参与拼团召集小伙伴，一起静享团购优惠&quot;</span><span class="p">,</span><span class="s2">&quot;pic_id&quot;</span><span class="p">:</span><span class="mi">187380</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.second_kill_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.second_kill_add">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加秒杀活动参数</span>
+
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">        字段              类型              默认               描述</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">         title               string          随机</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;只要一秒时间，顺手就捡个便宜!-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;news&quot;</span><span class="p">:{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="n">title</span><span class="p">,</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;秒杀进行时，走过路过不容错过，随手一点，没准捡个大便宜呢~&quot;</span><span class="p">,</span><span class="s2">&quot;document_id&quot;</span><span class="p">:</span><span class="mi">1336962</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MarketParam.second_kill_edit"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MarketParam.second_kill_edit">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_edit</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        编辑秒杀活动参数</span>
+
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">        字段              类型              示例               描述</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">         name</span>
+<span class="sd">         id                 int            2873              活动ID</span>
+<span class="sd">        start_time          timestamp     1484197822         开始时间</span>
+<span class="sd">        end_time            timestamp     1578805824         结束时间</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;秒杀活动-&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;activity&quot;</span><span class="p">:{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="nb">id</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;1. 活动时间：#年#月#日#时 至 #年#月#日#时；</span><span class="se">\n</span><span class="s2">2. 当秒杀开始后，选择中意的商品，点击抢购按钮即可参与秒杀；</span><span class="se">\n</span><span class="s2">3. 实物商品在秒杀结束后统一配送，请您耐心等待！</span><span class="se">\n</span><span class="s2">4. 本活动最终解释权归XX商家所有。&quot;</span><span class="p">,</span><span class="s2">&quot;expire_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;postage_setting_id&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">,</span><span class="s2">&quot;share_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="s2">&quot;secondKill&quot;</span><span class="p">:{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">846</span><span class="p">},</span><span class="s2">&quot;shareMessage&quot;</span><span class="p">:{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;只要一秒时间，顺手就捡个便宜！&quot;</span><span class="p">,</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;秒杀进行时，走过路过不容错过，随手一点，没准捡个大便宜呢~&quot;</span><span class="p">,</span><span class="s2">&quot;pic_id&quot;</span><span class="p">:</span><span class="mi">1336961</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

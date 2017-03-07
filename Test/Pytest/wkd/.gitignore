@@ -1,0 +1,21 @@
+# Object file
+*.o
+
+# Ada Library Information
+*.ali
+*.pyc
+*.bat
+*debug*
+**/.cache/**
+**/__pycache__/**
+**/report/**
+**/reports/**
+
+
+#IDE metadata
+**/.idea/**
+
+# Modules
+node_modules
+**/venv/**
+**/env/**

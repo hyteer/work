@@ -1,0 +1,1137 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.api package &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="搜索" href="search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">lib.api package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-lib.api.generic">lib.api.generic module</a></li>
+<li><a class="reference internal" href="#module-lib.api.market">lib.api.market module</a></li>
+<li><a class="reference internal" href="#module-lib.api.member">lib.api.member module</a></li>
+<li><a class="reference internal" href="#module-lib.api.myvkd">lib.api.myvkd module</a></li>
+<li><a class="reference internal" href="#module-lib.api.shop">lib.api.shop module</a></li>
+<li><a class="reference internal" href="#module-lib.api.terminal">lib.api.terminal module</a></li>
+<li><a class="reference internal" href="#module-lib.api.weixin">lib.api.weixin module</a></li>
+<li><a class="reference internal" href="#module-lib.api">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>lib.api package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lib.api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lib-api-package">
+<h1>lib.api package<a class="headerlink" href="#lib-api-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-lib.api.generic">
+<span id="lib-api-generic-module"></span><h2>lib.api.generic module<a class="headerlink" href="#module-lib.api.generic" title="永久链接至标题">¶</a></h2>
+<p>API库通用功能函数</p>
+<dl class="class">
+<dt id="lib.api.generic.Generic">
+<em class="property">class </em><code class="descclassname">lib.api.generic.</code><code class="descname">Generic</code><a class="reference internal" href="_modules/lib/api/generic.html#Generic"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.generic.Generic" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="lib.api.generic.Generic.post_requests">
+<em class="property">static </em><code class="descname">post_requests</code><span class="sig-paren">(</span><em>conf</em>, <em>url</em>, <em>data=None</em>, <em>id=None</em>, <em>page=False</em>, <em>header='json'</em>, <em>terminal=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/generic.html#Generic.post_requests"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.generic.Generic.post_requests" title="永久链接至目标">¶</a></dt>
+<dd><p>通用Post请求函数封装
+:param conf:
+:param url:
+:param data:
+:param id:
+:param page:
+:param header:
+:return:content</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.api.generic.Generic.wx_post_requests">
+<em class="property">static </em><code class="descname">wx_post_requests</code><span class="sig-paren">(</span><em>conf</em>, <em>url</em>, <em>data=None</em>, <em>id=None</em>, <em>page=False</em>, <em>header='json'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/generic.html#Generic.wx_post_requests"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.generic.Generic.wx_post_requests" title="永久链接至目标">¶</a></dt>
+<dd><p>微信前端通用Post请求函数封装
+:param conf:
+:param url:
+:param data:
+:param id:
+:param page:
+:param header:
+:return:content</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api.market">
+<span id="lib-api-market-module"></span><h2>lib.api.market module<a class="headerlink" href="#module-lib.api.market" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="lib.api.market.Market">
+<em class="property">class </em><code class="descclassname">lib.api.market.</code><code class="descname">Market</code><a class="reference internal" href="_modules/lib/api/market.html#Market"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>市场营销模块</p>
+<dl class="method">
+<dt id="lib.api.market.Market.activity_points_add">
+<code class="descname">activity_points_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.activity_points_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.activity_points_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.activity_points_close">
+<code class="descname">activity_points_close</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.activity_points_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.activity_points_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.activity_points_del">
+<code class="descname">activity_points_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.activity_points_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.activity_points_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.activity_points_list">
+<code class="descname">activity_points_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.activity_points_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.activity_points_list" title="永久链接至目标">¶</a></dt>
+<dd><p>积分活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.activity_points_open">
+<code class="descname">activity_points_open</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.activity_points_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.activity_points_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.card_coupons_add">
+<code class="descname">card_coupons_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.card_coupons_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.card_coupons_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加卡券</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.card_coupons_del">
+<code class="descname">card_coupons_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.card_coupons_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.card_coupons_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除卡券</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.card_coupons_list">
+<code class="descname">card_coupons_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.card_coupons_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.card_coupons_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取卡券列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.card_coupons_send">
+<code class="descname">card_coupons_send</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.card_coupons_send"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.card_coupons_send" title="永久链接至目标">¶</a></dt>
+<dd><p>派发卡券</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.cash_redpack_add">
+<code class="descname">cash_redpack_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.cash_redpack_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.cash_redpack_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加现金红包</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.cash_redpack_close">
+<code class="descname">cash_redpack_close</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.cash_redpack_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.cash_redpack_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭现金红包</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.cash_redpack_del">
+<code class="descname">cash_redpack_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.cash_redpack_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.cash_redpack_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除现金红包</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.cash_redpack_list">
+<code class="descname">cash_redpack_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.cash_redpack_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.cash_redpack_list" title="永久链接至目标">¶</a></dt>
+<dd><p>现金红包列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.cash_redpack_open">
+<code class="descname">cash_redpack_open</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.cash_redpack_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.cash_redpack_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启现金红包</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.collect_zan_list">
+<code class="descname">collect_zan_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.collect_zan_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.collect_zan_list" title="永久链接至目标">¶</a></dt>
+<dd><p>众筹活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.market_activity_add">
+<code class="descname">market_activity_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.market_activity_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.market_activity_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加推广活动（注：砸金蛋、大转盘、众筹等推广活动添加为同一接口）</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_add">
+<code class="descname">redpack_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加商城红包活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_close">
+<code class="descname">redpack_close</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭商城红包活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_del">
+<code class="descname">redpack_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商城红包活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_list">
+<code class="descname">redpack_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_list" title="永久链接至目标">¶</a></dt>
+<dd><p>商城红包活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_manage_add">
+<code class="descname">redpack_manage_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_manage_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_manage_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加商城红包</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_manage_del">
+<code class="descname">redpack_manage_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_manage_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_manage_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商城红包</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_manage_list">
+<code class="descname">redpack_manage_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_manage_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_manage_list" title="永久链接至目标">¶</a></dt>
+<dd><p>商城红包列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.redpack_open">
+<code class="descname">redpack_open</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.redpack_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.redpack_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启商城红包活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.reduction_add">
+<code class="descname">reduction_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.reduction_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.reduction_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加满减活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.reduction_close">
+<code class="descname">reduction_close</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.reduction_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.reduction_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭满减活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.reduction_del">
+<code class="descname">reduction_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.reduction_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.reduction_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除满减活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.reduction_list">
+<code class="descname">reduction_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.reduction_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.reduction_list" title="永久链接至目标">¶</a></dt>
+<dd><p>满减活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.reduction_open">
+<code class="descname">reduction_open</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.reduction_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.reduction_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启满减活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.second_kill_add">
+<code class="descname">second_kill_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.second_kill_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.second_kill_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加秒杀活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.second_kill_close">
+<code class="descname">second_kill_close</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.second_kill_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.second_kill_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭秒杀活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.second_kill_del">
+<code class="descname">second_kill_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.second_kill_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.second_kill_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除秒杀活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.second_kill_edit">
+<code class="descname">second_kill_edit</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.second_kill_edit"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.second_kill_edit" title="永久链接至目标">¶</a></dt>
+<dd><p>编辑秒杀活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.second_kill_list">
+<code class="descname">second_kill_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.second_kill_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.second_kill_list" title="永久链接至目标">¶</a></dt>
+<dd><p>秒杀活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.second_kill_open">
+<code class="descname">second_kill_open</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.second_kill_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.second_kill_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启秒杀活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.smashegg_close">
+<code class="descname">smashegg_close</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.smashegg_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.smashegg_close" title="永久链接至目标">¶</a></dt>
+<dd><p>闭关积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.smashegg_del">
+<code class="descname">smashegg_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.smashegg_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.smashegg_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.smashegg_list">
+<code class="descname">smashegg_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.smashegg_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.smashegg_list" title="永久链接至目标">¶</a></dt>
+<dd><p>砸金蛋活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.smashegg_open">
+<code class="descname">smashegg_open</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.smashegg_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.smashegg_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启积分活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.togetherBuy_add">
+<code class="descname">togetherBuy_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.togetherBuy_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.togetherBuy_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加拼团活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.togetherBuy_edit">
+<code class="descname">togetherBuy_edit</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.togetherBuy_edit"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.togetherBuy_edit" title="永久链接至目标">¶</a></dt>
+<dd><p>拼团活动编辑</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.togetherBuy_goods_add">
+<code class="descname">togetherBuy_goods_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.togetherBuy_goods_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.togetherBuy_goods_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加拼团活动商品</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.market.Market.together_buy_list">
+<code class="descname">together_buy_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/market.html#Market.together_buy_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.market.Market.together_buy_list" title="永久链接至目标">¶</a></dt>
+<dd><p>拼团活动列表</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api.member">
+<span id="lib-api-member-module"></span><h2>lib.api.member module<a class="headerlink" href="#module-lib.api.member" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="lib.api.member.Member">
+<em class="property">class </em><code class="descclassname">lib.api.member.</code><code class="descname">Member</code><a class="reference internal" href="_modules/lib/api/member.html#Member"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>会员模块相关接口</p>
+<dl class="method">
+<dt id="lib.api.member.Member.discounted_product_settings">
+<code class="descname">discounted_product_settings</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.discounted_product_settings"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.discounted_product_settings" title="永久链接至目标">¶</a></dt>
+<dd><p>会员折扣优惠共享设置</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.edit_shop_member_setting">
+<code class="descname">edit_shop_member_setting</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.edit_shop_member_setting"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.edit_shop_member_setting" title="永久链接至目标">¶</a></dt>
+<dd><p>会员折扣优惠共享设置</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.get_grade_ajax">
+<code class="descname">get_grade_ajax</code><span class="sig-paren">(</span><em>conf</em>, <em>points</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.get_grade_ajax"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.get_grade_ajax" title="永久链接至目标">¶</a></dt>
+<dd><p>获取等级信息</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_card_statisticst">
+<code class="descname">member_card_statisticst</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_card_statisticst"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_card_statisticst" title="永久链接至目标">¶</a></dt>
+<dd><p>会员卡投放统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_detail">
+<code class="descname">member_detail</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_detail"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_detail" title="永久链接至目标">¶</a></dt>
+<dd><p>客户详情</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_group_add">
+<code class="descname">member_group_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_group_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_group_add" title="永久链接至目标">¶</a></dt>
+<dd><p>客户分组列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_group_del">
+<code class="descname">member_group_del</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_group_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_group_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除客户分组
+注：该接口暂无效，待确认</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_group_list">
+<code class="descname">member_group_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_group_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_group_list" title="永久链接至目标">¶</a></dt>
+<dd><p>客户分组列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_last_count">
+<code class="descname">member_last_count</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_last_count"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_last_count" title="永久链接至目标">¶</a></dt>
+<dd><p>会员统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_list">
+<code class="descname">member_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_list" title="永久链接至目标">¶</a></dt>
+<dd><p>客户列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.member_point_list">
+<code class="descname">member_point_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.member_point_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.member_point_list" title="永久链接至目标">¶</a></dt>
+<dd><p>会员积分列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_add_import">
+<code class="descname">members_add_import</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_add_import"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_add_import" title="永久链接至目标">¶</a></dt>
+<dd><p>实体店会员统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_add_tag_ajax">
+<code class="descname">members_add_tag_ajax</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_add_tag_ajax"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_add_tag_ajax" title="永久链接至目标">¶</a></dt>
+<dd><p>标签管理</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_detail">
+<code class="descname">members_detail</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_detail"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_detail" title="永久链接至目标">¶</a></dt>
+<dd><p>会员详情</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_find_tag_ajax">
+<code class="descname">members_find_tag_ajax</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_find_tag_ajax"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_find_tag_ajax" title="永久链接至目标">¶</a></dt>
+<dd><p>标签列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_list">
+<code class="descname">members_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_list" title="永久链接至目标">¶</a></dt>
+<dd><p>会员列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_offline">
+<code class="descname">members_offline</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_offline"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_offline" title="永久链接至目标">¶</a></dt>
+<dd><p>实体店会员统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.member.Member.members_order_list">
+<code class="descname">members_order_list</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/member.html#Member.members_order_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.member.Member.members_order_list" title="永久链接至目标">¶</a></dt>
+<dd><p>客户消费记录</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api.myvkd">
+<span id="lib-api-myvkd-module"></span><h2>lib.api.myvkd module<a class="headerlink" href="#module-lib.api.myvkd" title="永久链接至标题">¶</a></h2>
+<p>Created on 2017��1��12��</p>
+<p>&#64;author: binwangdai</p>
+<dl class="class">
+<dt id="lib.api.myvkd.MyVkd">
+<em class="property">class </em><code class="descclassname">lib.api.myvkd.</code><code class="descname">MyVkd</code><a class="reference internal" href="_modules/lib/api/myvkd.html#MyVkd"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.myvkd.MyVkd" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>微店铺模块相关接口</p>
+<dl class="method">
+<dt id="lib.api.myvkd.MyVkd.image">
+<code class="descname">image</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/myvkd.html#MyVkd.image"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.myvkd.MyVkd.image" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api.shop">
+<span id="lib-api-shop-module"></span><h2>lib.api.shop module<a class="headerlink" href="#module-lib.api.shop" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="lib.api.shop.Shop">
+<em class="property">class </em><code class="descclassname">lib.api.shop.</code><code class="descname">Shop</code><a class="reference internal" href="_modules/lib/api/shop.html#Shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>店铺接口</p>
+<dl class="method">
+<dt id="lib.api.shop.Shop.add_used_address">
+<code class="descname">add_used_address</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.add_used_address"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.add_used_address" title="永久链接至目标">¶</a></dt>
+<dd><p>添加常用地址</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.category_add">
+<code class="descname">category_add</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.category_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.category_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加商品分类</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.category_del">
+<code class="descname">category_del</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.category_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.category_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商品分类</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.category_list">
+<code class="descname">category_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.category_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.category_list" title="永久链接至目标">¶</a></dt>
+<dd><p>商品分类</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.comment_del">
+<code class="descname">comment_del</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.comment_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.comment_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商品评论</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.comment_list">
+<code class="descname">comment_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.comment_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.comment_list" title="永久链接至目标">¶</a></dt>
+<dd><p>商品评论列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.comment_without_user">
+<code class="descname">comment_without_user</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.comment_without_user"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.comment_without_user" title="永久链接至目标">¶</a></dt>
+<dd><p>添加商品评论</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.get_shop">
+<code class="descname">get_shop</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.get_shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.get_shop" title="永久链接至目标">¶</a></dt>
+<dd><p>获取商家信息</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.get_used_address_list">
+<code class="descname">get_used_address_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.get_used_address_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.get_used_address_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取常用地址列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.kind_add">
+<code class="descname">kind_add</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.kind_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.kind_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加商品规格</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.kind_del">
+<code class="descname">kind_del</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.kind_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.kind_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商品规格</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.kind_list">
+<code class="descname">kind_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.kind_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.kind_list" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.order_list">
+<code class="descname">order_list</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.order_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.order_list" title="永久链接至目标">¶</a></dt>
+<dd><p>订单列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.product_add">
+<code class="descname">product_add</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.product_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.product_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加商品</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.product_check">
+<code class="descname">product_check</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.product_check"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.product_check" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商品检查渠道商是否在使用</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.product_del">
+<code class="descname">product_del</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.product_del"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.product_del" title="永久链接至目标">¶</a></dt>
+<dd><p>删除商品</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.product_list">
+<code class="descname">product_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.product_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.product_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取商品列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.product_off_sale">
+<code class="descname">product_off_sale</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.product_off_sale"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.product_off_sale" title="永久链接至目标">¶</a></dt>
+<dd><p>下架商品</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.product_on_sale">
+<code class="descname">product_on_sale</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.product_on_sale"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.product_on_sale" title="永久链接至目标">¶</a></dt>
+<dd><p>上架商品</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.refund_list">
+<code class="descname">refund_list</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.refund_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.refund_list" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.shipping_order_type_status_update">
+<code class="descname">shipping_order_type_status_update</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.shipping_order_type_status_update"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.shipping_order_type_status_update" title="永久链接至目标">¶</a></dt>
+<dd><p>配送方式对（普通订单，秒杀，拼团，积分商城等类型订单单独适配）</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.shipping_status_update">
+<code class="descname">shipping_status_update</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.shipping_status_update"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.shipping_status_update" title="永久链接至目标">¶</a></dt>
+<dd><p>更新商品配送设置（自提&amp;快递）</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.shop_order_auto_settings">
+<code class="descname">shop_order_auto_settings</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.shop_order_auto_settings"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.shop_order_auto_settings" title="永久链接至目标">¶</a></dt>
+<dd><p>更新订单自动任务设置信息(交易设置)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.shop.Shop.update_used_address">
+<code class="descname">update_used_address</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/shop.html#Shop.update_used_address"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.shop.Shop.update_used_address" title="永久链接至目标">¶</a></dt>
+<dd><p>更新某条常用地址</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api.terminal">
+<span id="lib-api-terminal-module"></span><h2>lib.api.terminal module<a class="headerlink" href="#module-lib.api.terminal" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="lib.api.terminal.Terminal">
+<em class="property">class </em><code class="descclassname">lib.api.terminal.</code><code class="descname">Terminal</code><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="docutils">
+<dt>接口列表：</dt>
+<dd><ul class="first last simple">
+<li>获取分店列表</li>
+<li>添加分店</li>
+<li>删除分店</li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.aftersale_statistics_by_staff">
+<code class="descname">aftersale_statistics_by_staff</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.aftersale_statistics_by_staff"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.aftersale_statistics_by_staff" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按员工统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.aftersales_statistics_by_shop">
+<code class="descname">aftersales_statistics_by_shop</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.aftersales_statistics_by_shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.aftersales_statistics_by_shop" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按门店统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.customer_statistics_by_shop">
+<code class="descname">customer_statistics_by_shop</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.customer_statistics_by_shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.customer_statistics_by_shop" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按门店统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.customer_statistics_by_staff">
+<code class="descname">customer_statistics_by_staff</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.customer_statistics_by_staff"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.customer_statistics_by_staff" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按员工统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.main_sub_close">
+<code class="descname">main_sub_close</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.main_sub_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.main_sub_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭分店店铺模式</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.main_sub_open">
+<code class="descname">main_sub_open</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.main_sub_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.main_sub_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启分店店铺模式</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.member_statistics_by_shop">
+<code class="descname">member_statistics_by_shop</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.member_statistics_by_shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.member_statistics_by_shop" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按门店统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.member_statistics_by_staff">
+<code class="descname">member_statistics_by_staff</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.member_statistics_by_staff"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.member_statistics_by_staff" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按员工统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.order_statistics_by_shop">
+<code class="descname">order_statistics_by_shop</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.order_statistics_by_shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.order_statistics_by_shop" title="永久链接至目标">¶</a></dt>
+<dd><p>根据门店统计订单、对账单统计、结算信息</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.order_statistics_by_staff">
+<code class="descname">order_statistics_by_staff</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.order_statistics_by_staff"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.order_statistics_by_staff" title="永久链接至目标">¶</a></dt>
+<dd><p>根据员工统计订单、对账单统计、结算信息</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.product_list">
+<code class="descname">product_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.product_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.product_list" title="永久链接至目标">¶</a></dt>
+<dd><p>分店商品列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.promotion_statistics_by_promoter">
+<code class="descname">promotion_statistics_by_promoter</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.promotion_statistics_by_promoter"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.promotion_statistics_by_promoter" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按员工统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.promotion_statistics_by_shop">
+<code class="descname">promotion_statistics_by_shop</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.promotion_statistics_by_shop"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.promotion_statistics_by_shop" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按门店统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.promotion_statistics_by_staff">
+<code class="descname">promotion_statistics_by_staff</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.promotion_statistics_by_staff"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.promotion_statistics_by_staff" title="永久链接至目标">¶</a></dt>
+<dd><p>售后订单按员工统计</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.reduction_staff_list">
+<code class="descname">reduction_staff_list</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.reduction_staff_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.reduction_staff_list" title="永久链接至目标">¶</a></dt>
+<dd><p>已选择的员工</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.reduction_store_list">
+<code class="descname">reduction_store_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.reduction_store_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.reduction_store_list" title="永久链接至目标">¶</a></dt>
+<dd><p>已选择的门店（包含代理商终端店信息）</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.set_main_sub">
+<code class="descname">set_main_sub</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.set_main_sub"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.set_main_sub" title="永久链接至目标">¶</a></dt>
+<dd><p>设置默认分店</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.single_setting_close">
+<code class="descname">single_setting_close</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.single_setting_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.single_setting_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭分店独立库存和价格</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.single_setting_open">
+<code class="descname">single_setting_open</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.single_setting_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.single_setting_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启分店独立库存和价格</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_list">
+<code class="descname">staff_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_list" title="永久链接至目标">¶</a></dt>
+<dd><p>分店员工列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_pay_refund_close">
+<code class="descname">staff_pay_refund_close</code><span class="sig-paren">(</span><em>conf</em>, <em>staffID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_pay_refund_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_pay_refund_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭员工退款权限</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_pay_refund_open">
+<code class="descname">staff_pay_refund_open</code><span class="sig-paren">(</span><em>conf</em>, <em>staffID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_pay_refund_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_pay_refund_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启员工退款权限</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_reduction_add">
+<code class="descname">staff_reduction_add</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_reduction_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_reduction_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加员工收款码满减送</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_reduction_close">
+<code class="descname">staff_reduction_close</code><span class="sig-paren">(</span><em>conf</em>, <em>reductionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_reduction_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_reduction_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭分店收款码满减送活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_reduction_delete">
+<code class="descname">staff_reduction_delete</code><span class="sig-paren">(</span><em>conf</em>, <em>reductionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_reduction_delete"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_reduction_delete" title="永久链接至目标">¶</a></dt>
+<dd><p>删除员工收款码满减送</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_reduction_list">
+<code class="descname">staff_reduction_list</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_reduction_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_reduction_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取员工满减活动列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_reduction_open">
+<code class="descname">staff_reduction_open</code><span class="sig-paren">(</span><em>conf</em>, <em>reductionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_reduction_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_reduction_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启分店收款码满减送活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_scan_pay_close">
+<code class="descname">staff_scan_pay_close</code><span class="sig-paren">(</span><em>conf</em>, <em>staffID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_scan_pay_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_scan_pay_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭员工收款码</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.staff_scan_pay_open">
+<code class="descname">staff_scan_pay_open</code><span class="sig-paren">(</span><em>conf</em>, <em>staffID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.staff_scan_pay_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.staff_scan_pay_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启员工收款码</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.statement_find_push_record">
+<code class="descname">statement_find_push_record</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.statement_find_push_record"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.statement_find_push_record" title="永久链接至目标">¶</a></dt>
+<dd><p>消息推送记录</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.statement_hq">
+<code class="descname">statement_hq</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.statement_hq"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.statement_hq" title="永久链接至目标">¶</a></dt>
+<dd><p>总部结算</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.statement_sub">
+<code class="descname">statement_sub</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.statement_sub"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.statement_sub" title="永久链接至目标">¶</a></dt>
+<dd><p>分店独立结算</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.sub_product_update">
+<code class="descname">sub_product_update</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.sub_product_update"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.sub_product_update" title="永久链接至目标">¶</a></dt>
+<dd><p>更新分店商品配送与上下架信息</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.sub_shop_product_list">
+<code class="descname">sub_shop_product_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.sub_shop_product_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.sub_shop_product_list" title="永久链接至目标">¶</a></dt>
+<dd><p>分店商品设置</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.sub_sku_arr_update">
+<code class="descname">sub_sku_arr_update</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.sub_sku_arr_update"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.sub_sku_arr_update" title="永久链接至目标">¶</a></dt>
+<dd><p>更新分店商品库存</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_add">
+<code class="descname">terminal_add</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加分店</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_list">
+<code class="descname">terminal_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_list" title="永久链接至目标">¶</a></dt>
+<dd><p>获取分店列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_reduction_add">
+<code class="descname">terminal_reduction_add</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_reduction_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_reduction_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加分店收款码满减送活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_reduction_close">
+<code class="descname">terminal_reduction_close</code><span class="sig-paren">(</span><em>conf</em>, <em>reductionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_reduction_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_reduction_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭分店收款码满减送活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_reduction_delete">
+<code class="descname">terminal_reduction_delete</code><span class="sig-paren">(</span><em>conf</em>, <em>reductionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_reduction_delete"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_reduction_delete" title="永久链接至目标">¶</a></dt>
+<dd><p>删除门店满减活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_reduction_list">
+<code class="descname">terminal_reduction_list</code><span class="sig-paren">(</span><em>conf</em>, <em>args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_reduction_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_reduction_list" title="永久链接至目标">¶</a></dt>
+<dd><p>分店收款码满减送列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_reduction_open">
+<code class="descname">terminal_reduction_open</code><span class="sig-paren">(</span><em>conf</em>, <em>reductionID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_reduction_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_reduction_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启分店收款码满减送活动</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_scan_pay_close">
+<code class="descname">terminal_scan_pay_close</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_scan_pay_close"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_scan_pay_close" title="永久链接至目标">¶</a></dt>
+<dd><p>关闭收款码</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.terminal.Terminal.terminal_scan_pay_open">
+<code class="descname">terminal_scan_pay_open</code><span class="sig-paren">(</span><em>conf</em>, <em>shopID</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/terminal.html#Terminal.terminal_scan_pay_open"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.terminal.Terminal.terminal_scan_pay_open" title="永久链接至目标">¶</a></dt>
+<dd><p>开启收款码</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api.weixin">
+<span id="lib-api-weixin-module"></span><h2>lib.api.weixin module<a class="headerlink" href="#module-lib.api.weixin" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="lib.api.weixin.Weixin">
+<em class="property">class </em><code class="descclassname">lib.api.weixin.</code><code class="descname">Weixin</code><a class="reference internal" href="_modules/lib/api/weixin.html#Weixin"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.weixin.Weixin" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>微信前端相关接口</p>
+<dl class="method">
+<dt id="lib.api.weixin.Weixin.order_add">
+<code class="descname">order_add</code><span class="sig-paren">(</span><em>conf</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/weixin.html#Weixin.order_add"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.weixin.Weixin.order_add" title="永久链接至目标">¶</a></dt>
+<dd><p>添加普通订单</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.weixin.Weixin.product_category_list">
+<code class="descname">product_category_list</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/weixin.html#Weixin.product_category_list"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.weixin.Weixin.product_category_list" title="永久链接至目标">¶</a></dt>
+<dd><p>商品列表</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.api.weixin.Weixin.product_get_detail">
+<code class="descname">product_get_detail</code><span class="sig-paren">(</span><em>conf</em>, <em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/api/weixin.html#Weixin.product_get_detail"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.api.weixin.Weixin.product_get_detail" title="永久链接至目标">¶</a></dt>
+<dd><p>商品详情</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.api">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lib.api" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

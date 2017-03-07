@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.api.shop &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.api.shop</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.api.shop 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1">#coding:utf-8</span>
+
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+
+
+<div class="viewcode-block" id="Shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop">[文档]</a><span class="k">class</span> <span class="nc">Shop</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    店铺接口</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1">##########################店铺###################################</span>
+<div class="viewcode-block" id="Shop.get_shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.get_shop">[文档]</a>    <span class="k">def</span> <span class="nf">get_shop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        获取商家信息</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/get-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span></div>
+    <span class="c1">###########################商品库##################################</span>
+<div class="viewcode-block" id="Shop.product_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.product_list">[文档]</a>    <span class="k">def</span> <span class="nf">product_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        获取商品列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/product/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.product_on_sale"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.product_on_sale">[文档]</a>    <span class="k">def</span> <span class="nf">product_on_sale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">                上架商品</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">uri</span> <span class="o">=</span> <span class="s1">&#39;/product/on-sale-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.product_off_sale"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.product_off_sale">[文档]</a>    <span class="k">def</span> <span class="nf">product_off_sale</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        下架商品</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">uri</span> <span class="o">=</span> <span class="s2">&quot;/product/off-sale-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.product_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.product_add">[文档]</a>    <span class="k">def</span> <span class="nf">product_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加商品</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/product/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.product_check"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.product_check">[文档]</a>    <span class="k">def</span> <span class="nf">product_check</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商品检查渠道商是否在使用</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/product/check-product-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+<div class="viewcode-block" id="Shop.product_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.product_del">[文档]</a>    <span class="k">def</span> <span class="nf">product_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商品</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/product/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="c1">############################商品分类###############################</span>
+<div class="viewcode-block" id="Shop.category_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.category_list">[文档]</a>    <span class="k">def</span> <span class="nf">category_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        商品分类</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/category-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.category_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.category_add">[文档]</a>    <span class="k">def</span> <span class="nf">category_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加商品分类</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/category-add-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.category_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.category_del">[文档]</a>    <span class="k">def</span> <span class="nf">category_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商品分类</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/category-del-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+    
+    <span class="c1">################################商品规格##############################</span>
+<div class="viewcode-block" id="Shop.kind_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.kind_list">[文档]</a>    <span class="k">def</span> <span class="nf">kind_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/kind-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.kind_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.kind_add">[文档]</a>    <span class="k">def</span> <span class="nf">kind_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加商品规格</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/kind-add-ajax&#39;</span>
+        <span class="k">return</span>  <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.kind_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.kind_del">[文档]</a>    <span class="k">def</span> <span class="nf">kind_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商品规格</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/kind-del-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="c1">##############################商品评论###############################</span>
+<div class="viewcode-block" id="Shop.comment_without_user"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.comment_without_user">[文档]</a>    <span class="k">def</span> <span class="nf">comment_without_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加商品评论</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/comment-without-user&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.comment_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.comment_list">[文档]</a>    <span class="k">def</span> <span class="nf">comment_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        商品评论列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/comment-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.comment_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.comment_del">[文档]</a>    <span class="k">def</span> <span class="nf">comment_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商品评论</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/product/comment-del-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+    <span class="c1">############################订单################################</span>
+<div class="viewcode-block" id="Shop.order_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.order_list">[文档]</a>    <span class="k">def</span> <span class="nf">order_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        订单列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/order/list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.refund_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.refund_list">[文档]</a>    <span class="k">def</span> <span class="nf">refund_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/order/refund-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+    <span class="c1">########################店铺设置##################################</span>
+<div class="viewcode-block" id="Shop.shop_order_auto_settings"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.shop_order_auto_settings">[文档]</a>    <span class="k">def</span> <span class="nf">shop_order_auto_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        更新订单自动任务设置信息(交易设置)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/update-shop-order-auto-settings-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.shipping_order_type_status_update"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.shipping_order_type_status_update">[文档]</a>    <span class="k">def</span> <span class="nf">shipping_order_type_status_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        配送方式对（普通订单，秒杀，拼团，积分商城等类型订单单独适配）</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/shipping-order-type-status-update&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.shipping_status_update"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.shipping_status_update">[文档]</a>    <span class="k">def</span> <span class="nf">shipping_status_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        更新商品配送设置（自提&amp;快递）</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/shipping-status-update&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.get_used_address_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.get_used_address_list">[文档]</a>    <span class="k">def</span> <span class="nf">get_used_address_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        获取常用地址列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/get-used-address-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.add_used_address"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.add_used_address">[文档]</a>    <span class="k">def</span> <span class="nf">add_used_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span> <span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加常用地址</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/add-used-address-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Shop.update_used_address"><a class="viewcode-back" href="../../../lib.api.html#lib.api.shop.Shop.update_used_address">[文档]</a>    <span class="k">def</span> <span class="nf">update_used_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        更新某条常用地址</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/update-used-address-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div></div>
+        
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

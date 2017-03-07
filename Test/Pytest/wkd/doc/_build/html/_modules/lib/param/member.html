@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.param.member &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.param.member</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.param.member 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">会员API参数化配置</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="kn">from</span> <span class="nn">utils</span> <span class="k">import</span> <span class="n">Utils</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+
+<div class="viewcode-block" id="MemberParam"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam">[文档]</a><span class="k">class</span> <span class="nc">MemberParam</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.member_group_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.member_group_add">[文档]</a>    <span class="k">def</span> <span class="nf">member_group_add</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加客户分组常用参数表</span>
+
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">         字段              类型              默认               描述</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">         group_name        中文字符        随机             分组名称</span>
+<span class="sd">         sort              int             随机(0-4)        排序</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">group_name</span> <span class="o">=</span> <span class="s2">&quot;测试&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_cn_str</span><span class="p">()</span>
+        <span class="n">sort</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;group_name&quot;</span><span class="p">:</span><span class="n">group_name</span><span class="p">,</span><span class="s2">&quot;sort&quot;</span><span class="p">:</span><span class="n">sort</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.card_coupons_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.card_coupons_add">[文档]</a>    <span class="k">def</span> <span class="nf">card_coupons_add</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">title</span> <span class="o">==</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;测试卡&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;brand_name&quot;</span><span class="p">:</span><span class="s2">&quot;微客联盟&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="n">title</span><span class="p">,</span><span class="s2">&quot;logo_url&quot;</span><span class="p">:</span><span class="s2">&quot;http://imgcache.vikduo.com/static/44ae6a2fae8d1ae7acddc0129dabb128.png&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#55bd47&quot;</span><span class="p">,</span><span class="s2">&quot;date_info_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;begin&quot;</span><span class="p">:</span><span class="mi">1483977600</span><span class="p">,</span><span class="s2">&quot;end&quot;</span><span class="p">:</span><span class="mi">1581436799</span><span class="p">,</span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="s2">&quot;999&quot;</span><span class="p">,</span><span class="s2">&quot;get_limit&quot;</span><span class="p">:</span><span class="s2">&quot;200&quot;</span><span class="p">,</span><span class="s2">&quot;can_give_friend&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;code_type&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;notice&quot;</span><span class="p">:</span><span class="s2">&quot;请出示卡券二维码&quot;</span><span class="p">,</span><span class="s2">&quot;description&quot;</span><span class="p">:</span><span class="s2">&quot;使用说明。。。&quot;</span><span class="p">,</span><span class="s2">&quot;service_phone&quot;</span><span class="p">:</span><span class="s2">&quot;13344556677&quot;</span><span class="p">,</span><span class="s2">&quot;card_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;assign&quot;</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;wx_card_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;card_money&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;money_limit&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;card_discount&quot;</span><span class="p">:</span><span class="s2">&quot;8.8&quot;</span><span class="p">,</span><span class="s2">&quot;exchange_content_text&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;product_ids&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;deal_detail&quot;</span><span class="p">:</span><span class="s2">&quot;8.8折折扣券1张，全场通用&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.reduction_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.reduction_add">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_add</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;满减&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;is_relate_all&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="mi">1484115936</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="mi">1579587938</span><span class="p">,</span><span class="s2">&quot;conditions&quot;</span><span class="p">:[{</span><span class="s2">&quot;condition_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;level&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;condition_min&quot;</span><span class="p">:</span><span class="mi">90000</span><span class="p">,</span><span class="s2">&quot;strategys&quot;</span><span class="p">:[{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">20000</span><span class="p">,</span><span class="s2">&quot;discount&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;point&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;card_type_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;red_packet_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_all_area&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;area_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;area_cn&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;discount&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;point&quot;</span><span class="p">:</span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="s2">&quot;card_type_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;red_packet_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_all_area&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;area_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;area_cn&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;is_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}]}],</span><span class="s2">&quot;products&quot;</span><span class="p">:[]}</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.cash_redpack_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.cash_redpack_add">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_add</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;红包&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;act_name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;send_name&quot;</span><span class="p">:</span><span class="s2">&quot;微客联盟&quot;</span><span class="p">,</span><span class="s2">&quot;wishing&quot;</span><span class="p">:</span><span class="s2">&quot;恭喜发财！大吉大利！&quot;</span><span class="p">,</span><span class="s2">&quot;remark&quot;</span><span class="p">:</span><span class="s2">&quot;一个测试红包&quot;</span><span class="p">,</span><span class="s2">&quot;min_value&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;max_value&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s2">&quot;quantity&quot;</span><span class="p">:</span><span class="s2">&quot;50&quot;</span><span class="p">,</span><span class="s2">&quot;deleted&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;can_share&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.activity_points_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.activity_points_add">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_add</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;default&#39;</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;积分赠送&quot;</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_str</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;activity&quot;</span><span class="p">:{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;expire_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span><span class="s2">&quot;pointsConsumption&quot;</span><span class="p">:{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span><span class="s2">&quot;points&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;count_type&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;together_buy_flag&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;seckill_flag&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;scan_flag&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;normal_flag&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}}</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.members_add_import"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.members_add_import">[文档]</a>    <span class="k">def</span> <span class="nf">members_add_import</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加实体店会员</span>
+
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">         字段              类型              默认               描述</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+<span class="sd">         group_name        中文字符        随机             分组名称</span>
+<span class="sd">         sort              int             随机(0-4)        排序</span>
+<span class="sd">        =============     ===========    ============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1">#rand_name = &quot;姓名&quot; + Utils.rand_cn_str(2)</span>
+        <span class="n">rand_phone</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_mobile</span><span class="p">()</span>
+        <span class="n">rand_name</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_name</span><span class="p">()</span>
+        <span class="n">growth</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_num</span><span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="n">Utils</span><span class="o">.</span><span class="n">rand_num</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;real_name&quot;</span><span class="p">:</span><span class="n">rand_name</span><span class="p">,</span><span class="s2">&quot;bind_mobile&quot;</span><span class="p">:</span><span class="n">rand_phone</span><span class="p">,</span><span class="s2">&quot;growth&quot;</span><span class="p">:</span><span class="n">growth</span><span class="p">,</span><span class="s2">&quot;point&quot;</span><span class="p">:</span><span class="s2">&quot;300&quot;</span><span class="p">,</span><span class="s2">&quot;sex&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;birth&quot;</span><span class="p">:</span><span class="mi">1487721600</span><span class="p">,</span><span class="s2">&quot;province&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;address&quot;</span><span class="p">:</span><span class="s2">&quot;北京东城区&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="c1">############################### 会员营销 ################################</span>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.edit_shop_member_setting"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.edit_shop_member_setting">[文档]</a>    <span class="k">def</span> <span class="nf">edit_shop_member_setting</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员折扣优惠共享设置参数</span>
+
+<span class="sd">        ===========================     ===========    =============     ===================================</span>
+<span class="sd">         字段                              类型           默认               描述</span>
+<span class="sd">        ===========================     ===========    =============     ===================================</span>
+<span class="sd">         is_member_discount                int             1               会员折扣开关(1开启，2关闭)</span>
+<span class="sd">         is_discount                       int             1               商城红包共享(1开启，2关闭)</span>
+<span class="sd">         is_card                           int             1               卡券共享(1开启，2关闭)</span>
+<span class="sd">         is_point                          int             1               积分共享(1开启，2关闭)</span>
+<span class="sd">        ===========================     ===========    =============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;is_member_discount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;is_discount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;is_card&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;is_point&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;statistics_offset&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="MemberParam.discounted_product_settings"><a class="viewcode-back" href="../../../lib.param.html#lib.config.MemberParam.discounted_product_settings">[文档]</a>    <span class="k">def</span> <span class="nf">discounted_product_settings</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        折扣商品设置参数</span>
+
+<span class="sd">        =================================     ===========    =============     ===================================</span>
+<span class="sd">         字段                                   类型           默认               描述</span>
+<span class="sd">        =================================     ===========    =============     ===================================</span>
+<span class="sd">         member_discounted_product_type        int             2                折扣类型(1全场商品，2指定商品)</span>
+<span class="sd">         sku                                   long           1171784           包含/排除的商品</span>
+<span class="sd">         sku_del                               long                             需要删除的包含/排除的商品</span>
+<span class="sd">        =================================     ===========    =============     ===================================</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;member_discounted_product_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;sku&quot;</span><span class="p">:[</span><span class="mi">1171784</span><span class="p">],</span><span class="s2">&quot;sku_del&quot;</span><span class="p">:[]}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span></div></div>
+
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

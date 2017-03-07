@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.param.shop &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.param.shop</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.param.shop 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1">#coding:utf-8</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<div class="viewcode-block" id="ShopParam"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam">[文档]</a><span class="k">class</span> <span class="nc">ShopParam</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShopParam.product_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam.product_add">[文档]</a>    <span class="k">def</span> <span class="nf">product_add</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+
+
+        <span class="n">product</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;product_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;测试商品&quot;</span><span class="p">,</span><span class="s2">&quot;sales&quot;</span><span class="p">:</span><span class="s2">&quot;123&quot;</span><span class="p">,</span><span class="s2">&quot;covers_id&quot;</span><span class="p">:</span><span class="mi">1337010</span><span class="p">,</span><span class="s2">&quot;quota&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="s2">&quot;sort&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="s2">&quot;sale_scope&quot;</span><span class="p">:</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;product_category_id&quot;</span><span class="p">:</span><span class="mi">64</span><span class="p">,</span><span class="s2">&quot;product_category_path&quot;</span><span class="p">:</span><span class="s2">&quot;/86/7/&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;postage_fee_type&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;product_kind_ids&quot;</span><span class="p">:</span><span class="s2">&quot;242999;&quot;</span><span class="p">,</span><span class="s2">&quot;show_sale_num&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;prod_weight&quot;</span><span class="p">:</span><span class="s2">&quot;1680&quot;</span><span class="p">}</span>
+        <span class="n">productInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;detail_pic&quot;</span><span class="p">:</span><span class="s2">&quot;1337010,&quot;</span><span class="p">,</span><span class="s2">&quot;detail&quot;</span><span class="p">:</span><span class="s2">&quot;&lt;p&gt;测试商品&lt;/p&gt;&quot;</span><span class="p">}</span>
+        <span class="n">shareMessage</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;desc&quot;</span><span class="p">:</span><span class="s2">&quot;优惠多多,欢迎选购&quot;</span><span class="p">,</span><span class="s2">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;测试商品&quot;</span><span class="p">,</span><span class="s2">&quot;file_cdn_path&quot;</span><span class="p">:</span><span class="s2">&quot;https://imgcache.vikduo.com/static/d9962123239ccacf755748ffef4bd697.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;pic_id&quot;</span><span class="p">:</span><span class="mi">1337010</span><span class="p">}</span>
+        <span class="n">kindBodyDic</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;40&quot;</span><span class="p">,</span><span class="s2">&quot;firstRowSpan&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;firstShow&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;40&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">}</span>
+        <span class="n">skuDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;reserves&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="s2">&quot;market_price&quot;</span><span class="p">:</span><span class="s2">&quot;186&quot;</span><span class="p">,</span><span class="s2">&quot;retail_price&quot;</span><span class="p">:</span><span class="s2">&quot;168&quot;</span><span class="p">,</span><span class="s2">&quot;sku_no&quot;</span><span class="p">:</span><span class="s2">&quot;123456&quot;</span><span class="p">,</span><span class="s2">&quot;barcode&quot;</span><span class="p">:</span><span class="s2">&quot;98765432&quot;</span><span class="p">,</span><span class="s2">&quot;sales&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;测试商品&quot;</span><span class="p">,</span><span class="s2">&quot;kind_value_ids&quot;</span><span class="p">:[</span><span class="mi">944482</span><span class="p">],</span><span class="s2">&quot;kind_ids&quot;</span><span class="p">:[</span><span class="mi">242999</span><span class="p">]}</span>
+        
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span>
+                <span class="n">product</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="n">skuDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">product</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">product</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">productInfo</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">productInfo</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">shareMessage</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">shareMessage</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">kindBodyDic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">kindBodyDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">skuDic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">skuDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span> <span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the args dictionary does not has the key:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+
+        <span class="n">kindBodyList</span> <span class="o">=</span> <span class="p">[</span><span class="n">kindBodyDic</span><span class="p">]</span>
+        <span class="n">skuList</span> <span class="o">=</span> <span class="p">[</span><span class="n">skuDic</span><span class="p">]</span>
+        <span class="n">productInfomation</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;productInfo&quot;</span><span class="p">:</span><span class="n">productInfo</span><span class="p">,</span><span class="s2">&quot;product&quot;</span><span class="p">:</span><span class="n">product</span><span class="p">,</span><span class="s2">&quot;shareMessage&quot;</span><span class="p">:</span><span class="n">shareMessage</span><span class="p">,</span><span class="s2">&quot;kindBody&quot;</span><span class="p">:</span><span class="n">kindBodyList</span><span class="p">,</span><span class="s2">&quot;skus&quot;</span><span class="p">:</span><span class="n">skuList</span><span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">productInfomation</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShopParam.product_list"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam.product_list">[文档]</a>    <span class="k">def</span> <span class="nf">product_list</span><span class="p">(</span><span class="o">**</span><span class="n">argsd</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">        ====================   =========  =========================================</span>
+<span class="sd">          字段                  类型                             描述</span>
+<span class="sd">        ====================   =========  =========================================</span>
+<span class="sd">        is_search               boolean     选填，是否取缓存数据</span>
+<span class="sd">        name                    String     选填，商品名称</span>
+<span class="sd">        product_category_id     Number     选填，商品分类</span>
+<span class="sd">        sale_scope              Number     选填，销售平台</span>
+<span class="sd">        status                  Number     选填，上下架状态</span>
+<span class="sd">        reserves                Number     选填，库存筛选</span>
+<span class="sd">        page                    Number     选填，页码(可照旧使用_page)</span>
+<span class="sd">        count                   Number     选填，每页数据量（可照旧使用_page_size）</span>
+<span class="sd">        ====================   =========  =========================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">paramDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;_page_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+        <span class="n">paraList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_search&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;product_category_id&#39;</span><span class="p">,</span><span class="s1">&#39;sale_scope&#39;</span><span class="p">,</span><span class="s1">&#39;status&#39;</span><span class="p">,</span><span class="s1">&#39;reserves&#39;</span><span class="p">,</span><span class="s1">&#39;page&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">argsd</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">paraList</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the args dictionary does not has the key:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">paramDic</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">argsd</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">paramDic</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShopParam.comment_without_user"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam.comment_without_user">[文档]</a>    <span class="k">def</span> <span class="nf">comment_without_user</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">commentDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;avatar&quot;</span><span class="p">:</span><span class="s2">&quot;http://imgcache.vikduo.com/static/d9f3947a544c1fb4418aca6887088124.jpg&quot;</span><span class="p">,</span><span class="s2">&quot;content&quot;</span><span class="p">:</span><span class="s2">&quot;东东很好，很超值&quot;</span><span class="p">,</span><span class="s2">&quot;created&quot;</span><span class="p">:</span><span class="mi">1484643481</span><span class="p">,</span><span class="s2">&quot;product_id&quot;</span><span class="p">:</span><span class="mi">289873</span><span class="p">,</span><span class="s2">&quot;star&quot;</span><span class="p">:</span><span class="s2">&quot;5&quot;</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">commentDic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">commentDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the args dictionary does not has the key:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">commentDic</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShopParam.order_list"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam.order_list">[文档]</a>    <span class="k">def</span> <span class="nf">order_list</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        ================    ========   ================================================================</span>
+<span class="sd">         字段                 类型                             描述</span>
+<span class="sd">        ================    ========   ================================================================</span>
+<span class="sd">        _status              Number     选填，状态 0全部 1待付款 2待发货 3待收货4已完成5售后中7已关闭</span>
+<span class="sd">        order_no             Number     选填，对应的订单号</span>
+<span class="sd">        createStart          Number     选填，订单开始的创建时间</span>
+<span class="sd">        createEnd            Number     选填，订单结束创建时间</span>
+<span class="sd">        service_no           Number     选填，售后单的service_no</span>
+<span class="sd">        order_type           Number     选填，订单类型</span>
+<span class="sd">        s_consignee          String     选填，收货人</span>
+<span class="sd">        s_tel                Number     选填，收货人手机号</span>
+<span class="sd">        pay_type             Number     选填，对应订单的支付类型</span>
+<span class="sd">        should_pay_min       String     选填，应付最小金额</span>
+<span class="sd">        should_pay_max       String     选填，应付最大金额</span>
+<span class="sd">        user_name            String     选填，微信昵称</span>
+<span class="sd">        pickup_type          Number     选填，对应订单的配送方式</span>
+<span class="sd">        shop_sub_id          Array     选填，对应订单的分店id数组</span>
+<span class="sd">        agent_id             Array     选填，对应订单的agent_id数组</span>
+<span class="sd">        staff_id             Array     选填，订单的所属员工id数组</span>
+<span class="sd">        page                 Number     选填，页码(可照旧使用_page)</span>
+<span class="sd">        count                Number     选填，每页数据量（可照旧使用_page_size）</span>
+<span class="sd">        ================    ========   ================================================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">defaultDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_status&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;after_sales_status&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;pickup_type&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;order_type&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;s_tel&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;s_consignee&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;order_no&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;pay_type&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;should_pay_min&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;should_pay_max&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;user_name&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="s2">&quot;express_type&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;agent_id&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;shop_sub_id&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;staff_id&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;pay_time_start&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;pay_time_end&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;pickup_date_start&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="s2">&quot;pickup_date_end&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;consignor_status&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;statement&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">defaultDic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">defaultDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the args dictionary does not has the key:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">defaultDic</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShopParam.refund_list"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam.refund_list">[文档]</a>    <span class="k">def</span> <span class="nf">refund_list</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        =============     =======    ==========================================================</span>
+<span class="sd">        字段              类型        描述</span>
+<span class="sd">        =============     =======    ==========================================================</span>
+<span class="sd">        order_id          Number     选填，售后单对应的订单id</span>
+<span class="sd">        shop_sub_id       Array      选填，售后单对应订单的分店id数组</span>
+<span class="sd">        agent_id          Array      选填，售后单对应订单的agent_id数组</span>
+<span class="sd">        shop_staff_id     Array      选填，售后单对应订单的所属员工id数组</span>
+<span class="sd">        order_type        Number     选填，售后单对应订单的类型（参照订单获取接口）</span>
+<span class="sd">        pay_type          Number     选填，售后单对应订单的支付类型（参照订单获取接口）</span>
+<span class="sd">        createStart       Number     选填，售后单开始的创建时间</span>
+<span class="sd">        createEnd         Number     选填，售后单结束创建时间</span>
+<span class="sd">        user_phone        String     选填，售后单用户填写的电话</span>
+<span class="sd">        user_name         String     选填，下单时用户的微信昵称</span>
+<span class="sd">        tel               String     选填，售后单对应订单的送货信息的用户电话</span>
+<span class="sd">        consignee         String     选填，售后单对应订单的发货人</span>
+<span class="sd">        service_no        String     选填，售后单的service_no</span>
+<span class="sd">        order_no          String     选填，售后单对应订单的order_no</span>
+<span class="sd">        type              Number     选填，售后单类型（参照/order/get-after-sale-detail-ajax）</span>
+<span class="sd">        pickup_type       Number     选填，售后单对应订单的配送方式</span>
+<span class="sd">        page              Number     选填，页码(可照旧使用_page)</span>
+<span class="sd">        count             Number     选填，每页数据量（可照旧使用_page_size）</span>
+<span class="sd">        =============     =======    ==========================================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">defaultDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;pay_type&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;order_type&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;processing_state&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;pickup_type&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;order_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;tel&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;consignee&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;order_no&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;user_phone&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;service_no&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;user_name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;agent_id&quot;</span><span class="p">:[],</span><span class="s2">&quot;shop_sub_id&quot;</span><span class="p">:[],</span><span class="s2">&quot;shop_staff_id&quot;</span><span class="p">:[]}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">defaultDic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">defaultDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the args dictionary does not has the key:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">defaultDic</span></div>
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="ShopParam.shop_order_auto_settings"><a class="viewcode-back" href="../../../lib.param.html#lib.config.ShopParam.shop_order_auto_settings">[文档]</a>    <span class="k">def</span> <span class="nf">shop_order_auto_settings</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;	</span>
+<span class="sd">		更新订单自动任务设置信息(交易设置)</span>
+<span class="sd">		===================================   ========    ============================================================</span>
+<span class="sd">			字段                               类型                   描述</span>
+<span class="sd">		===================================   ========    ============================================================</span>
+<span class="sd">		id                                     Number     必填，要更新的设置的对应id</span>
+<span class="sd">		simple_order_close_unpay_time          Number     可选,普通订单创建后可支付的时限</span>
+<span class="sd">		auto_receive_time                      Number     可选,发货后可收货时限</span>
+<span class="sd">		sk_order_close_unpay_time              Number     可选,秒杀订单创建后可支付的时限</span>
+<span class="sd">		order_comment_time                     Number     可选,订单收货后可评论的时限</span>
+<span class="sd">		simple_order_close_unpay_status        Number     可选,普通订单不支付自动关闭 1.开启、2.关闭</span>
+<span class="sd">		auto_receive_status                    Number     可选,发货后自动收货 1.开启、2.关闭</span>
+<span class="sd">		sk_order_close_unpay_status            Number     可选,秒杀订单不支付自动关闭 1.开启、2.关闭</span>
+<span class="sd">		order_comment_status                   Number     可选,订单收货后自动评论 1.开启、2.关闭</span>
+<span class="sd">		simple_order_close_unpay_time_type     Number     可选,普通订单创建后可支付的时限单位（1.分钟、2.小时、3.天）</span>
+<span class="sd">		auto_receive_time_type                 Number     </span>
+<span class="sd">		sk_order_close_unpay_time_type         Number     </span>
+<span class="sd">		order_comment_time_type                Number</span>
+<span class="sd">		===================================   ========    ============================================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">defaultdic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;simple_order_close_unpay_time&quot;</span><span class="p">:</span><span class="mi">86400</span><span class="p">,</span><span class="s2">&quot;auto_receive_time&quot;</span><span class="p">:</span><span class="mi">604800</span><span class="p">,</span><span class="s2">&quot;sk_order_close_unpay_time&quot;</span><span class="p">:</span><span class="mi">600</span><span class="p">,</span><span class="s2">&quot;order_comment_time&quot;</span><span class="p">:</span><span class="mi">259200</span><span class="p">,</span>
+                      <span class="s2">&quot;simple_order_close_unpay_status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;auto_receive_status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;sk_order_close_unpay_status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;order_comment_status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="s2">&quot;simple_order_close_unpay_time_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;auto_receive_time_type&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;sk_order_close_unpay_time_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;order_comment_time_type&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;status&quot;</span> <span class="ow">in</span> <span class="n">key</span> <span class="ow">and</span> <span class="n">defaultdic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]:</span>
+                    <span class="n">defaultdic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the key value is error :</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="s2">&quot;type&quot;</span> <span class="ow">in</span> <span class="n">key</span> <span class="ow">and</span> <span class="n">defaultdic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+                    <span class="n">defaultdic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the key value is error :</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">defaultdic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">defaultdic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;the args dictionary does not has the key:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">defaultdic</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

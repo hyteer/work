@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.param.terminal &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.param.terminal</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.param.terminal 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1">#coding:utf-8</span>
+
+<span class="kn">import</span> <span class="nn">random</span><span class="o">,</span><span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+
+<div class="viewcode-block" id="TerminalParam"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam">[文档]</a><span class="k">class</span> <span class="nc">TerminalParam</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.terminal_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.terminal_add">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_add</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="n">paraDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shopInfo[province_id]&quot;</span><span class="p">:</span><span class="mi">137</span><span class="p">,</span><span class="s2">&quot;shopInfo[city_id]&quot;</span><span class="p">:</span><span class="mi">138</span><span class="p">,</span><span class="s2">&quot;shopInfo[district_id]&quot;</span><span class="p">:</span><span class="mi">139</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[circle_id]&quot;</span><span class="p">:</span><span class="mi">140</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[name]&quot;</span><span class="p">:</span><span class="s2">&quot;分店测试0207&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[phone]&quot;</span><span class="p">:</span><span class="s2">&quot;15895623569&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[url]&quot;</span><span class="p">:</span><span class="s2">&quot;http://www.360.cn&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[bg_img]&quot;</span><span class="p">:</span><span class="s2">&quot;https://imgcache.vikduo.com/static/44ae6a2fae8d1ae7acddc0129dabb128.png&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[logo]&quot;</span><span class="p">:</span><span class="s2">&quot;https://imgcache.vikduo.com/static/89c357c48d8830326acfa5fb4b4cc3f7.png&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[avg_price]&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[recommend]&quot;</span><span class="p">:</span><span class="s2">&quot;没有特色推荐&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[special]&quot;</span><span class="p">:</span><span class="s2">&quot;没有特色服务&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[description]&quot;</span><span class="p">:</span><span class="s2">&quot;没有描述&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[address]&quot;</span><span class="p">:</span><span class="s2">&quot;比克大厦&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businesshour]&quot;</span><span class="p">:</span><span class="s2">&quot;08:00-21:00&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[wx_categories][0][id]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[wx_categories][0][name]&quot;</span><span class="p">:</span><span class="s2">&quot;美食&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[wx_categories][1][id]&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[wx_categories][1][name]&quot;</span><span class="p">:</span><span class="s2">&quot;粤菜&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[wx_categories][2][id]&quot;</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[wx_categories][2][name]&quot;</span><span class="p">:</span><span class="s2">&quot;潮汕菜&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Monday]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Tuesday]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Wednesday]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Thursday]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Friday]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Saturday]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[businessweek][0][Sunday]&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[shipping_status]&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopInfo[intracity_shipping_status]&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span>
+<span class="s2">&quot;shop_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+<span class="s2">&quot;shopStaff[user_name]&quot;</span><span class="p">:</span><span class="s2">&quot;test0207&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopStaff[password]&quot;</span><span class="p">:</span><span class="s2">&quot;test0207&quot;</span><span class="p">,</span>
+<span class="s2">&quot;shopStaff[real_name]&quot;</span><span class="p">:</span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+<span class="s2">&quot;lat&quot;</span><span class="p">:</span><span class="mf">22.541222892341</span><span class="p">,</span>
+<span class="s2">&quot;lng&quot;</span><span class="p">:</span><span class="mf">113.932718326450</span><span class="p">,</span>
+<span class="s2">&quot;is_pickup_shop&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.sub_product_update"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.sub_product_update">[文档]</a>    <span class="k">def</span> <span class="nf">sub_product_update</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    ===========================     ===========     ===================================</span>
+<span class="sd">              字段                     类型                        描述</span>
+<span class="sd">    ===========================     ===========     ===================================</span>
+<span class="sd">     intracity_shipping_status        int                  卡券标题</span>
+<span class="sd">	 product_id                       string                商品ID</span>
+<span class="sd">	 self_pickup_status               int                   到店自提</span>
+<span class="sd">	 shipping_status                  int                   快递配送</span>
+<span class="sd">	 shop_sub_id                      int                   分店ID</span>
+<span class="sd">	 status                           int                   商品上下架状态</span>
+<span class="sd">    ===========================     ===========     ===================================</span>
+<span class="sd">	    &#39;&#39;&#39;</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;product_id&quot;</span><span class="p">:</span> <span class="s2">&quot;289888&quot;</span><span class="p">,</span> <span class="s2">&quot;shop_sub_id&quot;</span><span class="p">:</span> <span class="mi">109829</span><span class="p">,</span> <span class="s2">&quot;shipping_status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;self_pickup_status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;intracity_shipping_status&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span><span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.staff_list"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.staff_list">[文档]</a>    <span class="k">def</span> <span class="nf">staff_list</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	===============     =========   ====================</span>
+<span class="sd">	   字段                类型            描述</span>
+<span class="sd">	===============     =========   ====================</span>
+<span class="sd">	 _page                int            页数</span>
+<span class="sd">	 _page_size           int            每页大小</span>
+<span class="sd">	 agent_id             int            商店ID </span>
+<span class="sd">	 real_name            string         真实姓名</span>
+<span class="sd">	 search_all           bool           是否搜索所有</span>
+<span class="sd">	 shop_type            int            分店类型</span>
+<span class="sd">	 terminal_id          int            分店ID </span>
+<span class="sd">	===============     =========   ====================</span>
+<span class="sd">	    &#39;&#39;&#39;</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;agent_id&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">,</span><span class="s2">&quot;real_name&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;search_all&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span><span class="s2">&quot;shop_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;terminal_id&quot;</span><span class="p">:</span><span class="kc">None</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.statement_param"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.statement_param">[文档]</a>    <span class="k">def</span> <span class="nf">statement_param</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;search_type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;payTimeEnd&quot;</span><span class="p">:</span> <span class="n">end_time</span><span class="p">,</span> <span class="s2">&quot;payTimeStart&quot;</span><span class="p">:</span> <span class="n">start_time</span><span class="p">,</span> <span class="s2">&quot;hideZero&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span><span class="s2">&quot;keyword&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.reduction_list"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.reduction_list">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_list</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	=============  ==========    =================================</span>
+<span class="sd">	  字段 	          类型 	        描述</span>
+<span class="sd">	=============  ==========    =================================</span>
+<span class="sd">	 name 	         string 	   选填，活动名称</span>
+<span class="sd">	 start_time 	     Number 	   选填，活动开始时间</span>
+<span class="sd">	 end_time 	     Number 	   选填，活动结束时间</span>
+<span class="sd">	 deleted 	     Number 	   选填，活动状态 1.启用 2.禁用</span>
+<span class="sd">	 isUnstart 	     Number 	   选填，是否开始，值传1</span>
+<span class="sd">	 underwayFlag 	 Number 	   选填，值传1</span>
+<span class="sd">	 isEnd 	         Number 	   选填，是否结束，值传1</span>
+<span class="sd">	 _page 	         Number 	   选填，当前页码</span>
+<span class="sd">	 _page_size 	 Number 	   选填，每页条数</span>
+<span class="sd">	 =============  ==========    =================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;terminal&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;deleted&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;_page&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;_page_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span><span class="s2">&quot;shop_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.reduction_add"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.reduction_add">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_add</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>   
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		====================   ========   ================================================================================================</span>
+<span class="sd">		  字段 	                 类型 	                      描述</span>
+<span class="sd">		====================   ========   ================================================================================================</span>
+<span class="sd">		terminal_ids 	        array 	   终端店数组集合</span>
+<span class="sd">		name 	                string     活动名称</span>
+<span class="sd">		start_time 	            number 	   活动开始时间</span>
+<span class="sd">		end_time 	            number 	   活动结束时间</span>
+<span class="sd">		limit_time 	            number 	   活动限制，（每个微信号享受优惠设置），0则不限制，1则限制仅享受一次</span>
+<span class="sd">		conditions 	            array 	   活动条件（二维数组）</span>
+<span class="sd">		  level 	            number 	   优惠条件层级</span>
+<span class="sd">		  condition_min 	    number 	   优惠条件值</span>
+<span class="sd">		  strategys 	        array 	   优惠设置（二维数组）</span>
+<span class="sd">			reduction_type 	    number 	   减免类型）1.金额 2.打折 3.积分、4.包邮、5.送卡券、6.商城红包 7.现金红包</span>
+<span class="sd">			point 	            number 	   选填，积分</span>
+<span class="sd">			amount 	            number 	   选填，减免金额(最多两位小数，传值过来需100，例如：用户输入8.5，请求参数为8.5100即850 )</span>
+<span class="sd">			discount 	        number 	   选填，打折(0-10区间 最多一位小数)，传值过来需10，例如：用户输入8.5，请求参数为8.510即85</span>
+<span class="sd">			card_type_id 	    number 	   赠送卡券id</span>
+<span class="sd">			cash_redpack_id 	number 	   赠送现金红包id</span>
+<span class="sd">			red_packet_id 	    number 	   赠送商城红包id</span>
+<span class="sd">			order_limit 	    number 	   订单使用限制 1.所以订单 2.适用于未使用卡券或红包优惠的订单</span>
+<span class="sd">			is_limit 	        number 	   是否上不封顶）1、是 2、否</span>
+<span class="sd">		====================   ========   ================================================================================================</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">start_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span> <span class="o">-</span> <span class="mi">3600</span>
+        <span class="n">end_time</span> <span class="o">=</span> <span class="n">start_time</span> <span class="o">+</span> <span class="mi">3600</span><span class="o">*</span><span class="mi">24</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;分店收款码满减活动-&quot;</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m</span><span class="si">%d</span><span class="s1">%H%M&#39;</span><span class="p">,</span><span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
+        <span class="c1">#订单支付立享优惠</span>
+        <span class="c1">#立减固定金额</span>
+        <span class="n">reductionType1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;amount&quot;</span><span class="p">:</span><span class="mi">2000</span><span class="p">,</span><span class="s2">&quot;is_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>    
+        <span class="c1">#折扣</span>
+        <span class="n">reductionType2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;discount&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">}</span>
+        <span class="c1">#订单完成后赠送</span>
+        <span class="c1">#卡券</span>
+        <span class="n">reductionType3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;point&quot;</span><span class="p">:</span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="s2">&quot;is_limit&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+        <span class="c1">#积分</span>
+        <span class="n">reductionType5</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;card_type_id&quot;</span><span class="p">:</span><span class="mi">1168</span><span class="p">,</span><span class="s2">&quot;order_limit&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="n">conditionDic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;level&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;condition_min&quot;</span><span class="p">:</span><span class="mi">15000</span><span class="p">,</span><span class="s2">&quot;strategys&quot;</span><span class="p">:[]}</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;terminal&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;terminal_ids&quot;</span><span class="p">:[],</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">name</span><span class="p">,</span><span class="s2">&quot;start_time&quot;</span><span class="p">:</span><span class="n">start_time</span><span class="p">,</span><span class="s2">&quot;end_time&quot;</span><span class="p">:</span><span class="n">end_time</span><span class="p">,</span><span class="s2">&quot;limit_time&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;conditions&quot;</span><span class="p">:[</span><span class="n">conditionDic</span><span class="p">]}</span>
+        
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span><span class="s2">&quot;reduction_type&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span><span class="p">((</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">])):</span>
+                    <span class="k">for</span> <span class="n">rtype</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                        <span class="k">if</span> <span class="n">rtype</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="n">conditionDic</span><span class="p">[</span><span class="s1">&#39;strategys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reductionType1</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">rtype</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                            <span class="n">conditionDic</span><span class="p">[</span><span class="s1">&#39;strategys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reductionType2</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">rtype</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                            <span class="n">conditionDic</span><span class="p">[</span><span class="s1">&#39;strategys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reductionType3</span><span class="p">)</span>                
+                        <span class="k">elif</span> <span class="n">rtype</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                            <span class="n">conditionDic</span><span class="p">[</span><span class="s1">&#39;strategys&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reductionType5</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;reduction_type 1 and reduction_type 2 should not both in args&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;is_limit&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;reduction_type&#39;</span><span class="p">]:</span>
+                        <span class="n">reductionType1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;reduction_type&#39;</span><span class="p">]:</span>
+                        <span class="n">reductionType3</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>   
+                    <span class="k">if</span> <span class="p">(</span><span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;reduction_type&#39;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">3</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;reduction_type&#39;</span><span class="p">]):</span>
+                        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;reduction_type类型错误，该类型无</span><span class="si">%s</span><span class="s2">类型参数&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">参数值错误&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span>  <span class="s2">&quot;terminal_ids&quot;</span><span class="p">:</span>
+                <span class="n">template</span><span class="p">[</span><span class="s1">&#39;terminal_ids&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>                       
+            <span class="k">elif</span> <span class="n">reductionType1</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">reductionType1</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">reductionType2</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">reductionType2</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">reductionType3</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">reductionType3</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">reductionType5</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">reductionType5</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">conditionDic</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">conditionDic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">template</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">template</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;参数名不存在!:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">template</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.order_statistics"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.order_statistics">[文档]</a>    <span class="k">def</span> <span class="nf">order_statistics</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		=================  ========    ============================================================		</span>
+<span class="sd">		  字段 	             类型 	               描述</span>
+<span class="sd">		=================  ========    ============================================================</span>
+<span class="sd">		 auto_get_params 	Number 	    是否禁止自动获取 agent_id 和 terminal_id，传值即不自动获取</span>
+<span class="sd">		 _page 	Number 	</span>
+<span class="sd">		 _page_size 	    Number 	</span>
+<span class="sd">		 createStart 	    Number 	    开始时间</span>
+<span class="sd">		 createEnd 	        Number 	    结束时间</span>
+<span class="sd">		 statement 	        Number 	    非必填，对账单标志，生成终端店对账单需传1</span>
+<span class="sd">		=================  ========    ============================================================		 </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span>
+        <span class="n">createStart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">86400</span><span class="p">)</span>
+        <span class="n">createEnd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="n">createStart</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="n">createEnd</span><span class="p">,</span><span class="s2">&quot;auto_get_params&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;newSortStr&quot;</span><span class="p">:{</span><span class="s2">&quot;num&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;attrName&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">},</span><span class="s2">&quot;keyword&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.aftersales_statistics"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.aftersales_statistics">[文档]</a>    <span class="k">def</span> <span class="nf">aftersales_statistics</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        =================  ========    ============================================================        </span>
+<span class="sd">          字段                  类型                    描述</span>
+<span class="sd">        =================  ========    ============================================================</span>
+<span class="sd">         auto_get_params     Number         是否禁止自动获取 agent_id 和 terminal_id，传值即不自动获取</span>
+<span class="sd">         _page     Number     </span>
+<span class="sd">         _page_size         Number     </span>
+<span class="sd">         createStart         Number         开始时间</span>
+<span class="sd">         createEnd             Number         结束时间</span>
+<span class="sd">         statement             Number         非必填，对账单标志，生成终端店对账单需传1</span>
+<span class="sd">        =================  ========    ============================================================         </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span>
+        <span class="n">createStart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">86400</span><span class="p">)</span>
+        <span class="n">createEnd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="n">createStart</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="n">createEnd</span><span class="p">,</span><span class="s2">&quot;auto_get_params&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;newSortStr&quot;</span><span class="p">:{</span><span class="s2">&quot;num&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;attrName&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">},</span><span class="s2">&quot;keyword&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;kind&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.member_statistics"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.member_statistics">[文档]</a>    <span class="k">def</span> <span class="nf">member_statistics</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        =================  ========    ============================================================        </span>
+<span class="sd">          字段                  类型                    描述</span>
+<span class="sd">        =================  ========    ============================================================</span>
+<span class="sd">         auto_get_params     Number         是否禁止自动获取 agent_id 和 terminal_id，传值即不自动获取</span>
+<span class="sd">         _page     Number     </span>
+<span class="sd">         _page_size         Number     </span>
+<span class="sd">         createStart         Number         开始时间</span>
+<span class="sd">         createEnd             Number         结束时间</span>
+<span class="sd">         statement             Number         非必填，对账单标志，生成终端店对账单需传1</span>
+<span class="sd">        =================  ========    ============================================================         </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span>
+        <span class="n">createStart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">86400</span><span class="p">)</span>
+        <span class="n">createEnd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="n">createStart</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="n">createEnd</span><span class="p">,</span><span class="s2">&quot;auto_get_params&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;newSortStr&quot;</span><span class="p">:{</span><span class="s2">&quot;num&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;attrName&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">},</span><span class="s2">&quot;keyword&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;kind&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.customer_statistics"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.customer_statistics">[文档]</a>    <span class="k">def</span> <span class="nf">customer_statistics</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        =================  ========    ============================================================        </span>
+<span class="sd">          字段                  类型                    描述</span>
+<span class="sd">        =================  ========    ============================================================</span>
+<span class="sd">         auto_get_params     Number         是否禁止自动获取 agent_id 和 terminal_id，传值即不自动获取</span>
+<span class="sd">         _page     Number     </span>
+<span class="sd">         _page_size         Number     </span>
+<span class="sd">         createStart         Number         开始时间</span>
+<span class="sd">         createEnd             Number         结束时间</span>
+<span class="sd">         statement             Number         非必填，对账单标志，生成终端店对账单需传1</span>
+<span class="sd">        =================  ========    ============================================================         </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span>
+        <span class="n">createStart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">86400</span><span class="p">)</span>
+        <span class="n">createEnd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="n">createStart</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="n">createEnd</span><span class="p">,</span><span class="s2">&quot;auto_get_params&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;newSortStr&quot;</span><span class="p">:{</span><span class="s2">&quot;num&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;attrName&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">},</span><span class="s2">&quot;keyword&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;kind&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div>
+    
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="TerminalParam.promotion_statistics"><a class="viewcode-back" href="../../../lib.param.html#lib.config.TerminalParam.promotion_statistics">[文档]</a>    <span class="k">def</span> <span class="nf">promotion_statistics</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        =================  ========    ============================================================        </span>
+<span class="sd">          字段                  类型                    描述</span>
+<span class="sd">        =================  ========    ============================================================</span>
+<span class="sd">         auto_get_params     Number         是否禁止自动获取 agent_id 和 terminal_id，传值即不自动获取</span>
+<span class="sd">         _page     Number     </span>
+<span class="sd">         _page_size         Number     </span>
+<span class="sd">         createStart         Number         开始时间</span>
+<span class="sd">         createEnd             Number         结束时间</span>
+<span class="sd">         statement             Number         非必填，对账单标志，生成终端店对账单需传1</span>
+<span class="sd">        =================  ========    ============================================================         </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">midnight</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="p">(</span><span class="n">now</span> <span class="o">%</span> <span class="mi">86400</span><span class="p">)</span> <span class="o">+</span> <span class="n">time</span><span class="o">.</span><span class="n">timezone</span>
+        <span class="n">createStart</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">86400</span><span class="p">)</span>
+        <span class="n">createEnd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">midnight</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;createStart&quot;</span><span class="p">:</span><span class="n">createStart</span><span class="p">,</span><span class="s2">&quot;createEnd&quot;</span><span class="p">:</span><span class="n">createEnd</span><span class="p">,</span><span class="s2">&quot;auto_get_params&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;newSortStr&quot;</span><span class="p">:{</span><span class="s2">&quot;num&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;attrName&quot;</span><span class="p">:</span><span class="s2">&quot;id&quot;</span><span class="p">},</span><span class="s2">&quot;keyword&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

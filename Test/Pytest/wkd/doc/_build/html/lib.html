@@ -1,0 +1,659 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib package &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="搜索" href="search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">lib package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-lib.common">lib.common module</a></li>
+<li><a class="reference internal" href="#module-lib.config">lib.config module</a></li>
+<li><a class="reference internal" href="#module-lib.init">lib.init module</a></li>
+<li><a class="reference internal" href="#module-lib">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>lib package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lib.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lib-package">
+<h1>lib package<a class="headerlink" href="#lib-package" title="永久链接至标题">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="永久链接至标题">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lib.api.html">lib.api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.generic">lib.api.generic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.market">lib.api.market module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.member">lib.api.member module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.myvkd">lib.api.myvkd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.shop">lib.api.shop module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.terminal">lib.api.terminal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api.weixin">lib.api.weixin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.api.html#module-lib.api">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lib.param.html">lib.param package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.generic">lib.param.generic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.market">lib.param.market module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.member">lib.param.member module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.shop">lib.param.shop module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.terminal">lib.param.terminal module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.utils">lib.param.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param.weixin">lib.param.weixin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.param.html#module-lib.param">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lib.ui.html">lib.ui package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lib.ui.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ui.html#module-lib.ui.weixin">lib.ui.weixin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.ui.html#module-lib.ui">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="module-lib.common">
+<span id="lib-common-module"></span><h2>lib.common module<a class="headerlink" href="#module-lib.common" title="永久链接至标题">¶</a></h2>
+<p>通用模块配置</p>
+<dl class="class">
+<dt id="lib.common.Common">
+<em class="property">class </em><code class="descclassname">lib.common.</code><code class="descname">Common</code><a class="reference internal" href="_modules/lib/common.html#Common"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.common.Common" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="lib.common.Common.api_login">
+<code class="descname">api_login</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/common.html#Common.api_login"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.common.Common.api_login" title="永久链接至目标">¶</a></dt>
+<dd><p>登录微商户API
+Returns:sessionid</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.common.Common.login">
+<code class="descname">login</code><span class="sig-paren">(</span><em>conf</em>, <em>driver</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/common.html#Common.login"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.common.Common.login" title="永久链接至目标">¶</a></dt>
+<dd><p>微客多管理后台登录
+:param conf:
+:param driver:
+:return:True</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lib.common.Common.wx_login">
+<code class="descname">wx_login</code><span class="sig-paren">(</span><em>conf</em>, <em>driver</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/common.html#Common.wx_login"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.common.Common.wx_login" title="永久链接至目标">¶</a></dt>
+<dd><p>微信前端页登录
+:param conf:
+:param driver:
+:return:True</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib.config">
+<span id="lib-config-module"></span><h2>lib.config module<a class="headerlink" href="#module-lib.config" title="永久链接至标题">¶</a></h2>
+<dl class="class">
+<dt id="lib.config.AutoConfig">
+<em class="property">class </em><code class="descclassname">lib.config.</code><code class="descname">AutoConfig</code><a class="reference internal" href="_modules/lib/config.html#AutoConfig"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.AutoConfig" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.config.Config" title="lib.config.Config"><code class="xref py py-class docutils literal"><span class="pre">lib.config.Config</span></code></a></p>
+<p>微客多自动化测试环境配置(自动化测试专用)</p>
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.MEMBER_ID">
+<code class="descname">MEMBER_ID</code><em class="property"> = '380'</em><a class="headerlink" href="#lib.config.AutoConfig.MEMBER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.PASSWORD">
+<code class="descname">PASSWORD</code><em class="property"> = '123456'</em><a class="headerlink" href="#lib.config.AutoConfig.PASSWORD" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.TITLE">
+<code class="descname">TITLE</code><em class="property"> = u'\u5fae\u5ba2\u591a\u540e\u53f0\u7ba1\u7406\u7cfb\u7edf'</em><a class="headerlink" href="#lib.config.AutoConfig.TITLE" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.URL">
+<code class="descname">URL</code><em class="property"> = 'http://testwkd.snsshop.net'</em><a class="headerlink" href="#lib.config.AutoConfig.URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.URL_TERMINAL">
+<code class="descname">URL_TERMINAL</code><em class="property"> = 'http://testwkdshopadmin.snsshop.net'</em><a class="headerlink" href="#lib.config.AutoConfig.URL_TERMINAL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.USERNAME">
+<code class="descname">USERNAME</code><em class="property"> = '20170108&#64;qq.com'</em><a class="headerlink" href="#lib.config.AutoConfig.USERNAME" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.USER_ID">
+<code class="descname">USER_ID</code><em class="property"> = '13764904'</em><a class="headerlink" href="#lib.config.AutoConfig.USER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.AutoConfig.WX_URL">
+<code class="descname">WX_URL</code><em class="property"> = 'http://wkdianshang.testwkdwx.snsshop.net/wkdianshang'</em><a class="headerlink" href="#lib.config.AutoConfig.WX_URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.config.BetaConfig">
+<em class="property">class </em><code class="descclassname">lib.config.</code><code class="descname">BetaConfig</code><a class="reference internal" href="_modules/lib/config.html#BetaConfig"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.BetaConfig" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.config.Config" title="lib.config.Config"><code class="xref py py-class docutils literal"><span class="pre">lib.config.Config</span></code></a></p>
+<dl class="attribute">
+<dt id="lib.config.BetaConfig.MEMBER_ID">
+<code class="descname">MEMBER_ID</code><em class="property"> = '267'</em><a class="headerlink" href="#lib.config.BetaConfig.MEMBER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.BetaConfig.PASSWORD">
+<code class="descname">PASSWORD</code><em class="property"> = 123456</em><a class="headerlink" href="#lib.config.BetaConfig.PASSWORD" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.BetaConfig.TITLE">
+<code class="descname">TITLE</code><em class="property"> = u'\u5546\u6237\u540e\u53f0\u7ba1\u7406\u7cfb\u7edf'</em><a class="headerlink" href="#lib.config.BetaConfig.TITLE" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.BetaConfig.URL">
+<code class="descname">URL</code><em class="property"> = 'http://betanewwsh.snsshop.net'</em><a class="headerlink" href="#lib.config.BetaConfig.URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.BetaConfig.USERNAME">
+<code class="descname">USERNAME</code><em class="property"> = 20151228</em><a class="headerlink" href="#lib.config.BetaConfig.USERNAME" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.BetaConfig.USER_ID">
+<code class="descname">USER_ID</code><em class="property"> = '13764779'</em><a class="headerlink" href="#lib.config.BetaConfig.USER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.config.CiConfig">
+<em class="property">class </em><code class="descclassname">lib.config.</code><code class="descname">CiConfig</code><a class="reference internal" href="_modules/lib/config.html#CiConfig"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.CiConfig" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.config.Config" title="lib.config.Config"><code class="xref py py-class docutils literal"><span class="pre">lib.config.Config</span></code></a></p>
+<dl class="attribute">
+<dt id="lib.config.CiConfig.PASSWORD">
+<code class="descname">PASSWORD</code><em class="property"> = 518000</em><a class="headerlink" href="#lib.config.CiConfig.PASSWORD" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.CiConfig.URL">
+<code class="descname">URL</code><em class="property"> = 'http://shanghutest.cxm'</em><a class="headerlink" href="#lib.config.CiConfig.URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.CiConfig.URL_TERMINAL">
+<code class="descname">URL_TERMINAL</code><em class="property"> = 'http://shopadmintest.cxm'</em><a class="headerlink" href="#lib.config.CiConfig.URL_TERMINAL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.CiConfig.URL_WEIXIN">
+<code class="descname">URL_WEIXIN</code><em class="property"> = 'http://scliveapp2015.weixintest.cxm/scliveapp2015'</em><a class="headerlink" href="#lib.config.CiConfig.URL_WEIXIN" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.CiConfig.USER">
+<code class="descname">USER</code><em class="property"> = 7638800811L</em><a class="headerlink" href="#lib.config.CiConfig.USER" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.CiConfig.USER_ID">
+<code class="descname">USER_ID</code><em class="property"> = '137240011'</em><a class="headerlink" href="#lib.config.CiConfig.USER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.config.Config">
+<em class="property">class </em><code class="descclassname">lib.config.</code><code class="descname">Config</code><a class="reference internal" href="_modules/lib/config.html#Config"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>基础配置</p>
+<dl class="attribute">
+<dt id="lib.config.Config.API">
+<code class="descname">API</code><em class="property"> = {'shop': &lt;class 'lib.api.shop.Shop'&gt;, 'terminal': &lt;class 'lib.api.terminal.Terminal'&gt;, 'weixin': &lt;class 'lib.api.weixin.Weixin'&gt;, 'myvkd': &lt;class 'lib.api.myvkd.MyVkd'&gt;, 'member': &lt;class 'lib.api.member.Member'&gt;, 'market': &lt;class 'lib.api.market.Market'&gt;}</em><a class="headerlink" href="#lib.config.Config.API" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.CAPTCHA">
+<code class="descname">CAPTCHA</code><em class="property"> = '1111'</em><a class="headerlink" href="#lib.config.Config.CAPTCHA" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.DEBUG">
+<code class="descname">DEBUG</code><em class="property"> = 'no'</em><a class="headerlink" href="#lib.config.Config.DEBUG" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.ENV">
+<code class="descname">ENV</code><em class="property"> = 'default'</em><a class="headerlink" href="#lib.config.Config.ENV" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.HEADERS">
+<code class="descname">HEADERS</code><em class="property"> = {'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Accept': 'application/json, text/plain, */*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'Upgrade-Insecure-Requests': '1', 'Content-Type': 'application/x-www-form-urlencoded', 'YT': 'for debug'}</em><a class="headerlink" href="#lib.config.Config.HEADERS" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.HEADERS_JSON">
+<code class="descname">HEADERS_JSON</code><em class="property"> = {'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Accept': 'application/json, text/plain, */*', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36', 'Upgrade-Insecure-Requests': '1', 'Content-Type': 'application/json;charset=UTF-8', 'YT': 'for debug'}</em><a class="headerlink" href="#lib.config.Config.HEADERS_JSON" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.INIT_FLAG">
+<code class="descname">INIT_FLAG</code><em class="property"> = 0</em><a class="headerlink" href="#lib.config.Config.INIT_FLAG" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.LOADED_API">
+<code class="descname">LOADED_API</code><em class="property"> = {}</em><a class="headerlink" href="#lib.config.Config.LOADED_API" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.LOADED_MODULES">
+<code class="descname">LOADED_MODULES</code><em class="property"> = {}</em><a class="headerlink" href="#lib.config.Config.LOADED_MODULES" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.MB_PARAM">
+<code class="descname">MB_PARAM</code><a class="headerlink" href="#lib.config.Config.MB_PARAM" title="永久链接至目标">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">MemberParam</span></code> 的别名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.MK_PARAM">
+<code class="descname">MK_PARAM</code><a class="headerlink" href="#lib.config.Config.MK_PARAM" title="永久链接至目标">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">MarketParam</span></code> 的别名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.MODULES">
+<code class="descname">MODULES</code><em class="property"> = {'member': &lt;class 'lib.api.member.Member'&gt;, 'shop': &lt;class 'lib.api.shop.Shop'&gt;, 'myvkd': &lt;class 'lib.api.myvkd.MyVkd'&gt;, 'market': &lt;class 'lib.api.market.Market'&gt;}</em><a class="headerlink" href="#lib.config.Config.MODULES" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.PROXY">
+<code class="descname">PROXY</code><em class="property"> = {'http': 'http://127.0.0.1:8888'}</em><a class="headerlink" href="#lib.config.Config.PROXY" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.SHOP_PARAM">
+<code class="descname">SHOP_PARAM</code><a class="headerlink" href="#lib.config.Config.SHOP_PARAM" title="永久链接至目标">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">ShopParam</span></code> 的别名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.SSID">
+<code class="descname">SSID</code><em class="property"> = None</em><a class="headerlink" href="#lib.config.Config.SSID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.TM_PARAM">
+<code class="descname">TM_PARAM</code><a class="headerlink" href="#lib.config.Config.TM_PARAM" title="永久链接至目标">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">TerminalParam</span></code> 的别名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.URL">
+<code class="descname">URL</code><em class="property"> = 'http://testwkd.snsshop.net/login/index'</em><a class="headerlink" href="#lib.config.Config.URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.WX_MENU">
+<code class="descname">WX_MENU</code><a class="headerlink" href="#lib.config.Config.WX_MENU" title="永久链接至目标">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">Menu</span></code> 的别名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.WX_PARAM">
+<code class="descname">WX_PARAM</code><a class="headerlink" href="#lib.config.Config.WX_PARAM" title="永久链接至目标">¶</a></dt>
+<dd><p><code class="xref py py-class docutils literal"><span class="pre">WeixinParam</span></code> 的别名</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.Config.cookie">
+<code class="descname">cookie</code><a class="headerlink" href="#lib.config.Config.cookie" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.config.Config.get_api_mod">
+<em class="property">static </em><code class="descname">get_api_mod</code><span class="sig-paren">(</span><em>*params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#Config.get_api_mod"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config.get_api_mod" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.config.Config.get_cookie">
+<em class="property">static </em><code class="descname">get_cookie</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#Config.get_cookie"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config.get_cookie" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.config.Config.get_flag">
+<em class="property">static </em><code class="descname">get_flag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#Config.get_flag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config.get_flag" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.config.Config.load_api_mod">
+<em class="property">static </em><code class="descname">load_api_mod</code><span class="sig-paren">(</span><em>*params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#Config.load_api_mod"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config.load_api_mod" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.config.Config.load_module">
+<em class="property">static </em><code class="descname">load_module</code><span class="sig-paren">(</span><em>*params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#Config.load_module"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config.load_module" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="lib.config.Config.set_flag">
+<em class="property">static </em><code class="descname">set_flag</code><span class="sig-paren">(</span><em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#Config.set_flag"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.Config.set_flag" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.config.DevConfig">
+<em class="property">class </em><code class="descclassname">lib.config.</code><code class="descname">DevConfig</code><a class="reference internal" href="_modules/lib/config.html#DevConfig"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.DevConfig" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.config.Config" title="lib.config.Config"><code class="xref py py-class docutils literal"><span class="pre">lib.config.Config</span></code></a></p>
+<dl class="attribute">
+<dt id="lib.config.DevConfig.PASSWORD">
+<code class="descname">PASSWORD</code><em class="property"> = 518000</em><a class="headerlink" href="#lib.config.DevConfig.PASSWORD" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.DevConfig.URL">
+<code class="descname">URL</code><em class="property"> = 'http://335.newwsh.snsshop.net'</em><a class="headerlink" href="#lib.config.DevConfig.URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.DevConfig.USER">
+<code class="descname">USER</code><em class="property"> = 7638800811L</em><a class="headerlink" href="#lib.config.DevConfig.USER" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="lib.config.TestConfig">
+<em class="property">class </em><code class="descclassname">lib.config.</code><code class="descname">TestConfig</code><a class="reference internal" href="_modules/lib/config.html#TestConfig"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.TestConfig" title="永久链接至目标">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#lib.config.Config" title="lib.config.Config"><code class="xref py py-class docutils literal"><span class="pre">lib.config.Config</span></code></a></p>
+<p>微客多测试环境配置(手工测试环境)</p>
+<dl class="attribute">
+<dt id="lib.config.TestConfig.MEMBER_ID">
+<code class="descname">MEMBER_ID</code><em class="property"> = '373'</em><a class="headerlink" href="#lib.config.TestConfig.MEMBER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.PASSWORD">
+<code class="descname">PASSWORD</code><em class="property"> = 123456</em><a class="headerlink" href="#lib.config.TestConfig.PASSWORD" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.TITLE">
+<code class="descname">TITLE</code><em class="property"> = u'\u5fae\u5ba2\u591a\u540e\u53f0\u7ba1\u7406\u7cfb\u7edf'</em><a class="headerlink" href="#lib.config.TestConfig.TITLE" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.URL">
+<code class="descname">URL</code><em class="property"> = 'http://testwkd.snsshop.net'</em><a class="headerlink" href="#lib.config.TestConfig.URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.URL_TERMINAL">
+<code class="descname">URL_TERMINAL</code><em class="property"> = 'http://testwkdshopadmin.snsshop.net'</em><a class="headerlink" href="#lib.config.TestConfig.URL_TERMINAL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.USERNAME">
+<code class="descname">USERNAME</code><em class="property"> = 20160809</em><a class="headerlink" href="#lib.config.TestConfig.USERNAME" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.USER_ID">
+<code class="descname">USER_ID</code><em class="property"> = '13764874'</em><a class="headerlink" href="#lib.config.TestConfig.USER_ID" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="lib.config.TestConfig.WX_URL">
+<code class="descname">WX_URL</code><em class="property"> = 'http://wkdianshang.testwkdwx.snsshop.net/wkdianshang'</em><a class="headerlink" href="#lib.config.TestConfig.WX_URL" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="lib.config.get_config">
+<code class="descclassname">lib.config.</code><code class="descname">get_config</code><span class="sig-paren">(</span><em>env</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/config.html#get_config"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.config.get_config" title="永久链接至目标">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-lib.init">
+<span id="lib-init-module"></span><h2>lib.init module<a class="headerlink" href="#module-lib.init" title="永久链接至标题">¶</a></h2>
+<p>初始化模块配置</p>
+<dl class="function">
+<dt id="lib.init.api_login">
+<code class="descclassname">lib.init.</code><code class="descname">api_login</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/init.html#api_login"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.init.api_login" title="永久链接至目标">¶</a></dt>
+<dd><p>登录微商户API
+Returns:cookies</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="lib.init.wx_api_login">
+<code class="descclassname">lib.init.</code><code class="descname">wx_api_login</code><span class="sig-paren">(</span><em>conf</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/lib/init.html#wx_api_login"><span class="viewcode-link">[源代码]</span></a><a class="headerlink" href="#lib.init.wx_api_login" title="永久链接至目标">¶</a></dt>
+<dd><p>登录微信前端API
+Returns:session</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-lib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-lib" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

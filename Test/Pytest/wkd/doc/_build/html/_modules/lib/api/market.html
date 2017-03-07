@@ -1,0 +1,539 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.api.market &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.api.market</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.api.market 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+
+
+<div class="viewcode-block" id="Market"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market">[文档]</a><span class="k">class</span> <span class="nc">Market</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    市场营销模块</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<span class="c1">############################# 添加推广活动 ############################</span>
+<div class="viewcode-block" id="Market.market_activity_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.market_activity_add">[文档]</a>    <span class="k">def</span> <span class="nf">market_activity_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+            <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">            添加推广活动（注：砸金蛋、大转盘、众筹等推广活动添加为同一接口）</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/market-activity/add-ajax&quot;</span>
+            <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="s1">&#39;form&#39;</span><span class="p">)</span></div>
+
+
+<span class="c1">############################# 拼团活动 ###############################</span>
+<div class="viewcode-block" id="Market.together_buy_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.together_buy_list">[文档]</a>    <span class="k">def</span> <span class="nf">together_buy_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        拼团活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/together-buy/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.togetherBuy_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.togetherBuy_add">[文档]</a>    <span class="k">def</span> <span class="nf">togetherBuy_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加拼团活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/together-buy/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Market.togetherBuy_goods_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.togetherBuy_goods_add">[文档]</a>    <span class="k">def</span> <span class="nf">togetherBuy_goods_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加拼团活动商品</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/together-buy/together-buy-goods-add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Market.togetherBuy_edit"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.togetherBuy_edit">[文档]</a>    <span class="k">def</span> <span class="nf">togetherBuy_edit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        拼团活动编辑</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/together-buy/edit-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
+    
+<span class="c1">############################# 卡券活动 ###############################</span>
+<div class="viewcode-block" id="Market.card_coupons_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.card_coupons_list">[文档]</a>    <span class="k">def</span> <span class="nf">card_coupons_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        获取卡券列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/card-coupons/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.card_coupons_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.card_coupons_add">[文档]</a>    <span class="k">def</span> <span class="nf">card_coupons_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加卡券</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/card-coupons/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.card_coupons_send"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.card_coupons_send">[文档]</a>    <span class="k">def</span> <span class="nf">card_coupons_send</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        派发卡券</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/card-coupons/send-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.card_coupons_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.card_coupons_del">[文档]</a>    <span class="k">def</span> <span class="nf">card_coupons_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除卡券</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/card-coupons/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<span class="c1">############################# 满减活动 ###############################</span>
+<div class="viewcode-block" id="Market.reduction_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.reduction_list">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        满减活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/reduction/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.reduction_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.reduction_add">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加满减活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/reduction/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.reduction_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.reduction_open">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启满减活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/reduction/open-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.reduction_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.reduction_close">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭满减活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/reduction/close-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.reduction_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.reduction_del">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除满减活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/reduction/delete-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<span class="c1">############################# 现金红包 ###############################</span>
+<div class="viewcode-block" id="Market.cash_redpack_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.cash_redpack_list">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        现金红包列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/cash-redpack/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.cash_redpack_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.cash_redpack_add">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加现金红包</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/cash-redpack/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.cash_redpack_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.cash_redpack_open">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启现金红包</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/cash-redpack/open-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.cash_redpack_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.cash_redpack_close">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭现金红包</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/cash-redpack/close-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.cash_redpack_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.cash_redpack_del">[文档]</a>    <span class="k">def</span> <span class="nf">cash_redpack_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除现金红包</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/cash-redpack/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<span class="c1">############################# 商城红包 ###############################</span>
+<div class="viewcode-block" id="Market.redpack_manage_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_manage_list">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_manage_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        商城红包列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack-manage/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_manage_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_manage_add">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_manage_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加商城红包</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack-manage/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_manage_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_manage_del">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_manage_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商城红包</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/cash-redpack/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_list">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        商城红包活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_add">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加商城红包活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_open">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启商城红包活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack/open-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_close">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭商城红包活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack/close-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.redpack_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.redpack_del">[文档]</a>    <span class="k">def</span> <span class="nf">redpack_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除商城红包活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/redpack/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+
+<span class="c1">############################# 积分活动 ###############################</span>
+<div class="viewcode-block" id="Market.activity_points_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.activity_points_list">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        积分活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/activity-points/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.activity_points_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.activity_points_add">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/activity-points/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.activity_points_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.activity_points_open">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/activity-points/open-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.activity_points_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.activity_points_close">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/activity-points/close-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.activity_points_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.activity_points_del">[文档]</a>    <span class="k">def</span> <span class="nf">activity_points_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/activity-points/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<span class="c1">############################# 砸金蛋活动 ###############################</span>
+<div class="viewcode-block" id="Market.smashegg_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.smashegg_list">[文档]</a>    <span class="k">def</span> <span class="nf">smashegg_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        砸金蛋活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/market-activity/smashegg-list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.smashegg_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.smashegg_open">[文档]</a>    <span class="k">def</span> <span class="nf">smashegg_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/market-activity/open-smashegg-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.smashegg_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.smashegg_close">[文档]</a>    <span class="k">def</span> <span class="nf">smashegg_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        闭关积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/market-activity/close-smashegg-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.smashegg_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.smashegg_del">[文档]</a>    <span class="k">def</span> <span class="nf">smashegg_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除积分活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/market-activity/del-smashegg-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<span class="c1">############################# 秒杀活动 ###############################</span>
+<div class="viewcode-block" id="Market.second_kill_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.second_kill_list">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        秒杀活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/second-kill/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.second_kill_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.second_kill_add">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加秒杀活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/second-kill/add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.second_kill_edit"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.second_kill_edit">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_edit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        编辑秒杀活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/second-kill/edit-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.second_kill_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.second_kill_open">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启秒杀活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/second-kill/open-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.second_kill_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.second_kill_close">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭秒杀活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/second-kill/close-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Market.second_kill_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.second_kill_del">[文档]</a>    <span class="k">def</span> <span class="nf">second_kill_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除秒杀活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/second-kill/del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<span class="c1">############################# 众筹活动 ###############################</span>
+<div class="viewcode-block" id="Market.collect_zan_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.market.Market.collect_zan_list">[文档]</a>    <span class="k">def</span> <span class="nf">collect_zan_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        众筹活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/collect-zan/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div></div>
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

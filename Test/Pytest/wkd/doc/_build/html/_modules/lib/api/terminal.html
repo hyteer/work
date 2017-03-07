@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.api.terminal &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.api.terminal</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.api.terminal 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+
+
+<div class="viewcode-block" id="Terminal"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal">[文档]</a><span class="k">class</span> <span class="nc">Terminal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+
+<span class="sd">接口列表：</span>
+<span class="sd"> - 获取分店列表</span>
+<span class="sd"> - 添加分店</span>
+<span class="sd"> - 删除分店</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<span class="c1">############################# 分店管理 ############################</span>
+<div class="viewcode-block" id="Terminal.terminal_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_list">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+            <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">            获取分店列表</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/terminal/list-ajax&quot;</span>
+            <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Terminal.terminal_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_add">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+            <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">            添加分店</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/terminal/add-ajax&quot;</span>
+            <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.main_sub_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.main_sub_open">[文档]</a>    <span class="k">def</span> <span class="nf">main_sub_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启分店店铺模式</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/main-sub-open-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>    </div>
+    
+<div class="viewcode-block" id="Terminal.main_sub_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.main_sub_close">[文档]</a>    <span class="k">def</span> <span class="nf">main_sub_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭分店店铺模式</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/main-sub-close-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.single_setting_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.single_setting_open">[文档]</a>    <span class="k">def</span> <span class="nf">single_setting_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启分店独立库存和价格</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/single-setting-open-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.single_setting_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.single_setting_close">[文档]</a>    <span class="k">def</span> <span class="nf">single_setting_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭分店独立库存和价格</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/shop/single-setting-close-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<span class="c1">###########################分店商品管理#########################</span>
+<div class="viewcode-block" id="Terminal.product_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.product_list">[文档]</a>    <span class="k">def</span> <span class="nf">product_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        分店商品列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/product-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.sub_shop_product_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.sub_shop_product_list">[文档]</a>    <span class="k">def</span> <span class="nf">sub_shop_product_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        分店商品设置</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/sub-shop-product-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span><span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.sub_product_update"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.sub_product_update">[文档]</a>    <span class="k">def</span> <span class="nf">sub_product_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        更新分店商品配送与上下架信息</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/sub-product-update-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.sub_sku_arr_update"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.sub_sku_arr_update">[文档]</a>    <span class="k">def</span> <span class="nf">sub_sku_arr_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        更新分店商品库存</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/sub-sku-arr-update-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.set_main_sub"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.set_main_sub">[文档]</a>    <span class="k">def</span> <span class="nf">set_main_sub</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span><span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        设置默认分店</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/set-main-sub-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+    <span class="c1">#####################收银台管理###########################</span>
+<div class="viewcode-block" id="Terminal.terminal_scan_pay_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_scan_pay_open">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_scan_pay_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启收款码</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/scan-pay-open-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.terminal_scan_pay_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_scan_pay_close">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_scan_pay_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">shopID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭收款码</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal/scan-pay-close-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">shopID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_list">[文档]</a>    <span class="k">def</span> <span class="nf">staff_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        分店员工列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/staff/list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_scan_pay_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_scan_pay_open">[文档]</a>    <span class="k">def</span> <span class="nf">staff_scan_pay_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span><span class="n">staffID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启员工收款码</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/staff/scan-pay-open-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">staffID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_scan_pay_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_scan_pay_close">[文档]</a>    <span class="k">def</span> <span class="nf">staff_scan_pay_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">staffID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭员工收款码</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/staff/scan-pay-close-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">staffID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+   
+<div class="viewcode-block" id="Terminal.staff_pay_refund_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_pay_refund_open">[文档]</a>    <span class="k">def</span> <span class="nf">staff_pay_refund_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">staffID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启员工退款权限</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/staff/scan-pay-refund-open-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">staffID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_pay_refund_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_pay_refund_close">[文档]</a>    <span class="k">def</span> <span class="nf">staff_pay_refund_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">staffID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭员工退款权限</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/staff/scan-pay-refund-close-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">staffID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.statement_hq"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.statement_hq">[文档]</a>    <span class="k">def</span> <span class="nf">statement_hq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        总部结算</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/statement/statement-hq&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.statement_sub"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.statement_sub">[文档]</a>    <span class="k">def</span> <span class="nf">statement_sub</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span> <span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        分店独立结算</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/statement/statement-sub&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.statement_find_push_record"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.statement_find_push_record">[文档]</a>    <span class="k">def</span> <span class="nf">statement_find_push_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        消息推送记录</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/statement/find-push-record&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+    <span class="c1">######################分店满减送活动########################</span>
+<div class="viewcode-block" id="Terminal.terminal_reduction_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_reduction_list">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_reduction_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        分店收款码满减送列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/list-by-terminal-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.terminal_reduction_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_reduction_add">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_reduction_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">         添加分店收款码满减送活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/add-by-terminal-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.terminal_reduction_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_reduction_open">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_reduction_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">reductionID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启分店收款码满减送活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/open-by-terminal-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">reductionID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Terminal.terminal_reduction_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_reduction_close">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_reduction_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">reductionID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭分店收款码满减送活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/close-by-terminal-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">reductionID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>    </div>
+    
+<div class="viewcode-block" id="Terminal.reduction_store_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.reduction_store_list">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_store_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        已选择的门店（包含代理商终端店信息）</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/reduction-store-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.terminal_reduction_delete"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.terminal_reduction_delete">[文档]</a>    <span class="k">def</span> <span class="nf">terminal_reduction_delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">reductionID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除门店满减活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/delete-by-terminal-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">reductionID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_reduction_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_reduction_list">[文档]</a>    <span class="k">def</span> <span class="nf">staff_reduction_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        获取员工满减活动列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/list-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.reduction_staff_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.reduction_staff_list">[文档]</a>    <span class="k">def</span> <span class="nf">reduction_staff_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        已选择的员工</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/reduction-staff-list-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_reduction_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_reduction_add">[文档]</a>    <span class="k">def</span> <span class="nf">staff_reduction_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        添加员工收款码满减送</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/add-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.staff_reduction_open"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_reduction_open">[文档]</a>    <span class="k">def</span> <span class="nf">staff_reduction_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">reductionID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        开启分店收款码满减送活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/open-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">reductionID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Terminal.staff_reduction_close"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_reduction_close">[文档]</a>    <span class="k">def</span> <span class="nf">staff_reduction_close</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">reductionID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        关闭分店收款码满减送活动</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/close-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">reductionID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     </div>
+    
+<div class="viewcode-block" id="Terminal.staff_reduction_delete"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.staff_reduction_delete">[文档]</a>    <span class="k">def</span> <span class="nf">staff_reduction_delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">reductionID</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除员工收款码满减送</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/terminal-reduction/delete-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">reductionID</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+    <span class="c1">#######################分店数据统计############################</span>
+    
+<div class="viewcode-block" id="Terminal.order_statistics_by_shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.order_statistics_by_shop">[文档]</a>    <span class="k">def</span> <span class="nf">order_statistics_by_shop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        根据门店统计订单、对账单统计、结算信息</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/order-by-shop-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.order_statistics_by_staff"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.order_statistics_by_staff">[文档]</a>    <span class="k">def</span> <span class="nf">order_statistics_by_staff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        根据员工统计订单、对账单统计、结算信息</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/order-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.aftersales_statistics_by_shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.aftersales_statistics_by_shop">[文档]</a>    <span class="k">def</span> <span class="nf">aftersales_statistics_by_shop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按门店统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/after-sales-by-shop-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.aftersale_statistics_by_staff"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.aftersale_statistics_by_staff">[文档]</a>    <span class="k">def</span> <span class="nf">aftersale_statistics_by_staff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按员工统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/after-sales-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.member_statistics_by_shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.member_statistics_by_shop">[文档]</a>    <span class="k">def</span> <span class="nf">member_statistics_by_shop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按门店统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/member-statistics-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.member_statistics_by_staff"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.member_statistics_by_staff">[文档]</a>    <span class="k">def</span> <span class="nf">member_statistics_by_staff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按员工统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/member-staff-statistics-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.customer_statistics_by_shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.customer_statistics_by_shop">[文档]</a>    <span class="k">def</span> <span class="nf">customer_statistics_by_shop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按门店统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/member-by-shop-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.customer_statistics_by_staff"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.customer_statistics_by_staff">[文档]</a>    <span class="k">def</span> <span class="nf">customer_statistics_by_staff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按员工统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/member-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.promotion_statistics_by_shop"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.promotion_statistics_by_shop">[文档]</a>    <span class="k">def</span> <span class="nf">promotion_statistics_by_shop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按门店统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/fx-by-shop-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.promotion_statistics_by_staff"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.promotion_statistics_by_staff">[文档]</a>    <span class="k">def</span> <span class="nf">promotion_statistics_by_staff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按员工统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/fx-by-staff-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Terminal.promotion_statistics_by_promoter"><a class="viewcode-back" href="../../../lib.api.html#lib.api.terminal.Terminal.promotion_statistics_by_promoter">[文档]</a>    <span class="k">def</span> <span class="nf">promotion_statistics_by_promoter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">conf</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        售后订单按员工统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/data/fx-by-member-ajax&#39;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">terminal</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

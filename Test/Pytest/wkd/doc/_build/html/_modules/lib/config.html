@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.config &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../index.html"/>
+        <link rel="up" title="模块代码" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.config</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.config 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1">#coding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">api.member</span> <span class="k">import</span> <span class="n">Member</span>
+<span class="kn">from</span> <span class="nn">api.shop</span> <span class="k">import</span> <span class="n">Shop</span>
+<span class="kn">from</span> <span class="nn">ui.weixin</span> <span class="k">import</span> <span class="n">Menu</span>
+<span class="kn">from</span> <span class="nn">api.weixin</span> <span class="k">import</span> <span class="n">Weixin</span>
+<span class="kn">from</span> <span class="nn">api.market</span> <span class="k">import</span> <span class="n">Market</span>
+<span class="kn">from</span> <span class="nn">api.terminal</span> <span class="k">import</span> <span class="n">Terminal</span>
+<span class="kn">from</span> <span class="nn">api.myvkd</span> <span class="k">import</span> <span class="n">MyVkd</span>
+<span class="kn">from</span> <span class="nn">param.shop</span> <span class="k">import</span> <span class="n">ShopParam</span>
+<span class="kn">from</span> <span class="nn">param.member</span> <span class="k">import</span> <span class="n">MemberParam</span>
+<span class="kn">from</span> <span class="nn">param.market</span> <span class="k">import</span> <span class="n">MarketParam</span>
+<span class="kn">from</span> <span class="nn">param.weixin</span> <span class="k">import</span> <span class="n">WeixinParam</span>
+<span class="kn">from</span> <span class="nn">param.terminal</span> <span class="k">import</span> <span class="n">TerminalParam</span>
+
+
+
+<span class="n">ROOT_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="Config"><a class="viewcode-back" href="../../lib.html#lib.config.Config">[文档]</a><span class="k">class</span> <span class="nc">Config</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    基础配置</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">CAPTCHA</span> <span class="o">=</span> <span class="s1">&#39;1111&#39;</span>
+    <span class="n">PROXY</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;http&#39;</span> <span class="p">:</span> <span class="s1">&#39;http://127.0.0.1:8888&#39;</span><span class="p">}</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://testwkd.snsshop.net/login/index&#39;</span>
+    <span class="n">INIT_FLAG</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ENV</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+    <span class="n">SSID</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">#COOKIE = None</span>
+    <span class="n">DEBUG</span> <span class="o">=</span> <span class="s1">&#39;no&#39;</span>
+    <span class="n">API</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;member&#39;</span><span class="p">:</span><span class="n">Member</span><span class="p">,</span>
+        <span class="s1">&#39;weixin&#39;</span><span class="p">:</span><span class="n">Weixin</span><span class="p">,</span>
+        <span class="s1">&#39;shop&#39;</span><span class="p">:</span><span class="n">Shop</span><span class="p">,</span>
+        <span class="s1">&#39;market&#39;</span><span class="p">:</span><span class="n">Market</span><span class="p">,</span>
+        <span class="s1">&#39;myvkd&#39;</span><span class="p">:</span><span class="n">MyVkd</span><span class="p">,</span>
+        <span class="s1">&#39;terminal&#39;</span><span class="p">:</span><span class="n">Terminal</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">MODULES</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;member&#39;</span><span class="p">:</span><span class="n">Member</span><span class="p">,</span>
+        <span class="s1">&#39;shop&#39;</span><span class="p">:</span><span class="n">Shop</span><span class="p">,</span>
+		<span class="s1">&#39;myvkd&#39;</span><span class="p">:</span><span class="n">MyVkd</span><span class="p">,</span>
+        <span class="s1">&#39;market&#39;</span><span class="p">:</span><span class="n">Market</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">MB_PARAM</span> <span class="o">=</span> <span class="n">MemberParam</span>
+    <span class="n">MK_PARAM</span> <span class="o">=</span> <span class="n">MarketParam</span>
+    <span class="n">WX_PARAM</span> <span class="o">=</span> <span class="n">WeixinParam</span>
+    <span class="n">WX_MENU</span> <span class="o">=</span> <span class="n">Menu</span>
+
+    <span class="n">SHOP_PARAM</span> <span class="o">=</span> <span class="n">ShopParam</span>
+    <span class="n">TM_PARAM</span> <span class="o">=</span> <span class="n">TerminalParam</span>
+
+
+    <span class="n">LOADED_API</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">LOADED_MODULES</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Config.get_flag"><a class="viewcode-back" href="../../lib.html#lib.config.Config.get_flag">[文档]</a>    <span class="k">def</span> <span class="nf">get_flag</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">Config</span><span class="o">.</span><span class="n">INIT_FLAG</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Config.set_flag"><a class="viewcode-back" href="../../lib.html#lib.config.Config.set_flag">[文档]</a>    <span class="k">def</span> <span class="nf">set_flag</span><span class="p">(</span><span class="n">flag</span><span class="p">):</span>
+        <span class="n">Config</span><span class="o">.</span><span class="n">INIT_FLAG</span> <span class="o">=</span> <span class="n">flag</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Config.get_cookie"><a class="viewcode-back" href="../../lib.html#lib.config.Config.get_cookie">[文档]</a>    <span class="k">def</span> <span class="nf">get_cookie</span><span class="p">():</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;PHPSESSID&#39;</span><span class="p">:</span> <span class="n">Config</span><span class="o">.</span><span class="n">SSID</span><span class="p">}</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cookie</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;PHPSESSID&#39;</span><span class="p">:</span> <span class="n">Config</span><span class="o">.</span><span class="n">SSID</span><span class="p">}</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Config.load_api_mod"><a class="viewcode-back" href="../../lib.html#lib.config.Config.load_api_mod">[文档]</a>    <span class="k">def</span> <span class="nf">load_api_mod</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">API</span> <span class="ow">and</span> <span class="n">mod</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_API</span><span class="p">:</span>
+                <span class="n">api</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">API</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_API</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span> <span class="o">=</span> <span class="n">api</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Config.get_api_mod"><a class="viewcode-back" href="../../lib.html#lib.config.Config.get_api_mod">[文档]</a>    <span class="k">def</span> <span class="nf">get_api_mod</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
+        <span class="n">modules</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">API</span> <span class="ow">and</span> <span class="n">mod</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_API</span><span class="p">:</span>
+                <span class="n">api</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">API</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_API</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span> <span class="o">=</span> <span class="n">api</span><span class="p">()</span>
+            <span class="n">modules</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_API</span><span class="p">[</span><span class="n">mod</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">modules</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">modules</span><span class="p">[</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">modules</span></div>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Config.load_module"><a class="viewcode-back" href="../../lib.html#lib.config.Config.load_module">[文档]</a>    <span class="k">def</span> <span class="nf">load_module</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">MODULES</span> <span class="ow">and</span> <span class="n">param</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_MODULES</span><span class="p">:</span>
+                <span class="n">module</span> <span class="o">=</span> <span class="n">Config</span><span class="o">.</span><span class="n">MODULES</span><span class="p">[</span><span class="n">param</span><span class="p">]</span>
+                <span class="n">Config</span><span class="o">.</span><span class="n">LOADED_MODULES</span><span class="p">[</span><span class="n">param</span><span class="p">]</span> <span class="o">=</span> <span class="n">module</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+    <span class="n">HEADERS</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Accept-Language&#39;</span><span class="p">:</span> <span class="s1">&#39;zh-CN,zh;q=0.8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Upgrade-Insecure-Requests&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, deflate, sdch&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json, text/plain, */*&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;YT&#39;</span><span class="p">:</span> <span class="s1">&#39;for debug&#39;</span>
+        <span class="p">}</span>
+    <span class="n">HEADERS_JSON</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Accept-Language&#39;</span><span class="p">:</span> <span class="s1">&#39;zh-CN,zh;q=0.8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Upgrade-Insecure-Requests&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, deflate, sdch&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json, text/plain, */*&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span><span class="s1">&#39;application/json;charset=UTF-8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;YT&#39;</span><span class="p">:</span> <span class="s1">&#39;for debug&#39;</span>
+    <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="AutoConfig"><a class="viewcode-back" href="../../lib.html#lib.config.AutoConfig">[文档]</a><span class="k">class</span> <span class="nc">AutoConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    微客多自动化测试环境配置(自动化测试专用)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">USERNAME</span> <span class="o">=</span> <span class="s1">&#39;20170108@qq.com&#39;</span>
+    <span class="n">PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;123456&#39;</span>
+    <span class="n">USER_ID</span> <span class="o">=</span> <span class="s1">&#39;13764904&#39;</span>
+    <span class="n">MEMBER_ID</span> <span class="o">=</span> <span class="s1">&#39;380&#39;</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://testwkd.snsshop.net&#39;</span>
+    <span class="n">URL_TERMINAL</span> <span class="o">=</span> <span class="s1">&#39;http://testwkdshopadmin.snsshop.net&#39;</span>
+    <span class="n">WX_URL</span> <span class="o">=</span> <span class="s1">&#39;http://wkdianshang.testwkdwx.snsshop.net/wkdianshang&#39;</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s2">u&quot;微客多后台管理系统&quot;</span></div>
+
+<div class="viewcode-block" id="TestConfig"><a class="viewcode-back" href="../../lib.html#lib.config.TestConfig">[文档]</a><span class="k">class</span> <span class="nc">TestConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    微客多测试环境配置(手工测试环境)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">USERNAME</span> <span class="o">=</span> <span class="mi">20160809</span>
+    <span class="n">PASSWORD</span> <span class="o">=</span> <span class="mi">123456</span>
+    <span class="n">USER_ID</span> <span class="o">=</span> <span class="s1">&#39;13764874&#39;</span>
+    <span class="n">MEMBER_ID</span> <span class="o">=</span> <span class="s1">&#39;373&#39;</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://testwkd.snsshop.net&#39;</span>
+    <span class="n">URL_TERMINAL</span> <span class="o">=</span> <span class="s1">&#39;http://testwkdshopadmin.snsshop.net&#39;</span>
+    <span class="n">WX_URL</span> <span class="o">=</span> <span class="s1">&#39;http://wkdianshang.testwkdwx.snsshop.net/wkdianshang&#39;</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s2">u&quot;微客多后台管理系统&quot;</span></div>
+
+<div class="viewcode-block" id="BetaConfig"><a class="viewcode-back" href="../../lib.html#lib.config.BetaConfig">[文档]</a><span class="k">class</span> <span class="nc">BetaConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="n">USERNAME</span> <span class="o">=</span> <span class="mi">20151228</span>
+    <span class="n">PASSWORD</span> <span class="o">=</span> <span class="mi">123456</span>
+    <span class="n">USER_ID</span> <span class="o">=</span> <span class="s1">&#39;13764779&#39;</span>
+    <span class="n">MEMBER_ID</span> <span class="o">=</span> <span class="s1">&#39;267&#39;</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://betanewwsh.snsshop.net&#39;</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s2">u&quot;商户后台管理系统&quot;</span></div>
+
+
+<div class="viewcode-block" id="DevConfig"><a class="viewcode-back" href="../../lib.html#lib.config.DevConfig">[文档]</a><span class="k">class</span> <span class="nc">DevConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="n">USER</span> <span class="o">=</span> <span class="mi">7638800811</span>
+    <span class="n">PASSWORD</span> <span class="o">=</span> <span class="mi">518000</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://335.newwsh.snsshop.net&#39;</span></div>
+
+<div class="viewcode-block" id="CiConfig"><a class="viewcode-back" href="../../lib.html#lib.config.CiConfig">[文档]</a><span class="k">class</span> <span class="nc">CiConfig</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
+    <span class="n">USER</span> <span class="o">=</span> <span class="mi">7638800811</span>
+    <span class="n">PASSWORD</span> <span class="o">=</span> <span class="mi">518000</span>
+    <span class="n">USER_ID</span> <span class="o">=</span> <span class="s1">&#39;137240011&#39;</span>
+    <span class="n">URL</span> <span class="o">=</span> <span class="s1">&#39;http://shanghutest.cxm&#39;</span>
+    <span class="n">URL_TERMINAL</span> <span class="o">=</span> <span class="s1">&#39;http://shopadmintest.cxm&#39;</span>
+    <span class="n">URL_WEIXIN</span> <span class="o">=</span> <span class="s1">&#39;http://scliveapp2015.weixintest.cxm/scliveapp2015&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="get_config"><a class="viewcode-back" href="../../lib.html#lib.config.get_config">[文档]</a><span class="k">def</span> <span class="nf">get_config</span><span class="p">(</span><span class="n">env</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">env</span> <span class="o">==</span> <span class="s2">&quot;auto&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">AutoConfig</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">env</span> <span class="o">==</span> <span class="s2">&quot;test&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">TestConfig</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">env</span> <span class="o">==</span> <span class="s2">&quot;beta&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">BetaConfig</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">env</span> <span class="o">==</span> <span class="s2">&quot;dev&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">DevConfig</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">env</span> <span class="o">==</span> <span class="s2">&quot;ci&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">CiConfig</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please input a legal env string,eg. &#39;test&#39;,&#39;wkd&#39;,&#39;auto&#39;,&#39;dev&#39;,&#39;ci&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

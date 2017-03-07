@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*- 
+
+TERMINAL_LIST = {
+                 "分店名称":'''//td[@ng-bind="list.shopInfo.name"]''',
+                 "分店创建时间":'''//td[contains(@ng-bind,"created")]''',
+                 "分店地址":'''//td[@ng-bind="list.shopInfo.address"]''',
+                 "分店联系电话":'''//td[@ng-bind="list.shopInfo.phone"]''',
+                 "营业状态":'''//input[@ng-model="list.shopInfo.deleted"]''',
+                 "分店名称搜索输入框":'''//input[@placeholder="分店名称搜索"]''',
+                 "分店搜索按钮":'''//span[@ng-click="normalSearch()"]''',
+                 "分店名称输入框":'''//input[@name="name"]''',
+                 "管理员账号输入框":'''//input[@name="user_name"]''',
+                 "管理员密码输入框":'''//input[@name="password"]''',
+                 "管理员姓名输入框":'''//input[@name="real_name"]''',
+                 "微信店铺一级分类选择框":'''//select[@id="wxShopFirstId"]''',
+                 "微信店铺二级分类选择框":'''//select[@id="wxShopSecondId"]''',
+                 "微信店铺三级分类选择框":'''//select[@id="wxShopThirdId"]''',
+                 "所属商圈省选择框":'''//select[@id="provinceId"]''',
+                 "所属商圈市选择框":'''//select[@id="cityId"]''',
+                 "所属商圈区选择框":'''//select[@id="districtId"]''',
+                 "所属商圈选择框":'''//select[@id="circleId"]''',
+                 "开始营业时间输入框":'''//input[@name="start"]''',
+                 "结束营业时间输入框":'''//input[@name="end"]''',
+                 "营业时间周":'''//span[@id="week"]//span[%s]''',
+                 "分店电话输入框":'''//input[@name="phone"]''',
+                 "快递配送选择框":'''//span[text()="快递配送"]''',
+                 "买家自提选择框":'''//span[text()="买家自提"]''',
+                 "同城配送选择框":'''//span[text()="同城配送"]''',
+                 "店铺网址输入框":'''//input[@name="url"]''',
+                 "店铺背景图片选择":'''//strong[contains(text(),"店铺背景")]/parent::label/following-sibling::div//label''',
+                 "店铺log图片选择":'''//strong[contains(text(),"店铺logo")]/parent::label/following-sibling::div//label''',
+                 "图库选择列表":'''//form[@id="select_ajax_form"]//ul/li''',
+                 "从图库选择确定按钮":'''//a[@id="submitImage"]''',
+                 "人均消费输入框":'''//input[@name="avgPrice"]''',
+                 "特色推荐输入框":'''//textarea[@name="shopInfoRecommend"]''',
+                 "特色服务输入框":'''//textarea[@name="shopInfoSpecial"]''',
+                 "商家描述输入框":'''//textarea[@name="shopInfoDescription"]''',
+                 "详细地址输入框":'''//input[@name="address"]''',
+                 "门店地图定位输入框":'''//input[@id="suggestId"]''',
+                 "门店地图定位搜索按钮":'''//a[@id="positioning"]''',
+                 "门店保存按钮":'''//button[text()="保存"]''',
+                 }
+
+PUSH_STRATEGY = {
+                 "门店码推送策略名称输入框":'''//input[@ng-model="name"]''',
+                 "门店码推送策略开始时间输入框":'''//input[@id="start_time"]''',
+                 "门店码推送策略结束时间输入框":'''//input[@id="end_time"]''',
+                 "推送动作下拉列表":'''//select[contains(@ng-model,"addAction")]''',
+                 "扫码回复模块选择框":'''//div[@id="activityModal"]''',
+                 "扫码回复模块活动类型列表":'''//div[@id="activityModal"]//ul[@id="myActivityTab"]/li/a[@isshow="false"]''',
+                 "扫码回复模块活动列表":'''//div[@id="activityModal"]//div[@id="tabPane"]//div[contains(@class,"active")]//li''',
+                 "扫码回复模块确定按钮":'''//div[@id="activityModal"]//a[text()="确定"]''',
+                 }
+
+COMMON = {
+          "时间选择框":'''//iframe[@src="about:blank" and @hidefocus="true"]''',
+}

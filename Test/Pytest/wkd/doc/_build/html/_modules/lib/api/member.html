@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lib.api.member &mdash; WKD TestLib 1.0 文档</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../search.html"/>
+    <link rel="top" title="WKD TestLib 1.0 文档" href="../../../index.html"/>
+        <link rel="up" title="模块代码" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WKD TestLib
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"></div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WKD TestLib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">模块代码</a> &raquo;</li>
+        
+      <li>lib.api.member</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>lib.api.member 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># coding: utf-8</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">generic</span> <span class="k">import</span> <span class="n">Generic</span> <span class="k">as</span> <span class="n">g</span>
+
+<div class="viewcode-block" id="Member"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member">[文档]</a><span class="k">class</span> <span class="nc">Member</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    会员模块相关接口</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="Member.member_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_list">[文档]</a>    <span class="k">def</span> <span class="nf">member_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        客户列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/member/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.member_detail"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_detail">[文档]</a>    <span class="k">def</span> <span class="nf">member_detail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        客户详情</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/member/member-detail-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.members_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_list">[文档]</a>    <span class="k">def</span> <span class="nf">members_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.members_detail"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_detail">[文档]</a>    <span class="k">def</span> <span class="nf">members_detail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员详情</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/detail-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.member_group_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_group_list">[文档]</a>    <span class="k">def</span> <span class="nf">member_group_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        客户分组列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/member/group-list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.member_group_add"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_group_add">[文档]</a>    <span class="k">def</span> <span class="nf">member_group_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        客户分组列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/member/group-add-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.member_group_del"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_group_del">[文档]</a>    <span class="k">def</span> <span class="nf">member_group_del</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        删除客户分组</span>
+<span class="sd">        注：该接口暂无效，待确认</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/member/group-del-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.member_last_count"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_last_count">[文档]</a>    <span class="k">def</span> <span class="nf">member_last_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/last-count-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.member_point_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_point_list">[文档]</a>    <span class="k">def</span> <span class="nf">member_point_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员积分列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/member/point-list-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.members_order_list"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_order_list">[文档]</a>    <span class="k">def</span> <span class="nf">members_order_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        客户消费记录</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/find-member-order-list-ajax&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;uid&quot;</span><span class="p">:</span><span class="nb">id</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+<span class="c1">############################# 会员管理 ###############################</span>
+<div class="viewcode-block" id="Member.member_card_statisticst"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.member_card_statisticst">[文档]</a>    <span class="k">def</span> <span class="nf">member_card_statisticst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员卡投放统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/member-card-statistics-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">page</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.members_offline"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_offline">[文档]</a>    <span class="k">def</span> <span class="nf">members_offline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        实体店会员统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/offline-ajax&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.members_add_import"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_add_import">[文档]</a>    <span class="k">def</span> <span class="nf">members_add_import</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        实体店会员统计</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/add-import-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+<span class="c1">############################# 标签管理 ###############################</span>
+<div class="viewcode-block" id="Member.members_add_tag_ajax"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_add_tag_ajax">[文档]</a>    <span class="k">def</span> <span class="nf">members_add_tag_ajax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        标签管理</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/add-tag-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.members_find_tag_ajax"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.members_find_tag_ajax">[文档]</a>    <span class="k">def</span> <span class="nf">members_find_tag_ajax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        标签列表</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/find-tag-ajax&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;_page_size&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="s2">&quot;_page&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+
+
+<span class="c1">############################# 会员卡 ###############################</span>
+<div class="viewcode-block" id="Member.get_grade_ajax"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.get_grade_ajax">[文档]</a>    <span class="k">def</span> <span class="nf">get_grade_ajax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">points</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        获取等级信息</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/get-grade-ajax&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;growth&quot;</span><span class="p">:</span> <span class="n">points</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+
+<span class="c1">############################# 会员营销 ###############################</span>
+<div class="viewcode-block" id="Member.edit_shop_member_setting"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.edit_shop_member_setting">[文档]</a>    <span class="k">def</span> <span class="nf">edit_shop_member_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员折扣优惠共享设置</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/edit-shop-member-setting-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Member.discounted_product_settings"><a class="viewcode-back" href="../../../lib.api.html#lib.api.member.Member.discounted_product_settings">[文档]</a>    <span class="k">def</span> <span class="nf">discounted_product_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">conf</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        会员折扣优惠共享设置</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;/members/discounted-product-settings-ajax&quot;</span>
+        <span class="k">return</span> <span class="n">g</span><span class="o">.</span><span class="n">post_requests</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span><span class="n">url</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span></div></div>
+
+
+
+<span class="c1">####</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, SCTek.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
